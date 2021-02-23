@@ -1,0 +1,104 @@
+###計量地理學　 作業〇
+####地理碩一　R07228005　杜承軒　→　"請寫上學號姓名"
+
+＊初步環境建置與讀取檔案
+```{r results ='hide',message =FALSE,warning=FALSE}
+#上面的results/message/warning可以隱藏一些多餘的訊息
+#可以在這個段落跑library和讀檔案
+library(GISTools)
+library(rgdal)
+library(splancs)
+setwd("C:/Users/user/Desktop")
+#讀取資料與格式轉換
+tpe=readOGR(dsn = "Data", layer = "TPE_TOWN", encoding="utf8",verbose = F)
+FF=readOGR(dsn = "Homework", layer = "Tpe_Fastfood", encoding="utf8",verbose = F)
+MIC=subset(FF,FF@data$STORE=="MIC")
+KFC=subset(FF,FF@data$STORE=="KFC")
+FF.pt=as.points(FF@coords[,1],FF@coords[,2]) 
+MIC.pt=as.points(MIC@coords[,1],MIC@coords[,2]) 
+KFC.pt=as.points(KFC@coords[,1],KFC@coords[,2]) 
+bondary <- read.table("Data/tpe_sqr_bnd.csv", header=TRUE, sep=",") #邊界資料
+BDP <- as.points(bondary[,2], bondary[,3])
+```
+
+
+> Q1.以下有些RMarkDown的教學      
+> 題號請用">"當前綴來標示    
+
+一般的文字Plain text   
+    
+換行最後請空2~4格(讓它辨識你要換行)    
+   
+如果沒空格
+在撰寫時換行但結果還是不會換   
+
+斜體：*斜體*　或  _斜體_   
+粗體：**粗體** 或 __粗體__  
+次方的寫法：平方^2^   
+刪除線：~~strikethrough~~   
+連結：[點此進入台大地理系](http://www.geog.ntu.edu.tw/index.php?lang=tw)   
+
+# 字形1(大)   
+## 字形2   
+### 字形3   
+#### 字形4   
+##### 字形5   
+###### 字形6(小)   
+
+公式： $A = \pi*r^{2}$   
+公式用\$錢字符號括起來，中間用LaTeX格式撰寫    
+
+橫線（分隔線）：
+
+*** 
+
+> 標示段落1    
+> 標示段落1    
+
+>> 標示段落2    
+>> 標示段落2     
+
+*不是很好用的表格：
+ 
+Table Header  | Second Header 
+------------- | ------------- 
+Table Cell    | Cell 2 
+Cell 3        | Cell 4 
+
+一題結束可以用分隔線隔開     
+
+***
+
+> Q2.題目通常都是畫圖和解釋     
+
+```{r}
+#回答的時候請保留程式碼以利批改
+plot(tpe, col="#DDDDDD")
+pointmap(MIC.pt, pch=21, bg="yellow", add=T)
+pointmap(KFC.pt, pch=21, bg="red", add=T)
+legend(313000,2787000,c("麥當勞","肯德基"),pch=20,col=c("yellow","red"),box.col="white")
+
+```
+
+####文字解釋的部分可以直接撰寫在RMarkDown中   
+    
+####或在    
+```{r}
+return("R裡面用return函示寫出來，會在") #井號是在註記程式碼的
+```
+
+***
+
+> Q3.不想看到的東西
+
+```{r}
+library(dbscan)
+```
+
+```{r}
+summary(tpe)
+tpe
+```
+
+
+

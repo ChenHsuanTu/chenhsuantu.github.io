@@ -1,0 +1,112 @@
+<!DOCTYPE html> 
+<html lang='zh-TW'>
+  <head>
+    <meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    
+    <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css' integrity='sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO' crossorigin='anonymous'>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js' integrity='sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49' crossorigin='anonymous'></script>
+    <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js' integrity='sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy' crossorigin='anonymous'></script>
+  
+    <link rel="stylesheet" href="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.2.0/css/ol.css" type="text/css">
+    <script src="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.2.0/build/ol.js"></script>    
+    
+    <script src="https://cdn.jsdelivr.net/npm/@turf/turf@5/turf.min.js"></script>
+
+    <style>
+      .map {
+        height: 600px;
+        width: 100%;
+      }
+      #custom-handle {
+        width: 3em;
+        height: 1.6em;
+        top: 50%;
+        margin-top: -.8em;
+        text-align: center;
+        line-height: 1.6em;
+      }
+    </style>
+  </head>
+  <body>
+    <div class='container'>
+      <!------------------------------------------------------>
+      <div class='row'>
+        <div class='col-10'><h1>Convex Hull 找尋凸包多邊形</h1></div>
+		<div class='col-2'>R07228005<br>杜承軒</div>
+      </div>
+      <!------------------------------------------------------>
+      <div class='row'>
+        <div class='col-12'>
+          <div id="map" class="map"></div>
+        </div>
+      </div>
+      <!------------------------------------------------------>
+      <script>
+        var MBRLayer=undefined;
+        var LineLayer=undefined;
+        
+        var map = new ol.Map({
+          target: 'map',
+          layers: [new ol.layer.Tile({source: new ol.source.OSM()})],	
+          view: new ol.View({center: ol.proj.fromLonLat([121.539,25.017]),zoom:15.9})
+        });
+        
+        var vectorSource = new ol.source.Vector({});
+        var draw = new ol.interaction.Draw({
+          source: vectorSource,
+          type: 'LineString'
+        });
+        map.addInteraction(draw);
+
+        draw.on('drawend', function(event) {
+          var feat = event.feature;
+          var geometry = feat.getGeometry().transform('EPSG:3857','EPSG:4326');
+          var coords = geometry.getCoordinates();
+          coords.push(coords[0]);//閉合
+          
+          if(LineLayer!==undefined) removeLayer(LineLayer); //若圖層已經存在,則移除圖層
+          LineLayer=addPolygon(coords,'rgba(0,0,170,0.8)'); //藍色多邊形
+          
+          if(MBRLayer!==undefined) removeLayer(MBRLayer); //若圖層已經存在,則移除圖層
+          MBRLayer=addPolygon(getConvexCoord(coords),'rgba(170,0,0,0.8)'); //紅色多邊形
+        });
+        
+		
+		function addPolygon(coords,color){ //依照coords建立一個Layer
+          layer = new ol.layer.Vector({
+            source: new ol.source.Vector({
+              features: [new ol.Feature({
+                geometry: new ol.geom.LineString(coords).transform('EPSG:4326','EPSG:3857'),
+                name: 'PolyLine'
+              })],
+            }),
+            style: [
+              new ol.style.Style({
+                stroke: new ol.style.Stroke({
+                  color: color,
+                  width: 2,
+                }),
+              }),
+            ],
+          });
+          map.addLayer(layer);
+          map.updateSize();
+          return layer;
+        }
+
+        function removeLayer(layer){
+          map.removeLayer(layer);
+          map.updateSize();
+        }
+
+        function getConvexCoord(coords){
+		  var convex=turf.convex(turf.lineString(coords));
+          return convex.geometry.coordinates[0];
+        }
+      </script>
+    </div>
+  </body>
+</html>

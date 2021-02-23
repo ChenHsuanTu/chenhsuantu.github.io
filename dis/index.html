@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<!-- Website template by freewebsitetemplates.com -->
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="user-scalable=0, width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>無障礙資料蒐集系統</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/mobile.css">
+	<script type='text/javascript' src='js/mobile.js'></script>
+</head>
+<body>
+	<div id="header"　style="text-align:center">
+		<h2><font color="#FFFF77"><p align="center">無障礙資料蒐集系統</p> </font></span></h2>
+	</div>
+	<div id="body">
+<form name="myForm" action="https://getform.org/f/e5a1fb77-1ecb-44c8-a011-9f916786e824" method="POST">
+	<h2>地圖定位</h2>
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAo4XlUxhsJa_AjiQrdWa8i4U9lrwNrEaU"></script>
+<script type="text/javascript">
+var initialLocation;
+var taipei = new google.maps.LatLng(25.09108, 121.5598);
+var browserSupportFlag =  new Boolean();
+
+
+
+function initialize() {
+  var myOptions = {
+    zoom: 18,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  };
+  var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+  
+  // Try W3C Geolocation (Preferred)
+
+  if(navigator.geolocation) {
+    browserSupportFlag = true;
+    navigator.geolocation.getCurrentPosition(function(position) {
+      initialLocation = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
+      map.setCenter(initialLocation);
+    }, function() {
+      handleNoGeolocation(browserSupportFlag);
+    });
+  }
+  // Browser doesn't support Geolocation
+  else {
+    browserSupportFlag = false;
+    handleNoGeolocation(browserSupportFlag);
+  }
+  
+  function handleNoGeolocation(errorFlag) {
+    if (errorFlag == true) {
+      alert("地圖定位失敗");
+    } else {
+      alert("您的瀏覽器不支援定位服務");
+    }
+	initialLocation = taipei;
+    map.setCenter(initialLocation);
+  }
+
+  var marker = new google.maps.Marker({
+			position: map.getCenter(),
+			map: map
+		});
+  
+  map.addListener('center_changed', function(){
+	marker.setPosition(map.getCenter())
+		});
+
+  
+  
+}
+
+
+</script>
+</head>
+<body onload="initialize()">
+  <div id="map_canvas" style="width:290px; height:320px"></div>
+
+
+<br>
+<p id="demo"></p>
+<input type=button	value=取得定位座標 onclick="getLocation()"></button>
+<script>
+var x=document.getElementById("demo");
+function getLocation()
+  {
+  if (navigator.geolocation)
+    {
+    navigator.geolocation.getCurrentPosition(showPosition);
+    }
+  else{x.innerHTML="Geolocation is not supported by this browser.";}
+  }
+function showPosition(position)
+  {
+  x.innerHTML="經度: " + position.coords.longitude + 
+  "<br />緯度: " + position.coords.latitude;	
+  }
+</script>
+
+<br><br>
+<hr>
+
+
+		
+<h2>基本資料</h2>
+
+
+
+<script>
+poi=new Array();
+poi[0]=["速食","早餐店","西餐","小吃店","便當簡餐類","火鍋燒烤類","其他"];	
+poi[1]=["便利商店","超市賣場","量販店","品牌專賣店","日用品店","服飾店","其他"];	
+poi[2]=["銀行","郵局","大學","高中","國中","國小","行政機構","其他"];			
+poi[3]=["火車站","公車站","捷運站","加油站","其他"];	
+poi[4]=["公園","展覽館","圖書館","宗教場所","電影院","咖啡廳","美髮店","其他"];	
+poi[5]=["醫院","診所","藥局","照護機構","其他"];
+poi[6]=["自然景點","人文景點","其他"];
+poi[7]=["其他"];
+
+function renew(index){
+	for(var i=0;i<poi[index].length;i++)
+		document.myForm.店家項目.options[i]=new Option(poi[index][i]);	// 設定新選項
+	document.myForm.店家項目.length=poi[index].length;	// 刪除多餘的選項
+}
+</script>
+
+
+<B>	店家類別：</B> <br><br>
+
+
+類別：
+<select name="店家類別" size=8 onChange="renew(this.selectedIndex);">
+<option value="餐飲">　餐飲　
+<option value="購物">　購物　
+<option value="公共機構">　公共機構　
+<option value="交通">　交通　
+<option value="休閒">　休閒　
+<option value="醫療">　醫療　
+<option value="旅遊景點">　旅遊景點　
+<option value="其他">　其他　
+</select>
+
+
+<br>項目：
+<select name="店家項目" size=8>
+	<option value="">請先選擇類別
+</select>
+	
+
+
+
+<br><br>
+
+<B>是否有座位：</B>
+<input type="radio" name="座位" value="有">是  <input type="radio" name="座位" value="無">否 <br><br>
+
+
+<B>大約可容納人數：</B>
+<select name="容納人數">
+<option value="">請選填人數</option>
+<option value="10人以下">10人以下</option>
+<option value="10人~20人">10人~20人</option>
+<option value="20人~50人">20人~50人</option>
+<option value="50人~100人">50人~100人</option>
+<option value="100人以上">100人以上</option>
+</select><br><br>
+
+
+
+
+
+<hr>
+<h2>無障礙調查</h2><br>
+
+<B>一樓出入口是否平坦或有無障礙坡道：	</B><br><br>
+
+<script>
+po=new Array();
+po[0]=[];	
+po[1]=["出入口有設置無障礙坡道","出入口無設置無障礙坡道"];	
+
+function rnew(index){
+	for(var i=0;i<po[index].length;i++)
+		document.myForm.設施.options[i]=new Option(po[index][i]);	// 設定新選項
+	document.myForm.設施.length=po[index].length;	// 刪除多餘的選項
+}
+</script>
+　　是否平坦：
+<select name="一樓是否平坦" size=2 onChange="rnew(this.selectedIndex);">
+<option value="平坦">　平坦　
+<option value="不平坦">　不平坦　
+</select>
+
+
+<br>
+　　　設施　：
+<select name="設施" size=2>
+	<option value="">請先選擇上列問題
+</select>
+
+<br><br><br><br>
+
+<B>店面是否在一樓：</B><br>
+<script>
+poy=new Array();
+poy[0]=[];	
+poy[1]=["有設置電梯","有設置手扶梯","無設置電梯"];	
+
+function rynew(index){
+	for(var i=0;i<poy[index].length;i++)
+		document.myForm.電梯.options[i]=new Option(poy[index][i]);	// 設定新選項
+	document.myForm.電梯.length=poy[index].length;	// 刪除多餘的選項
+}
+</script>
+
+
+　　是否在一樓：
+<select name="是否在一樓" size=2 onChange="rynew(this.selectedIndex);">
+<option value="一樓">　一樓　
+<option value="非一樓">　非一樓　
+</select>
+<br>　　是否有電梯：
+<select name="電梯" size=3>
+	<option value="">請先選擇上列問題
+</select>
+<br><br><br>
+
+
+
+
+<B>店面入口大門型態：　</B>
+<select name="大門型態">
+<option value="">請選填　　　</option>
+<option value="自動門">自動門</option>
+<option value="推拉門">推拉門</option>
+<option value="旋轉門">旋轉門</option>
+<option value="無">無／鐵捲門</option>
+<option value="其他">其他</option>
+</select><br><br><br>
+
+<B>大門寬度是否能讓輪椅通過：　</B>  <br>
+<input type="radio" name="輪椅進入" value="是">是  <input type="radio" name="輪椅進入" value="否">否 <br><br><br>
+
+<B>店內無障礙電梯設置：　</B><br>
+<input type="radio" name="室內電梯" value="未知">未知  <input type="radio" name="室內電梯" value="有">有  <input type="radio" name="室內電梯" value="無">無  <input type="radio" name="室內電梯" value="不需要">店面只有一層樓<br><br><br>
+
+<B>是否設置無障礙廁所：　</B><br>
+<input type="radio" name="廁所" value="未知">未知  <input type="radio" name="廁所" value="有">有  <input type="radio" name="廁所" value="無">無 <br><br><br>
+
+
+
+<B>照片：</B><input type="file" name="照片"><br><br>
+
+
+<B>額外註記：</B><br>
+<textarea name="註記" style="width:400px;height:120px;"></textarea><br><br>
+
+
+
+<input type="submit" value="送出表單"  onChange="location=https://www.google.com.tw;">
+</form>
+
+
+
+	</div>
+	<div id="footer">
+		<div>
+			<span>無障礙資料蒐集系統	</span>
+			<p>
+				國立台灣大學 地理環境資源學系 地理計算科學研究室
+			</p>
+		</div>
+		
+	</div>
+</body>
+</html>

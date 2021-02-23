@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang='zh-TW'>
+  <head>
+  <title>記帳小幫手🙂</title>
+	<meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+    <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css' integrity='sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO' crossorigin='anonymous'>
+    
+	<script src='https://code.jquery.com/jquery-3.3.1.min.js' crossorigin='anonymous'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js' integrity='sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49' crossorigin='anonymous'></script>
+    <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js' integrity='sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy' crossorigin='anonymous'></script>
+    
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <style>
+      .row{
+        margin-bottom: 20px;
+      }
+      .input-error{
+        border: 1px solid #f00;
+      }
+	  	button.del{
+			color:#999999;
+			background-color: #e9f2f8 ;
+			border:0px none;
+		}
+		
+		button.del:hover {
+			color:red;
+			background-color: #e9f2f8 ;
+			border:0px blue;
+		}
+		
+		a#Jsn1:link{
+		color:white;
+		}
+    </style>
+  </head>
+  <body style="background-color:#e9f2f8">
+		<div style="background-color:#ffee61e0;">
+			<br>
+			  <div class='row'>
+				<div class='col-1' style="text-align:left;" ></div>
+				<div class='col-7' style="text-align:left;" ><h1>🙂 記帳小幫手</h1></div>
+				<div class='col-3' style="text-align:right;"><h5>👦　<br/>杜承軒</h5></div>
+				<div class='col-1' style="text-align:left;" ></div>
+			  </div>
+			  <!--新增---------------------------------------------------->
+			  <div class='row'>
+				<div class='col-1' style="text-align:left;" ></div>
+				<!--餘額---------------------------------------------------->
+				<div class='col-6'><p class='lead' id='total'></p></div>
+				<div class='col-2'><button class='btn btn-info float-right' id='addBtn'>新增</button></div>
+				<div class='col-2'>
+					<button class='btn btn-info float-left' id='JsnBtn'>
+							<a id='Jsn1' download='money.json'>匯出JSON檔</a>
+					</button>
+				</div>
+				<div class='col-1' style="text-align:left;" ></div>	
+			  </div>
+		</div>
+
+    <div class='container'>
+      <!--記帳---------------------------------------------------->
+		
+      <!--餘額---------------------------------------------------->
+
+      <!--表頭---------------------------------------------------->
+      <div class='row'>
+        <table class='table' id='table1'>
+          <tr><th>⌚時間</th><th>💴收支</th><th>📊項目</th><th>💰金額</th><th>📝備註</th><th></th></tr>
+        </table>
+      </div>
+      <!------------------------------------------------------>
+      <div class='modal fade' id='dialog1' tabindex='-1' role='dialog' aria-labelledby='dialog1-title' aria-hidden='true'>
+        <div class='modal-dialog modal-dialog-centered' role='document' >
+          <div class='modal-content' style="background-color:#d4d4d4db">
+            <div class='modal-header'>
+              <h2 class='modal-title' id='dialog1-title'>新增一筆收支記錄</h2>
+              <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
+                <span aria-hidden='true'>&times;</span>
+              </button>
+            </div>
+            <div class='modal-body'>
+              <form name="myForm">
+			  <!--form---------------------------------------------------->
+ 
+                <div class='form-group row'>
+                  <label for='staticEmail' class='col-sm-3 col-form-label'>⌚時間</label>
+                  <div class='col-sm-9'>
+					<select name="year" id="year">
+						<option value=2016>2016</option><option value=2017>2017</option><option value=2018>2018</option><option value=2019>2019</option><option value=2020>2020</option>
+					</select>年
+					<select name="month" id="month" >
+						<option value=1>1</option><option value=2>2</option><option value=3>3</option><option value=4>4</option>
+						<option value=5>5</option><option value=6>6</option><option value=7>7</option><option value=8>8</option>
+						<option value=9>9</option><option value=10>10</option><option value=11>11</option><option value=12>12</option>
+					</select>月
+					<select name="day" id="day">
+						<option value=1>1</option><option value=2>2</option><option value=3>3</option><option value=4>4</option><option value=5>5</option>
+						<option value=6>6</option><option value=7>7</option><option value=8>8</option><option value=9>9</option><option value=10>10</option>
+						<option value=11>11</option><option value=12>12</option><option value=13>13</option><option value=14>14</option><option value=15>15</option>
+						<option value=16>16</option><option value=17>17</option><option value=18>18</option><option value=19>19</option><option value=20>20</option>
+						<option value=21>21</option><option value=22>22</option><option value=23>23</option><option value=24>24</option><option value=25>25</option>
+						<option value=26>26</option><option value=27>27</option><option value=28>28</option>
+						<option value=29>29</option><option value=30>30</option><option value=31>31</option>						
+					</select>日
+                  </div>
+                </div>
+					
+					
+                <div class='form-group row'>
+                  <label for='staticEmail' class='col-sm-3 col-form-label'>💴收支</label>
+                  <div class='col-sm-9'>
+					<input type="radio" name="type"  value="收入" onChange="renew(0);">　收入　
+					<input type="radio" name="type"  value="支出" onChange="renew(1);">　支出　
+				  </div>
+                </div>
+				
+
+					<script>
+					var poi=new Array();
+					poi[0]=["家教","教學薪資","研究計畫","助教薪資","工讀金","其他"];	
+					poi[1]=["正餐餐費","零食飲料","日用品","交通費","娛樂社交","其他"];	
+					poi[2]=["請先選擇收入或支出"]
+					function renew(index){
+						for(var i=0;i<poi[index].length;i++)
+							document.myForm.selection.options[i]=new Option(poi[index][i]);	// 設定新選項
+						document.myForm.selection.length=poi[index].length;	// 刪除多餘的選項
+					}
+					</script>
+
+                <div class='form-group row'>
+                  <label for='staticEmail' class='col-sm-3 col-form-label'>📊項目</label>
+                  <div class='col-sm-9'>
+					<select name="selection" id="selection" size=6>
+						<option value="">請先選擇收入或支出
+					</select>
+                  </div>
+                </div>
+				
+                <div class='form-group row'>
+                  <label for='inputPassword' class='col-sm-3 col-form-label'>💰金額</label>
+                  <div class='col-sm-9'>
+                    <input type='text' class='form-control' id='cost' onkeypress="if (event.keyCode == 13) {return false;}">
+                  </div>
+                </div>
+				
+                <div class='form-group row'>
+                  <label for='inputPassword' class='col-sm-3 col-form-label'>📝備註</label>
+                  <div class='col-sm-9'>
+                    <textarea class='form-control' id='note' rows='5'></textarea>
+                  </div>
+                </div>
+				
+			  <!--form-end------------------------------------------------>
+              </form>
+            </div>
+            <div class='modal-footer'>
+              <button type='button' class='btn btn-secondary' id='cancel' data-dismiss='modal'>取消</button>
+              <button type='button' class='btn btn-primary' id='saveBtn'>儲存</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!------------------------------------------------------>
+      <script>
+        var items=[]; //all data put here
+		var add=[0,0,0,0,0,0];
+		var minus=[0,0,0,0,0,0];
+		
+		function formatDate(date) {  //日期輸出格式
+          var Y = date.getFullYear();
+          var M = date.getMonth()+1;
+          var D = date.getDate();
+          return Y+'/'+M+'/'+D;
+        }
+		
+		$("#cost").keypress(function(e){ //金額按enter就自動送出
+		  code = (e.keyCode ? e.keyCode : e.which);
+		  if (code == 13) {$('#saveBtn').click();}});
+		  
+
+		$('#Jsn1').attr("href",'data:text/json;charset=utf-8,' + encodeURIComponent(JSON.stringify(items)));  
+
+		function updateTable(){ //更新資料
+          var result=new Number(0);
+		  add=[0,0,0,0,0,0];
+		  minus=[0,0,0,0,0,0];
+          $('#table1 tr').remove();   //先把整個表單移除
+		  $('#table1').append($('<tr><th>⌚時間</th><th>💴收支</th><th>📊項目</th><th>💰金額</th><th>📝備註</th><th></th></tr>'));
+          for(i in items){     //get all data to create a table and its contents
+            $('#table1').append(
+              $('<tr />').append($('<td />').addClass('time').html(formatDate(new Date(items[i].time))))
+						 .append($('<td />').addClass('type').html(items[i].type))
+						 .append($('<td />').addClass('selection').html(items[i].selection))
+                         .append($('<td />').addClass('cost').html(items[i].cost))
+                         .append($('<td />').html(items[i].note))
+						 .append($('<td />').append($('<button type="button" class="del">&times;</button>')))
+            );
+			var ct=new Number(items[i].cost);
+			if(items[i].type=="收入"){for(var k=0; k<6;k++){if(items[i].selection==poi[0][k]) {add[k]+=ct;result+=ct;}}}
+			else					 {for(var k=0; k<6;k++){if(items[i].selection==poi[1][k]) {minus[k]+=ct;result-=ct;}}}
+          }
+		  
+		  $(".del").click(function(){  //按每一列刪除的x鍵，將item資料刪除該列，再更新一次
+		    items.splice(this.parentNode.parentNode.rowIndex-1,1);
+			updateTable();
+		  });
+		  
+		  //更新餘額與畫圖
+		  $('#total').html('　💵 餘額：'+result);
+		  google.charts.setOnLoadCallback(drawChart);
+		  google.charts.setOnLoadCallback(drawChart2);
+		                                
+		  $('#Jsn1').attr("href",'data:text/json;charset=utf-8,' + encodeURIComponent(JSON.stringify(items)));  
+		  }		  
+	
+	
+        $(function(){		
+		
+		//add
+          $('#addBtn').click(function(){
+            $('#dialog1').modal('show');
+			$('#year').val(new Date().getFullYear());
+			$('#month').val(new Date().getMonth()+1);
+			$('#day').val(new Date().getDate());
+		  });
+		
+		//Json
+		  $('#JsnBtn').click(function(){
+			//$('#Jsn1').click();
+		  });/**/
+		  
+		//save
+		  $('#saveBtn').click(function(){
+            
+			//取得表單資料
+            var time=Date.parse($('#year').val()+'/'+$('#month').val()+'/'+$('#day').val());
+			var YR=$('#year').val();
+			var MON=$('#month').val();
+			var DAY=$('#day').val();
+            var type=$("input[name=type]:checked").val();
+            var selection=$('#selection').val();
+            var cost=new Number($('#cost').val());
+            var note=$('#note').val();
+
+			//防呆
+			if(isNaN(time)){alert("提醒：日期格式錯誤！");return;}
+			if(MON==2||MON==4||MON==6||MON==9||MON==11){if(DAY==31){alert("提醒：日期格式錯誤！");return;}}
+			if(MON==2){if(DAY==30){alert("提醒：日期格式錯誤！");return;}}
+			if(MON==2&&!YR%4==0){if(DAY==29){alert("提醒：日期格式錯誤！");return;}}
+			if(!myForm.type[0].checked && !myForm.type[1].checked){alert("提醒：請選擇收入或支出！");return;}
+			if(selection==null){alert("提醒：請選擇項目！");return;}
+			if(isNaN(cost)){alert("提醒：金額請輸入正整數！");return;}
+			if(cost<=0){alert("提醒：輸入金額不得為負數、0或空白！");return;}
+			if(!((cost | 0) == cost)){alert("提醒：金額請輸入整數！");return;}
+			
+			//匯入資料至item
+			var item={
+              time: time,
+			  type: type,
+			  selection: selection,
+              cost: cost,
+              note: note,
+            };
+			
+            //insertion sort，插入至items
+			var inserted=false;
+			for(i in items){
+				if(!inserted){
+				  if(item.time>=items[i].time){  // new...old
+					items.splice(i,0,item);    //.splice(index of inster, 0, value),0 means inster, 1 means replace
+					inserted=true;
+				  }
+				}
+			}
+			if(!inserted) items.push(item);
+            	
+			//update更新資料表
+			updateTable();
+			
+            //hide dialog
+            $('#dialog1').modal('hide');
+			
+			//clear input/textarea
+            $('#year').val('');
+            $('#month').val('');
+            $('#day').val('');
+            $('#selection').val('');
+			myForm.type[0].checked=false;
+			myForm.type[1].checked=false;
+			renew(2)
+            $('#cost').val('');
+            $('#note').val('');
+			
+          });
+		  
+		  //cancel: clear input
+		  $('#cancel').click(function(){
+            $('#year').val('');
+            $('#month').val('');
+            $('#day').val('');
+			myForm.type[0].checked=false;
+			myForm.type[1].checked=false;
+            $('#selection').val('');
+			renew(2)
+            $('#cost').val('');
+            $('#note').val('');
+		  });
+		  
+        });
+      </script>
+	  
+	 <script type="text/javascript">
+     google.charts.load('current', {'packages':['corechart']});
+     google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'brand');
+        data.addColumn('number', 'percentage');
+        data.addRows([
+          ['家教', add[0]],['教學薪資', add[1]],['研究計畫', add[2]],['助教薪資', add[3]],['工讀金', add[4]],['其他', add[5]]
+        ]);
+        
+        var options = {'width':500,'height':300};
+        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+	  
+	  
+      google.charts.setOnLoadCallback(drawChart2);
+      function drawChart2() {
+        var data2 = new google.visualization.DataTable();
+        data2.addColumn('string', 'brand');
+        data2.addColumn('number', 'percentage');
+        data2.addRows([
+          ['正餐餐費', minus[0]],['零食飲料', minus[1]],['日用品', minus[2]],['交通費', minus[3]],['娛樂社交', minus[4]],['其他', minus[5]]
+        ]);
+        
+        var options2 = {'width':500,'height':300};
+        var chart2 = new google.visualization.PieChart(document.getElementById('chart_div2'));
+        chart2.draw(data2, options2);
+      }
+    </script>
+
+	</div>
+	<div style="background-color:#FFFFFF;">
+		<div class='row' style="background-color:#FFFFFF;">
+			<div class='col-6' style="text-align:center;">收入圓餅圖</div>
+			<div class='col-6' style="text-align:center;">支出圓餅圖</div>
+		</div>
+		<div class='row' style="background-color:#FFFFFF;">
+			<div class='col-2'></div>
+			<div class='col-4' id="chart_div" style="text-align:center;"></div>
+			<div class='col-4' id="chart_div2" style="text-align:center;"></div>
+			<div class='col-2'></div>
+		</div>
+	</div>
+  </body>
+</html>
