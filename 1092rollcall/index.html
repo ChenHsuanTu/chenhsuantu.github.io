@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<!-- saved from url=(0120)index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>課堂抽點</title>
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+		<link rel="stylesheet" href="assets/css/main.css">
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+		<script src="list.txt"></script>
+		
+	</head>
+	<body class="">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<section id="main">
+						<header>
+							<h1>課堂抽點</h1>
+							<p>109-2 網絡分析／空間分析</p>
+						</header>
+						
+						<div>
+							<div style="height:480px;width:50%;float:left;padding: 0px 20px 0px 20px">
+								<div style="height:80px">
+								匯入名單<br/>
+								<button type="button" class="NT">網絡分析</button>
+								<button type="button" class="SA">空間分析</button>
+								<button type="button" class="NO">清空</button>
+								</div>
+								<textarea id="input" style="height:320px;margin: 20px 0px 20px 0px"></textarea>
+								<button type="button" class="draw" style="color:white;background-color:red">抽籤！</button>
+							</div>
+							
+							<div style="height:450px;width:50%;float:left;padding: 0px 20px 0px 20px">
+								<div style="height:150px;background-color:#22222222">
+									<B>抽籤結果</B><br/>
+									<div id="result" style="height:120px;">
+									</div>
+								</div>
+								<div style="height:30px">歷史記錄（新→舊）<br/></div>
+								<div >
+								<textarea id="history" style="height:220px;margin: 20px 0px 20px 0px"></textarea>
+								</div>
+								
+							</div>
+						</div>
+					</section>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<ul class="copyright">
+							<li>© Angus Tu, R07228005</li><li>Design: <a href="http://html5up.net/">HTML5 UP</a></li>
+						</ul>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script>
+				$(function () {
+					
+					$("button.NT").click(function () {
+						$("#input").val(NT);
+						$("#history").val('');
+						$("#result").empty();
+					});
+					
+					$("button.SA").click(function () {
+						$("#input").val(SA);
+					    $("#history").val('');
+						$("#result").empty();
+					});
+					
+					$("button.NO").click(function () {
+						$("#input").val('');
+					    $("#history").val('');
+						$("#result").empty();
+					});
+				
+					$("button.draw").click(function () {
+						var _lines = $.trim($("#input").val()).split("\n");
+						var _result = $("#result").empty();
+						
+						var _list = [];
+						for (var _i = 0; _i < _lines.length; _i++) {
+							var _line = $.trim(_lines[_i]);
+							if ($.inArray(_line, _list) === -1) {_list.push(_line);}
+						}
+
+						var _random_int = Math.floor(Math.random() * _list.length);
+						_result.append('<div style="font-size:50px;color:blue;font-weight:bold;">' + _list[_random_int] + '</div>');
+						$("#history").val( _list[_random_int]+"\n"+$("#history").val());
+					
+					});
+				  
+				  
+				});
+				
+				if ('addEventListener' in window) {
+					window.addEventListener('load', function() { document.body.className = document.body.className.replace(/\bis-preload\b/, ''); });
+					document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
+				}
+			</script>
+
+	
+</body></html>
