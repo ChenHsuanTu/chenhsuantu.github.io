@@ -1,0 +1,308 @@
+/*!
+ * Start Bootstrap - Resume v5.0.8 (https://startbootstrap.com/template-overviews/resume)
+ * Copyright 2013-2019 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-resume/blob/master/LICENSE)
+ */
+
+ body{
+   font-family:'Tajawal', Sans-serif, -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';
+   padding-top:54px;color:#565656}@media (min-width:992px)
+
+ {body{padding-top:0;padding-left:17rem}}
+
+ h1,h2,h3,h4,h5,h6{font-family:'Ubuntu', 'San-serif',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';font-weight:700;color:#343a40}
+ h1{font-size:6rem;line-height:5.5rem}
+ h2{font-size:2rem}
+ h3{font-size:1.5rem}
+ h4{font-size:1.4rem; margin-bottom: 1.3rem;}
+
+ p.lead{font-size:1.2rem;font-weight:400}
+ ul.main-list{font-size:1.2rem;font-weight:400}
+
+ .subheading{
+   margin-top: 0.5rem;
+   font-weight:500;
+   font-family:'Saira Semi Condensed', sans-serif, -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';
+   font-size:1.3rem}
+
+ .social-icons a{display:inline-block;height:3.5rem;width:3.5rem;background-color:#495057;color:#fff!important;border-radius:100%;text-align:center;font-size:1.5rem;line-height:3.5rem;margin-right:1rem; padding-top: 0rem;}
+ .social-icons a:last-child{margin-right:0}
+ .social-icons a:hover{background-color:#f0290b}.dev-icons{font-size:3rem}
+ .dev-icons .list-inline-item i:hover{color:#f0290b}
+
+ #sideNav .navbar-nav .nav-item .nav-link{font-weight:800;letter-spacing:.05rem;text-transform:uppercase}
+ #sideNav .navbar-toggler:focus{outline-color:#d48a6e}@media (min-width:992px){#sideNav{text-align:center;position:fixed;top:0;left:0;display:flex;flex-direction:column;width:17rem;height:100vh}
+ #sideNav .navbar-brand{display:flex;margin:auto auto 0;padding:.5rem}
+ #sideNav .navbar-brand .img-profile{max-width:10rem;max-height:10rem;border:.5rem solid rgba(255,255,255,.2)}
+ #sideNav .navbar-collapse{display:flex;align-items:flex-start;flex-grow:0;width:100%;margin-bottom:auto}
+ #sideNav .navbar-collapse .navbar-nav{flex-direction:column;width:100%}
+ #sideNav .navbar-collapse .navbar-nav .nav-item{display:block}
+ #sideNav .navbar-collapse .navbar-nav .nav-item .nav-link{display:block}}
+
+ section.resume-section{padding-top:5rem!important;padding-bottom:5rem!important;max-width:75rem}
+ section.resume-section .resume-item .resume-date{min-width:none}@media (min-width:768px){section.resume-section{min-height:100vh}
+ section.resume-section .resume-item .resume-date{min-width:18rem}}@media (min-width:992px){section.resume-section{padding-top:3rem!important;padding-bottom:3rem!important}}
+
+ .bg-primary{background-color:#0f401c!important}
+ .text-primary{color:#f0290b!important}
+
+ .hashtag {background-color: #57a828; color: white; padding: 0.3rem 0.5rem 0.3rem 0.5rem; border-radius: 15px; margin-right: 0.7rem; }
+ .resume-date {font-size: 1.0rem; font-weight: 500; font-family: Muli, sans-serif;}
+ .update-news {font-size: 1.0rem; font-weight: 500; font-family: Muli, sans-serif; font-style: italic; color:#CB4042; /*border-style: solid; border-width: thin; border-color:#D0104C ; padding: 0.1rem;*/ }
+
+ a{color:#f0290b}
+
+/*
+ a:active,a:focus,a:hover{color:#BDC0BA}
+*/
+
+
+
+
+div.social-icons {margin-top: 1.5rem; margin-bottom: 1.5rem; }
+   /* a:hover.social-icons {color:#f0290b!important} */
+
+hr.modal-hr {border-top: 1px dotted #BDC0BA;}
+p.modal-p {font-size:1.1rem; }
+ul.modal-list {font-size:1.1rem; }
+li.modal-list-in {margin-bottom: 0.6rem;}
+
+p.note {font-size:1.0rem;}
+
+.empha {color:#f0290b; font-weight:500; }
+.empha2 {color:#f0290b; font-weight:600; }
+.empha-black {color:#FC9F4D; font-weight:500; }
+.memo {color:#D0104C; font-size:1.0rem; }
+.italic {font-style: italic;}
+
+.file {color: #BEC23F; }
+.data {color:#DB4D6D; }
+.other {color: #A5DEE4; }
+.code {color:#986DB2;}
+
+.file:hover {color: #BEC23F; text-decoration: underline;}
+.data:hover {color: #DB4D6D; text-decoration: underline;}
+.other:hover {color: #A5DEE4; text-decoration: underline;}
+.code:hover {color: #986DB2; text-decoration: underline;}
+
+a.web-link {font-size:1.1rem;font-weight:400; color:#1E88A8; }
+a.web-link-light {font-size:1.1rem;font-weight:400; color:#81C7D4; }
+
+
+/* Portfolio boxes */
+.port-big-box {margin-left: 2.7rem; margin-top: 1.4rem; }
+.port-box {float: left; width: 25%; padding-right: 20px;}
+.new-line {float:none;}
+.port-box-text {color: black; margin-top: 1.0rem; margin-left: 0.2rem;}
+
+
+
+h4.modal-title {
+  font-family:'Tajawal', Sans-serif, -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';
+  font-size:1.7rem;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+  color:#E1E1E1;
+}
+
+h4.modal-subtitle {
+  font-family:'Saira Semi Condensed', sans-serif, -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol','Noto Color Emoji';
+  font-size:1.4rem;
+  margin-bottom: 1.3rem;
+  color:#E1E1E1;
+}
+
+
+
+.port-box-img:hover .port-img {
+  opacity: 0.3;
+}
+
+/*
+.port-img-middle {
+ transition: .5s ease;
+ opacity: 0;
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%, -50%);
+ -ms-transform: translate(-50%, -50%);
+ text-align: center;
+}
+*/
+
+.port-box-img:hover .port-img-middle {
+opacity: 1;
+}
+
+/*
+.port-img-text {
+ color: black;
+ font-size: 1.4rem;
+
+}
+*/
+
+div .port-box-img {
+   cursor:pointer;
+}
+
+.port-box-text:hover {
+    text-decoration: underline;
+    cursor:pointer;
+}
+
+
+/* test  */
+
+
+
+
+
+/* remove from here 20200626 */
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 15px;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.68);
+  -webkit-animation-duration: 0.35s;
+          animation-duration: 0.35s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-name: fadeIn;
+          animation-name: fadeIn;
+  /* Modifiers */
+  /* States */
+}
+.modal__dialog {
+  position: relative;
+  width: 50rem;
+  padding: 20px;
+  margin: auto;
+  border-radius: 4px;
+  background: rgba(28,28,28,0.95);
+
+  color:#E1E1E1;
+}
+
+.modal__close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 0;
+  border: none;
+  color: #ccc;
+  background-color: transparent;
+  background-image: none;
+}
+.modal__close:focus {
+  outline: 0;
+}
+.modal__header {
+  border-bottom: 1px solid #e2e2e2;
+  color:#E1E1E1;
+}
+.modal__title {
+  margin: 0 0 15px;
+}
+.modal__content {
+  padding: 10px 0;
+  line-height: 1.6;
+  /*
+  color: #555;
+  */
+}
+.modal__footer {
+  padding-top: 20px;
+  border-top: 1px solid #e2e2e2;
+  text-align: right;
+}
+.modal--fullscreen {
+  padding: 5px;
+}
+.modal--fullscreen .modal__dialog {
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  border-radius: 0;
+}
+.modal.is-modal-active {
+  display: -webkit-box;
+  display: flex;
+}
+/* Animation */
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/*------------------------------------------------*/
+/* Unrelated styling, not for the typing indicator
+   Only using this for DEMO purposes  */
+/*------------------------------------------------*/
+body {
+  background-color: #f7f7f7;
+}
+.demo {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: center;
+          align-items: center;
+  height: 100vh;
+}
+.demo__card {
+  max-width: 350px;
+  margin: 30px auto;
+  padding: 20px;
+  border: 1px solid #e2e2e2;
+  background-color: #fff;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  color: #444;
+}
+.demo__title {
+  margin-top: 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e2e2e2;
+  font-size: 16px;
+}
+.demo__btn {
+  display: inline-block;
+  width: 100%;
+  padding: 10px 15px;
+  border: 1px solid #333;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #333;
+  background-color: transparent;
+  -webkit-transition: all 0.25s linear;
+  transition: all 0.25s linear;
+  margin-bottom: 10px;
+}
+.demo__btn:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.demo__btn:focus,
+.demo__btn:active {
+  outline: 0;
+}
+.demo__btn--secondary {
+  border: 1px solid #e2e2e2;
+}
