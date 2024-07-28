@@ -29,6 +29,27 @@
 <!-- test start here -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<style>
+  /* 預設情況下，四個 port-box 並排 */
+  .port-big-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .port-box {
+    width: 23%; /* 四個並列，每個佔23%，留些間隙 */
+    margin-bottom: 20px;
+  }
+
+  /* 當畫面寬度小於768px時，讓每個 port-box 佔滿整個父容器的寬度 */
+  @media (max-width: 768px) {
+    .port-box {
+      width: 100%;
+    }
+  }
+
+</style>
 
 </head>
 
