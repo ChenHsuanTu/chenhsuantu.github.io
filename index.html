@@ -8,7 +8,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>杜承軒 Chen-Hsuan Tu</title>
+<title>杜承軒 Angus Tu</title>
 
 <!-- Bootstrap core CSS -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -34,7 +34,7 @@
   .port-big-box {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    
   }
 
   .port-box {
@@ -49,6 +49,16 @@
     }
   }
 
+  .desktop-only {
+    display: block;
+  }
+
+  @media screen and (max-width: 768px) {
+    .desktop-only {
+      display: none;
+    }
+  }
+
 </style>
 
 </head>
@@ -59,7 +69,7 @@
     <a class="navbar-brand js-scroll-trigger" href="#page-top">
       <span class="d-block d-lg-none"> 杜承軒 Chen-Hsuan Tu </span>
       <span class="d-none d-lg-block">
-        <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="./image/profile_img.jpg" alt="">
+        <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="./image/profile_img3.jpg" alt="">
       </span>
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -81,24 +91,26 @@
 
     <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="about">
       <div class="w-100">
-        <h2 class="mb-0">杜承軒 Chen-Husan Tu</h2>
+        <h2 class="mb-0">杜承軒 Angus Tu</h2>
         <div class="subheading mb-5"> (886) 934-170-221 ·
 		<a href="mailto:angus0822@gmail.com">angus0822@gmail.com</a>
         </div>
 
         <p class="lead mb-3">你好，我是承軒！</p>
-        <p class="lead mb-3">來自高雄，畢業於<B>臺灣大學地理所碩士</B>，對於<B>數理統計</B>及<B>程式演算</B>有濃厚的興趣，希望透過數學模式來理解真實發生的地理現象。</p>
-        <p class="lead mb-3">參與研究計畫和<B>傳染病風險評估</B>與<B>高齡照護資源可近性</B>兩大主題有關，實作面向涵蓋<B>空間資料分析與視覺化</B>、<B>地圖平台及網頁建置</B>及<B>函式庫套件開發</B>等。同時在求學期間也有相當豐富的教學經驗，包括GIS、空間資料分析及資料視覺化等。</p>
-        <p class="lead mb-3">閒暇時喜歡參與活動，音樂、下廚、旅遊，持續在雄中校友管樂團演出，也從高中開始培養打排球的興趣。</p>
-        <p class="lead mb-3">我樂於探索新的領域，也喜歡與人接觸、從事團隊合作的項目，期望能以自己的能力在未來發揮所長。</p>
+        <p class="lead mb-3">來自高雄，畢業於<B>臺灣大學地理所碩士</B>，曾在 <B>LINE GO</B> 擔任<B>數據分析師</B> (Data Anaylst)，現任職於<B>東南旅遊</B>擔任<B>資料工程師</B>(Data Engineer)，同時在<B>益閣教育</B>擔任<B>地理學講師</B>。一直以來對於<B>資料</B>、<B>統計</B>與<B>程式演算</B>有濃厚的興趣，希望透過良好的數據整理與溝通，來梳理日常發生的現象。</p>
+        <p class="lead mb-3">在學期間參與許多研究計畫，與<B>傳染病風險評估</B>與<B>高齡照護資源可近性</B>等主題相關，實作面向涵蓋<B>空間資料分析與視覺化</B>、<B>地圖平台及網頁建置</B>及<B>函式庫套件開發</B>等。也持續累積豐富的教學經驗，包括GIS、空間資料分析及資料視覺化等課程。</p>
+        <p class="lead mb-3">工作期間，具備<B>資料工程</B>和<B>資料分析</B>方面的經驗，熱衷於探索各種方法和技術，專注於<B>資料倉儲</B>、<B>自動化流程</B>及<B>數據分析</B>，簡化複雜邏輯規則與計算，整併資料並建置儀表板，致力提升資料處理效率和溝通能力。也在團隊推動<B>敏捷開發</B>時，協助流程控管，以提升協作效率與生產力。</p>
+        <p class="lead mb-3">閒暇時喜歡參與活動，音樂、旅遊、下廚，持續在樂團演出，也擔任雄中校友管樂團的行政總監。從高中開始培養打排球的興趣，也喜歡打羽球、桌球、飛鏢。</p>
+        <p class="lead mb-3">我樂於探索新的領域，也喜歡與人接觸，從事團隊合作的項目，期望能以自己的能力在未來發揮所長。</p>
         <p class="lead mb-3">很高興能認識你！歡迎透過以下平台來與我聯繫。</p>
 
-        <span class="hashtag"># GIS</span>
-        <span class="hashtag"># 數理統計</span>
-        <span class="hashtag"># 地圖繪製</span>
-        <span class="hashtag"># 資料視覺化</span>
-        <span class="hashtag"># 風險評估</span>
-        <span class="hashtag"># 資源可近性分析</span>
+        <p class="desktop-only">
+          <span class="hashtag"># 資料工程</span>
+          <span class="hashtag"># 數據分析</span>
+          <span class="hashtag"># GIS</span>
+          <span class="hashtag"># 地圖與資料視覺化</span>
+          <span class="hashtag"># 數理統計</span>
+        </p>
 
         <div class="social-icons">
           <a href="https://www.facebook.com/angustu.0822/" target="_blank" style="background-color: #3b5998">
@@ -109,6 +121,9 @@
           </a>
           <a href="https://www.youtube.com/channel/UCMsU2aeLJEklZWZkd7-k3fw" target="_blank" style="background-color: #c4302b">
             <i class="fab fa-youtube"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/chenhsuantu/" target="_blank" style="background-color: #0a66c2">
+            <i class="fab fa-linkedin"></i>
           </a>
         </div>
       </div>
@@ -123,7 +138,7 @@
 
         <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5" style="margin-bottom: 0rem!important;">
           <div class="resume-content">
-            <h3 class="mb-0"><i class="fas fa-project-diagram"></i>　地圖平台・網頁應用程式・網頁</h3>
+            <h3 class="mb-0"><i class="fas fa-project-diagram"></i>　地圖平台・網頁應用程式</h3>
 
             <div class="port-big-box">
 
