@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+
+<html class="layout-wrapper flexbox flexboxlegacy no-flexboxtweener flexwrap cssgradients objectfit object-fit csspositionsticky rgba csstransforms csstransitions history localstorage wf-active"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]--><meta content="width=device-width, initial-scale=1.0" name="viewport"><title>Sorting Algorithms Animations | Toptal®</title>
+<meta name="description" content="Animation, code, analysis, and discussion of 8 sorting algorithms on 4 initial conditions.">
+<link rel="canonical" href="https://www.toptal.com/developers/sorting-algorithms">
+<link rel="alternate" title="Toptal Engineering Blog" type="application/rss+xml" href="https://www.toptal.com/developers/blog.rss">
+<meta property="og:image" content="https://bs-uploads.toptal.io/blackfish-uploads/components/open_graph_image/9416009/og_image/original/og_image_76642a-76642aa3fbe8f00d2a15c9c80eec68e6.jpg">
+<meta property="og:url" content="https://www.toptal.com/developers/sorting-algorithms">
+<meta property="og:title" content="Sorting Algorithms Animations">
+<meta property="og:description" content="Animation, code, analysis, and discussion of 8 sorting algorithms on 4 initial conditions.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@toptal"><script type="text/javascript" async="" src="./files/insight.min.js"></script><script type="text/javascript" async="" src="./files/analytics.js"></script><script src="./files/fb.js" type="text/javascript" id="hs-ads-pixel-2799924" data-ads-portal-id="2799924" data-ads-env="prod" data-loader="hs-scriptloader" data-hsjs-portal="2799924" data-hsjs-env="prod" data-hsjs-hublet="na1"></script><script src="./files/banner.js" type="text/javascript" id="cookieBanner-2799924" data-cookieconsent="ignore" data-hs-ignore="true" data-loader="hs-scriptloader" data-hsjs-portal="2799924" data-hsjs-env="prod" data-hsjs-hublet="na1"></script><script src="./files/2799924.js" type="text/javascript" id="hs-analytics"></script><script type="text/javascript" async="" src="./files/js"></script><script type="text/javascript" async="" src="./files/analytics.js"></script><script async="" src="./files/gtm.js"></script><script src="./files/463369723801939" async=""></script><script async="" src="./files/fbevents.js"></script><script>
+//<![CDATA[
+window.gon={};gon.env="production";gon.api_sessions_url="https://www.toptal.com/api/cms/sessions";gon.api_shorten_url="https://www.toptal.com/shorten_url";gon.geo_target_url="https://www.toptal.com/api/geo_target";gon.referrers_url="https://www.toptal.com/referrers";gon.flash={};gon.google_api_browser_key="AIzaSyDED9v55b-c1opDYMEDYBkOgDFGlBMICGY";gon.google_maps_api_browser_key="AIzaSyB-X6Stk7LlgQ9uRv3901GP-XVKXqtbY3w";gon.recaptcha_site_key="6LfgR1UUAAAAAJ8-zrjvTk18gKat-4CdBPSrUJoR";gon.recaptcha_url="https://www.google.com/recaptcha/api.js";gon.url_share_counter=1188;gon.ga_settings={"group":"Sorting Algorithms"};gon.fullstory_rate=0.0025;gon.fullstory_enabled=true;gon.fullstory_org_key="1YmX";
+//]]>
+</script><script type="text/javascript" src="./files/script.js"></script><script async="" src="./files/js(1)"></script>
+<script>
+//<![CDATA[
+/*! modernizr 3.6.0 (Custom Build) | MIT *
+ * https://modernizr.com/download/?-cssgradients-csspositionsticky-csstransforms-csstransitions-flexbox-flexboxlegacy-flexboxtweener-flexwrap-history-input-localstorage-objectfit-rgba-prefixed-setclasses !*/
+ !function(e,t,n){function r(e,t){return typeof e===t}function o(){var e,t,n,o,i,s,a;for(var l in x)if(x.hasOwnProperty(l)){if(e=[],t=x[l],t.name&&(e.push(t.name.toLowerCase()),t.options&&t.options.aliases&&t.options.aliases.length))for(n=0;n<t.options.aliases.length;n++)e.push(t.options.aliases[n].toLowerCase());for(o=r(t.fn,"function")?t.fn():t.fn,i=0;i<e.length;i++)s=e[i],a=s.split("."),1===a.length?Modernizr[a[0]]=o:(!Modernizr[a[0]]||Modernizr[a[0]]instanceof Boolean||(Modernizr[a[0]]=new Boolean(Modernizr[a[0]])),Modernizr[a[0]][a[1]]=o),C.push((o?"":"no-")+a.join("-"))}}function i(e){var t=w.className,n=Modernizr._config.classPrefix||"";if(S&&(t=t.baseVal),Modernizr._config.enableJSClass){var r=new RegExp("(^|\\s)"+n+"no-js(\\s|$)");t=t.replace(r,"$1"+n+"js$2")}Modernizr._config.enableClasses&&(t+=" "+n+e.join(" "+n),S?w.className.baseVal=t:w.className=t)}function s(e,t){return!!~(""+e).indexOf(t)}function a(){return"function"!=typeof t.createElement?t.createElement(arguments[0]):S?t.createElementNS.call(t,"http://www.w3.org/2000/svg",arguments[0]):t.createElement.apply(t,arguments)}function l(){var e=t.body;return e||(e=a(S?"svg":"body"),e.fake=!0),e}function f(e,n,r,o){var i,s,f,u,d="modernizr",c=a("div"),p=l();if(parseInt(r,10))for(;r--;)f=a("div"),f.id=o?o[r]:d+(r+1),c.appendChild(f);return i=a("style"),i.type="text/css",i.id="s"+d,(p.fake?p:c).appendChild(i),p.appendChild(c),i.styleSheet?i.styleSheet.cssText=e:i.appendChild(t.createTextNode(e)),c.id=d,p.fake&&(p.style.background="",p.style.overflow="hidden",u=w.style.overflow,w.style.overflow="hidden",w.appendChild(p)),s=n(c,e),p.fake?(p.parentNode.removeChild(p),w.style.overflow=u,w.offsetHeight):c.parentNode.removeChild(c),!!s}function u(e){return e.replace(/([A-Z])/g,function(e,t){return"-"+t.toLowerCase()}).replace(/^ms-/,"-ms-")}function d(t,n,r){var o;if("getComputedStyle"in e){o=getComputedStyle.call(e,t,n);var i=e.console;if(null!==o)r&&(o=o.getPropertyValue(r));else if(i){var s=i.error?"error":"log";i[s].call(i,"getComputedStyle returning null, its possible modernizr test results are inaccurate")}}else o=!n&&t.currentStyle&&t.currentStyle[r];return o}function c(t,r){var o=t.length;if("CSS"in e&&"supports"in e.CSS){for(;o--;)if(e.CSS.supports(u(t[o]),r))return!0;return!1}if("CSSSupportsRule"in e){for(var i=[];o--;)i.push("("+u(t[o])+":"+r+")");return i=i.join(" or "),f("@supports ("+i+") { #modernizr { position: absolute; } }",function(e){return"absolute"==d(e,null,"position")})}return n}function p(e){return e.replace(/([a-z])-([a-z])/g,function(e,t,n){return t+n.toUpperCase()}).replace(/^-/,"")}function g(e,t,o,i){function l(){u&&(delete k.style,delete k.modElem)}if(i=r(i,"undefined")?!1:i,!r(o,"undefined")){var f=c(e,o);if(!r(f,"undefined"))return f}for(var u,d,g,m,v,h=["modernizr","tspan","samp"];!k.style&&h.length;)u=!0,k.modElem=a(h.shift()),k.style=k.modElem.style;for(g=e.length,d=0;g>d;d++)if(m=e[d],v=k.style[m],s(m,"-")&&(m=p(m)),k.style[m]!==n){if(i||r(o,"undefined"))return l(),"pfx"==t?m:!0;try{k.style[m]=o}catch(y){}if(k.style[m]!=v)return l(),"pfx"==t?m:!0}return l(),!1}function m(e,t){return function(){return e.apply(t,arguments)}}function v(e,t,n){var o;for(var i in e)if(e[i]in t)return n===!1?e[i]:(o=t[e[i]],r(o,"function")?m(o,n||t):o);return!1}function h(e,t,n,o,i){var s=e.charAt(0).toUpperCase()+e.slice(1),a=(e+" "+T.join(s+" ")+s).split(" ");return r(t,"string")||r(t,"undefined")?g(a,t,o,i):(a=(e+" "+P.join(s+" ")+s).split(" "),v(a,t,n))}function y(e,t,r){return h(e,n,n,t,r)}var x=[],b={_version:"3.6.0",_config:{classPrefix:"",enableClasses:!0,enableJSClass:!0,usePrefixes:!0},_q:[],on:function(e,t){var n=this;setTimeout(function(){t(n[e])},0)},addTest:function(e,t,n){x.push({name:e,fn:t,options:n})},addAsyncTest:function(e){x.push({name:null,fn:e})}},Modernizr=function(){};Modernizr.prototype=b,Modernizr=new Modernizr;var C=[],w=t.documentElement,S="svg"===w.nodeName.toLowerCase(),_="Moz O ms Webkit",T=b._config.usePrefixes?_.split(" "):[];b._cssomPrefixes=T;var O={elem:a("modernizr")};Modernizr._q.push(function(){delete O.elem});var k={style:O.elem.style};Modernizr._q.unshift(function(){delete k.style});var P=b._config.usePrefixes?_.toLowerCase().split(" "):[];b._domPrefixes=P,b.testAllProps=h;var z=function(t){var r,o=E.length,i=e.CSSRule;if("undefined"==typeof i)return n;if(!t)return!1;if(t=t.replace(/^@/,""),r=t.replace(/-/g,"_").toUpperCase()+"_RULE",r in i)return"@"+t;for(var s=0;o>s;s++){var a=E[s],l=a.toUpperCase()+"_"+r;if(l in i)return"@-"+a.toLowerCase()+"-"+t}return!1};b.atRule=z;var A=b.prefixed=function(e,t,n){return 0===e.indexOf("@")?z(e):(-1!=e.indexOf("-")&&(e=p(e)),t?h(e,t,n):h(e,"pfx"))};b.testAllProps=y,Modernizr.addTest("flexbox",y("flexBasis","1px",!0)),Modernizr.addTest("flexboxlegacy",y("boxDirection","reverse",!0)),Modernizr.addTest("flexboxtweener",y("flexAlign","end",!0)),Modernizr.addTest("flexwrap",y("flexWrap","wrap",!0));var E=b._config.usePrefixes?" -webkit- -moz- -o- -ms- ".split(" "):["",""];b._prefixes=E,Modernizr.addTest("cssgradients",function(){for(var e,t="background-image:",n="gradient(linear,left top,right bottom,from(#9f9),to(white));",r="",o=0,i=E.length-1;i>o;o++)e=0===o?"to ":"",r+=t+E[o]+"linear-gradient("+e+"left top, #9f9, white);";Modernizr._config.usePrefixes&&(r+=t+"-webkit-"+n);var s=a("a"),l=s.style;return l.cssText=r,(""+l.backgroundImage).indexOf("gradient")>-1}),Modernizr.addTest("objectfit",!!A("objectFit"),{aliases:["object-fit"]}),Modernizr.addTest("csspositionsticky",function(){var e="position:",t="sticky",n=a("a"),r=n.style;return r.cssText=e+E.join(t+";"+e).slice(0,-e.length),-1!==r.position.indexOf(t)}),Modernizr.addTest("rgba",function(){var e=a("a").style;return e.cssText="background-color:rgba(150,255,150,.5)",(""+e.backgroundColor).indexOf("rgba")>-1}),Modernizr.addTest("csstransforms",function(){return-1===navigator.userAgent.indexOf("Android 2.")&&y("transform","scale(1)",!0)}),Modernizr.addTest("csstransitions",y("transition","all",!0)),Modernizr.addTest("history",function(){var t=navigator.userAgent;return-1===t.indexOf("Android 2.")&&-1===t.indexOf("Android 4.0")||-1===t.indexOf("Mobile Safari")||-1!==t.indexOf("Chrome")||-1!==t.indexOf("Windows Phone")||"file:"===location.protocol?e.history&&"pushState"in e.history:!1});var j=a("input"),L="autocomplete autofocus list placeholder max min multiple pattern required step".split(" "),N={};Modernizr.input=function(t){for(var n=0,r=t.length;r>n;n++)N[t[n]]=!!(t[n]in j);return N.list&&(N.list=!(!a("datalist")||!e.HTMLDataListElement)),N}(L),Modernizr.addTest("localstorage",function(){var e="modernizr";try{return localStorage.setItem(e,e),localStorage.removeItem(e),!0}catch(t){return!1}}),o(),i(C),delete b.addTest,delete b.addAsyncTest;for(var q=0;q<Modernizr._q.length;q++)Modernizr._q[q]();e.Modernizr=Modernizr}(window,document);
+
+//]]>
+</script>
+<script>// Disable no-flexbox for pages that mix legacy styles supporting
+// no-flexbox(no longer supported) and the new CSS approach
+var isIE, isIE11, noFlexboxClassName
+isIE = /MSIE/.test(navigator.userAgent) && !/Opera/.test(navigator.userAgent)
+isIE11 = window.MSInputMethodContext && !/\bEdge\/[0-9.]+$/.test(navigator.userAgent)
+if (window.Modernizr && window.Modernizr.flexbox && (isIE || isIE11)) {
+  noFlexboxClassName = document.documentElement.className.replace(/\bflexbox\b/, 'no-flexbox ie-flexbox')
+  document.documentElement.className = noFlexboxClassName
+}</script><script src="./files/jquery.min.js"></script><link rel="stylesheet" media="screen" href="./files/public_base_styles.25c98c50bb9d0a505eebc0f0acac87f5.css"><link rel="stylesheet" media="screen" href="./files/public_sorting_algorithms_styles.a7b35d274bd054c5ae6ad2648435b4b9.css"><style type="text/css"></style></head><body class="layout" data-view="layout#body" id="top"><div class="layout_layer" data-view="layout#layout"><header class="page_header hide_in_webview" data-role="fixed-header"></header><main class="layout-main"><style type="text/css">@font-face {
+  font-display: swap;
+  font-weight: 400;
+  font-family: Proxima Nova;
+  font-style: normal;
+  src: url(https://frontier-assets.toptal.com/40a6e2b8c2bc99f6d71b9f93dbf695fe.woff2)
+      format("woff2"),
+    url(https://frontier-assets.toptal.com/7cac85ffd14a52221fddc4c497dfd26c.woff)
+      format("woff"),
+    url(https://frontier-assets.toptal.com/bf9f5d50c1b928ff21436517a1a95ad9.otf)
+      format("opentype");
+}
+@font-face {
+  font-display: swap;
+  font-weight: 600;
+  font-family: Proxima Nova;
+  font-style: normal;
+  src: url(https://frontier-assets.toptal.com/3fb023cbbea947bff794503fdfba1cec.woff2)
+      format("woff2"),
+    url(https://frontier-assets.toptal.com/791f9bea40ce639002df71e98e01176c.woff)
+      format("woff"),
+    url(https://frontier-assets.toptal.com/f14eee643541cf03a10f26c944cc29f5.otf)
+      format("opentype");
+}
+.internal-linking-container {
+  font-weight: 400;
+  font-family: Proxima Nova, Arial, sans-serif;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  max-width: 100vw;
+  height: 56px;
+  overflow: hidden;
+  color: #ffffff;
+  background-color: #0f256e;
+  position: absolute;
+}
+
+.internal-linking-container ~ .page_header_line {
+  margin-top: 56px;
+}
+
+@media screen and (max-width: 768px) {
+  .internal-linking-container {
+    height: 32px;
+    border: none;
+    box-shadow: none;
+  }
+
+  .internal-linking-container ~ .page_header_line {
+    margin-top: 32px;
+  }
+}
+.layout {
+  background: #FFF
+}
+.internal-linking-container .internal-linking-title {
+  z-index: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-shrink: 0;
+  height: 100%;
+  color: #204ecf;
+  font-weight: 600;
+  font-size: 10px;
+  line-height: 12px;
+  text-transform: uppercase;
+  background-color: #ffffff;
+  min-width: auto;
+  text-decoration: none;
+}
+.internal-linking-container .internal-linking-title img {
+  margin: 22px 8px 18px 24px;
+}
+@media screen and (max-width: 768px) {
+  .internal-linking-container .internal-linking-title img {
+    margin: 8px;
+  }
+}
+.internal-linking-container .internal-linking-title span {
+  margin: 16px 24px 16px 0;
+  white-space: nowrap;
+}
+@media screen and (max-width: 768px) {
+  .internal-linking-container .internal-linking-title span {
+    margin: 6px 16px 6px 0;
+    font-size: 8px;
+    line-height: 10px;
+  }
+}
+.internal-linking-container .internal-linking-ticker-list {
+  display: flex;
+  flex-direction: row;
+  font-size: 12px;
+  line-height: 16px;
+  animation-name: ticker;
+  animation-duration: 180s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  min-width: auto;
+}
+.internal-linking-container .internal-linking-ticker-list:hover {
+  animation-play-state: paused;
+}
+.internal-linking-container .internal-linking-ticker-list .internal-linking-link {
+  margin: 20px 28px;
+  padding: 5px 12px 3px 12px;
+  color: #ffffff;
+  white-space: nowrap;
+  text-decoration: underline;
+  min-width: auto;
+}
+@media (max-width: 768px) {
+  .internal-linking-container .internal-linking-ticker-list .internal-linking-link {
+    margin: 4px 16px;
+    text-decoration: none;
+    border: 1px solid white;
+    border-radius: 16px;
+  }
+}
+@keyframes ticker {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}</style>
+<header class="sorting_algorithms_header"></header><section class="sorting_algorithms_grid"><div class="sorting_algorithms_grid-row"><div class="sorting_algorithms_grid-column is-full_width"><div class="sorting_algorithms_hero"><h1 class="sorting_algorithms_hero-title">排序演算法</h1>
+  </div></div></div></section>
+  
+  <section class="sorting_algorithms_grid" data-view="sorting_algorithms#animation">
+    <div class="sorting_algorithms_grid-row">
+      <div class="sorting_algorithms_grid-column is-full_width">
+    
+    
+    
+    <div class="sorting_algorithms_table">
+      
+    <table class="sorting_algorithms_table-container for-desktop"><thead><tr><th><a class="sorting_algorithms_table-play is-black" data-role="reload_all" href=""></a><a class="sorting_algorithms_table-play_all" data-role="reload_all" href="https://www.toptal.com/developers/sorting-algorithms#">Play All</a></th>
+    <th><a class="sorting_algorithms_table-play" data-role="reload_col" href="https://www.toptal.com/developers/sorting-algorithms#"></a><a>Insertion</a></th>
+    <th><a class="sorting_algorithms_table-play" data-role="reload_col" href="https://www.toptal.com/developers/sorting-algorithms#"></a><a>Selection</a></th>
+    <th><a class="sorting_algorithms_table-play" data-role="reload_col" href="https://www.toptal.com/developers/sorting-algorithms#"></a><a>Bubble</a></th>
+    <th><a class="sorting_algorithms_table-play" data-role="reload_col" href="https://www.toptal.com/developers/sorting-algorithms#"></a><a>Merge</a></th>
+    <th><a class="sorting_algorithms_table-play" data-role="reload_col" href="https://www.toptal.com/developers/sorting-algorithms#"></a><a>Quick</a></th>
+    </tr></thead>
+  <tbody><tr><th><a class="sorting_algorithms_table-play" data-role="reload_row" href="https://www.toptal.com/developers/sorting-algorithms#"></a><a>Random</a></th>
+    <td><div class="sorting_algorithms_table-td" data-role="td"><div class="sorting_algorithms_table-hover_card" data-role="hover_card"><div class="sorting_algorithms_table-hover_card_actions"><div class="sorting_algorithms_table-play is-white"></div>Play animation</div></div><img alt="" class="sorting_algorithms_table-image" data-animated="{&quot;20&quot;:&quot;https://bs-uploads.toptal.io/blackfish-uploads/components/sorting_algorithms_page/illustration/9415869/animated_image/optimized/insertion-sort-e8e40865ca8316a75a00ae32347acffb.gif&quot;,&quot;30&quot;:&quot;https://bs-uploads.toptal.io/blackfish-uploads/components/sorting_algorithms_page/illustration/9415870/animated_image/optimized/insertion-sort-997a0ccd0c864f1c89e2481ccfb3608b.gif&quot;,&quot;40&quot;:&quot;https://bs-uploads.toptal.io/blackfish-uploads/components/sorting_algorithms_page/illustration/9415871/animated_image/optimized/insertion-sort-73d4d2a97b420f9cc1d4b2a6f1c7f4c9.gif&quot;,&quot;50&quot;:&quot;https://bs-uploads.toptal.io/blackfish-uploads/components/sorting_algorithms_page/illustration/9415872/animated_image/optimized/insertion-sort-da381c7f50e4edcaf1a468d5255b666b.gif&quot;}" data-role="sorting_example" data-static="{&quot;20&quot;:&quot;https://bs-uploads.toptal.io/blackfish-uploads/components/sorting_algorithms_page/illustration/9415869/static_image/optimized/insertion-sort-0-dc86a88ab889d19e8ffad6cba3eb6e2f.gif&quot;,&quot;30&quot;:&quot;https://bs-uploads.toptal.io/blackfish-uploads/components/sorting_algorithms_page/illustration/9415870/static_image/optimized/insertion-sort-0-436051c91fedf976551a47bbd6efddff.gif&quot;,&quot;40&quot;:&quot;https://bs-uploads.toptal.io/blackfish-uploads/components/sorting_algorithms_page/illustration/9415871/static_image/optimized/insertion-sort-0-65e37ae1a3a05ce891de9f9acbba8052.gif&quot;,&quot;50&quot;:&quot;https://bs-uploads.toptal.io/blackfish-uploads/components/sorting_algorithms_page/illustration/9415872/static_image/optimized/insertion-sort-0-f83472c3c53268b30f1b43e690a3a370.gif&quot;}" src="./files/insertion-sort-0-dc86a88ab889d19e8ffad6cba3eb6e2f.gif"></div></td>
+    <td><div class="sorting_algorithms_table-td" data-role="td"><div class="sorting_algorithms_table-hover_card" data-role="hover_card"><div class="sorting_algorithms_table-hover_card_actions"><div class="sorting_algorithms_table-play is-white"></div>Play animation</div></div><img alt="" class="sorting_algorithms_table-image" data-animated="{&quot;20&quot;:&quot;https://bs-uploads.toptal.io/blackfish-uploads/components/sorting_algorithms_page/illustration/9415885/animated_image/optimized/selection-sort-c041bf9c588d9780072fc3ef713f22ef.gif&quot;,&quot;30&quot;:&quot;https://bs-uploads.toptal.io/blackfish-uploads/components/sorting_algorithms_page/illustration/9415886/animated_image/optimized/selection-sort-0ba73d9551484f18f485fbd7a8e3b437.gif&quot;,&quot;40&quot;:&quot;https://bs-uploads.toptal.io/blackfish-uploads/components/sorting_algorithms_page/illustration/9415887/animated_image/optimized/selection-sort-d24b132df87810beb0b2abf896200e7f.gif&quot;,&quot;50&quot;:&quot;https://bs-uploads.toptal.io/blackfish-uploads/components/sorting_algorithms_page/illustration/9415888/animated_image/optimized/selection-sort-f03ab6c4bee12d931a4899d1d48254fe.gif&quot;}" data-role="sorting_example" data-static="{&quot;20&quot;:&quot;https://bs-uploads.toptal.io/blackfish-uploads/components/sorting_algorithms_page/illustration/9415885/static_image/optimized/selection-sort-0-dc86a88ab889d19e8ffad6cba3eb6e2f.gif&quot;,&quot;30&quot;:&quot;https://bs-uploads.toptal.io/blackfish-uploads/components/sorting_algorithms_page/illustration/9415886/static_image/optimized/selection-sort-0-436051c91fedf976551a47bbd6efddff.gif&quot;,&quot;40&quot;:&quot;https://bs-uploads.toptal.io/blackfish-uploads/components/sorting_algorithms_page/illustration/9415887/static_image/optimized/selection-sort-0-65e37ae1a3a05ce891de9f9acbba8052.gif&quot;,&quot;50&quot;:&quot;https://bs-uploads.toptal.io/blackfish-uploads/components/sorting_algorithms_page/illustration/9415888/static_image/optimized/selection-sort-0-f83472c3c53268b30f1b43e690a3a370.gif&quot;}" src="./files/selection-sort-0-dc86a88ab889d19e8ffad6cba3eb6e2f.gif"></div></td>
+    <td><div class="sorting_algorithms_table-td" data-role="td"><div class="sorting_algorithms_table-hover_card" data-role="hover_card"><div class="sorting_algorithms_table-hover_card_actions"><div class="sorting_algorithms_table-play is-white"></div>Play animation</div></div><img alt="" class="sorting_algorithms_table-image" data-animated="{&quot;20&quot;:&quot;https://bs-uploads.toptal.io/blackfish-uploads/components/sorting_algorithms_page/illustration/9415901/animated_image/optimized/bubble-sort-295a6abfc3ca865791b985101ed9358f.gif&quot;,&quot;30&quot;:&quot;https://bs-uploads.toptal.io/blackfish-uploads/components/sorting_algorithms_page/illustration/9415902/animated_image/optimized/bubble-sort-60e1f5c419c67471b7a4a2a13eeb40c9.gif&quot;,&quot;40&quot;:&quot;https://bs-uploads.toptal.io/blackfish-uploads/components/sorting_algorithms_page/illustration/9415903/animated_image/optimized/bubble-sort-fa12d2c89cb8fe2e90fbf85a85ee501b.gif&quot;,&quot;50&quot;:&quot;https://bs-uploads.toptal.io/blackfish-uploads/components/sorting_algorithms_page/illustration/9415904/animated_image/optimized/bubble-sort-ee720bc9e748ac03441804139ea1a5a7.gif&quot;}" data-role="sorting_example" data-static="{&quot;20&quot;:&quot;https://bs-uploads.toptal.io/blackfish-uploads/components/sorting_algorithms_page/illustration/9415901/static_image/optimized/bubble-sort-0-dc86a88ab889d19e8ffad6cba3eb6e2f.gif&quot;,&quot;30&quot;:&quot;https://bs-uploads.toptal.io/blackfish-uploads/components/sorting_algorithms_page/illustration/9415902/static_image/optimized/bubble-sort-0-436051c91fedf976551a47bbd6efddff.gif&quot;,&quot;40&quot;:&quot;https://bs-uploads.toptal.io/blackfish-uploads/components/sorting_algorithms_page/illustration/9415903/static_image/optimized/bubble-sort-0-65e37ae1a3a05ce891de9f9acbba8052.gif&quot;,&quot;50&quot;:&quot;https://bs-uploads.toptal.io/blackfish-uploads/components/sorting_algorithms_page/illustration/9415904/static_image/optimized/bubble-sort-0-f83472c3c53268b30f1b43e690a3a370.gif&quot;}" src="./files/bubble-sort-0-dc86a88ab889d19e8ffad6cba3eb6e2f.gif"></div></td>
+    <td><div class="sorting_algorithms_table-td" data-role="td"><div class="sorting_algorithms_table-hover_card" data-role="hover_card" style="display: none;"><div class="sorting_algorithms_table-hover_card_actions"><div class="sorting_algorithms_table-play is-white"></div>Play animation</div></div><img alt="" class="sorting_algorithms_table-image" data-animated="{&quot;20&quot;:&quot;https://bs-uploads.toptal.io/blackfish-uploads/components/sorting_algorithms_page/illustration/9415933/animated_image/optimized/merge-sort-eefc491a721d7d3b47f26bdf687907af.gif&quot;,&quot;30&quot;:&quot;https://bs-uploads.toptal.io/blackfish-uploads/components/sorting_algorithms_page/illustration/9415934/animated_image/optimized/merge-sort-bde9550e27d9db295445c428de78c17a.gif&quot;,&quot;40&quot;:&quot;https://bs-uploads.toptal.io/blackfish-uploads/components/sorting_algorithms_page/illustration/9415935/animated_image/optimized/merge-sort-3d471ac722ab52fc3a8cc59162808c60.gif&quot;,&quot;50&quot;:&quot;https://bs-uploads.toptal.io/blackfish-uploads/components/sorting_algorithms_page/illustration/9415936/animated_image/optimized/merge-sort-8993d88bdfbaaceeccd892ffc089ed43.gif&quot;}" data-role="sorting_example" data-static="{&quot;20&quot;:&quot;https://bs-uploads.toptal.io/blackfish-uploads/components/sorting_algorithms_page/illustration/9415933/static_image/optimized/merge-sort-0-dc86a88ab889d19e8ffad6cba3eb6e2f.gif&quot;,&quot;30&quot;:&quot;https://bs-uploads.toptal.io/blackfish-uploads/components/sorting_algorithms_page/illustration/9415934/static_image/optimized/merge-sort-0-436051c91fedf976551a47bbd6efddff.gif&quot;,&quot;40&quot;:&quot;https://bs-uploads.toptal.io/blackfish-uploads/components/sorting_algorithms_page/illustration/9415935/static_image/optimized/merge-sort-0-65e37ae1a3a05ce891de9f9acbba8052.gif&quot;,&quot;50&quot;:&quot;https://bs-uploads.toptal.io/blackfish-uploads/components/sorting_algorithms_page/illustration/9415936/static_image/optimized/merge-sort-0-f83472c3c53268b30f1b43e690a3a370.gif&quot;}" src="./files/merge-sort-0-dc86a88ab889d19e8ffad6cba3eb6e2f.gif"></div></td>
+    <td><div class="sorting_algorithms_table-td" data-role="td"><div class="sorting_algorithms_table-hover_card" data-role="hover_card"><div class="sorting_algorithms_table-hover_card_actions"><div class="sorting_algorithms_table-play is-white"></div>Play animation</div></div><img alt="" class="sorting_algorithms_table-image" data-animated="{&quot;20&quot;:&quot;https://bs-uploads.toptal.io/blackfish-uploads/components/sorting_algorithms_page/illustration/9415965/animated_image/optimized/quick-sort-f9e492f65547dd9ee8cc83686def1844.gif&quot;,&quot;30&quot;:&quot;https://bs-uploads.toptal.io/blackfish-uploads/components/sorting_algorithms_page/illustration/9415966/animated_image/optimized/quick-sort-9b5c116e05be6f258a02be72d1d302f7.gif&quot;,&quot;40&quot;:&quot;https://bs-uploads.toptal.io/blackfish-uploads/components/sorting_algorithms_page/illustration/9415967/animated_image/optimized/quick-sort-d8a4d4fda0d1156f280f9567bc132ae9.gif&quot;,&quot;50&quot;:&quot;https://bs-uploads.toptal.io/blackfish-uploads/components/sorting_algorithms_page/illustration/9415968/animated_image/optimized/quick-sort-b49af55c5a190e17bf2e256890728a6c.gif&quot;}" data-role="sorting_example" data-static="{&quot;20&quot;:&quot;https://bs-uploads.toptal.io/blackfish-uploads/components/sorting_algorithms_page/illustration/9415965/static_image/optimized/quick-sort-0-dc86a88ab889d19e8ffad6cba3eb6e2f.gif&quot;,&quot;30&quot;:&quot;https://bs-uploads.toptal.io/blackfish-uploads/components/sorting_algorithms_page/illustration/9415966/static_image/optimized/quick-sort-0-436051c91fedf976551a47bbd6efddff.gif&quot;,&quot;40&quot;:&quot;https://bs-uploads.toptal.io/blackfish-uploads/components/sorting_algorithms_page/illustration/9415967/static_image/optimized/quick-sort-0-65e37ae1a3a05ce891de9f9acbba8052.gif&quot;,&quot;50&quot;:&quot;https://bs-uploads.toptal.io/blackfish-uploads/components/sorting_algorithms_page/illustration/9415968/static_image/optimized/quick-sort-0-f83472c3c53268b30f1b43e690a3a370.gif&quot;}" src="./files/quick-sort-0-dc86a88ab889d19e8ffad6cba3eb6e2f.gif"></div></td>
+    </tr><tr><th><a class="sorting_algorithms_table-play" data-role="reload_row" href="https://www.toptal.com/developers/sorting-algorithms#"></a><a>Nearly Sorted</a></th>
+    <td><div class="sorting_algorithms_table-td" data-role="td"><div class="sorting_algorithms_table-hover_card" data-role="hover_card"><div class="sorting_algorithms_table-hover_card_actions"><div class="sorting_algorithms_table-play is-white"></div>Play animation</div></div><img alt="" class="sorting_algorithms_table-image" data-animated="{&quot;20&quot;:&quot;https://bs-uploads.toptal.io/blackfish-uploads/components/sorting_algorithms_page/illustration/9415873/animated_image/optimized/insertion-sort-9308ecc13ecb19e2a7cf3a26755313d0.gif&quot;,&quot;30&quot;:&quot;https://bs-uploads.toptal.io/blackfish-uploads/components/sorting_algorithms_page/illustration/9415874/animated_image/optimized/insertion-sort-e2d77c5fd7ff77793170310b491bbe42.gif&quot;,&quot;40&quot;:&quot;https://bs-uploads.toptal.io/blackfish-uploads/components/sorting_algorithms_page/illustration/9415875/animated_image/optimized/insertion-sort-335e068c4f195a2687a3c4743c1fd4d2.gif&quot;,&quot;50&quot;:&quot;https://bs-uploads.toptal.io/blackfish-uploads/components/sorting_algorithms_page/illustration/9415876/animated_image/optimized/insertion-sort-93cefb274b4367139eb1b92904b9cd96.gif&quot;}" data-role="sorting_example" data-static="{&quot;20&quot;:&quot;https://bs-uploads.toptal.io/blackfish-uploads/components/sorting_algorithms_page/illustration/9415873/static_image/optimized/insertion-sort-0-2574ce46d0886b16887e6f5baff4071c.gif&quot;,&quot;30&quot;:&quot;https://bs-uploads.toptal.io/blackfish-uploads/components/sorting_algorithms_page/illustration/9415874/static_image/optimized/insertion-sort-0-d7227fe6ebde46ad4f294746971cf5ea.gif&quot;,&quot;40&quot;:&quot;https://bs-uploads.toptal.io/blackfish-uploads/components/sorting_algorithms_page/illustration/9415875/static_image/optimized/insertion-sort-0-84f462db576f62c1b15abc89cc8fde75.gif&quot;,&quot;50&quot;:&quot;https://bs-uploads.toptal.io/blackfish-uploads/components/sorting_algorithms_page/illustration/9415876/static_image/optimized/insertion-sort-0-f0bb4e1c7359baa10046f69af97f5ec6.gif&quot;}" src="./files/insertion-sort-0-2574ce46d0886b16887e6f5baff4071c.gif"></div></td>
+    <td><div class="sorting_algorithms_table-td" data-role="td"><div class="sorting_algorithms_table-hover_card" data-role="hover_card"><div class="sorting_algorithms_table-hover_card_actions"><div class="sorting_algorithms_table-play is-white"></div>Play animation</div></div><img alt="" class="sorting_algorithms_table-image" data-animated="{&quot;20&quot;:&quot;https://bs-uploads.toptal.io/blackfish-uploads/components/sorting_algorithms_page/illustration/9415889/animated_image/optimized/selection-sort-cd40d73addbf167b5c868f32b29945c9.gif&quot;,&quot;30&quot;:&quot;https://bs-uploads.toptal.io/blackfish-uploads/components/sorting_algorithms_page/illustration/9415890/animated_image/optimized/selection-sort-b8dafee946e57529d6e8d96c40ecf44c.gif&quot;,&quot;40&quot;:&quot;https://bs-uploads.toptal.io/blackfish-uploads/components/sorting_algorithms_page/illustration/9415891/animated_image/optimized/selection-sort-ef136436d4a65b3f252ceee41f1f90a8.gif&quot;,&quot;50&quot;:&quot;https://bs-uploads.toptal.io/blackfish-uploads/components/sorting_algorithms_page/illustration/9415892/animated_image/optimized/selection-sort-316f7c1ef1da5e8bcea0499e7102692e.gif&quot;}" data-role="sorting_example" data-static="{&quot;20&quot;:&quot;https://bs-uploads.toptal.io/blackfish-uploads/components/sorting_algorithms_page/illustration/9415889/static_image/optimized/selection-sort-0-2574ce46d0886b16887e6f5baff4071c.gif&quot;,&quot;30&quot;:&quot;https://bs-uploads.toptal.io/blackfish-uploads/components/sorting_algorithms_page/illustration/9415890/static_image/optimized/selection-sort-0-d7227fe6ebde46ad4f294746971cf5ea.gif&quot;,&quot;40&quot;:&quot;https://bs-uploads.toptal.io/blackfish-uploads/components/sorting_algorithms_page/illustration/9415891/static_image/optimized/selection-sort-0-84f462db576f62c1b15abc89cc8fde75.gif&quot;,&quot;50&quot;:&quot;https://bs-uploads.toptal.io/blackfish-uploads/components/sorting_algorithms_page/illustration/9415892/static_image/optimized/selection-sort-0-f0bb4e1c7359baa10046f69af97f5ec6.gif&quot;}" src="./files/selection-sort-0-2574ce46d0886b16887e6f5baff4071c.gif"></div></td>
+    <td><div class="sorting_algorithms_table-td" data-role="td"><div class="sorting_algorithms_table-hover_card" data-role="hover_card" style="display: none;"><div class="sorting_algorithms_table-hover_card_actions"><div class="sorting_algorithms_table-play is-white"></div>Play animation</div></div><img alt="" class="sorting_algorithms_table-image" data-animated="{&quot;20&quot;:&quot;https://bs-uploads.toptal.io/blackfish-uploads/components/sorting_algorithms_page/illustration/9415905/animated_image/optimized/bubble-sort-0b3e0c712c18b7eeb9865042ffeb16a5.gif&quot;,&quot;30&quot;:&quot;https://bs-uploads.toptal.io/blackfish-uploads/components/sorting_algorithms_page/illustration/9415906/animated_image/optimized/bubble-sort-bee1a76db1ac059c7b041cac74dcd74e.gif&quot;,&quot;40&quot;:&quot;https://bs-uploads.toptal.io/blackfish-uploads/components/sorting_algorithms_page/illustration/9415907/animated_image/optimized/bubble-sort-009ebe3308a1579a4e852f1c625d8841.gif&quot;,&quot;50&quot;:&quot;https://bs-uploads.toptal.io/blackfish-uploads/components/sorting_algorithms_page/illustration/9415908/animated_image/optimized/bubble-sort-fe9aa235835a873d92d50c7fc9f21f92.gif&quot;}" data-role="sorting_example" data-static="{&quot;20&quot;:&quot;https://bs-uploads.toptal.io/blackfish-uploads/components/sorting_algorithms_page/illustration/9415905/static_image/optimized/bubble-sort-0-2574ce46d0886b16887e6f5baff4071c.gif&quot;,&quot;30&quot;:&quot;https://bs-uploads.toptal.io/blackfish-uploads/components/sorting_algorithms_page/illustration/9415906/static_image/optimized/bubble-sort-0-d7227fe6ebde46ad4f294746971cf5ea.gif&quot;,&quot;40&quot;:&quot;https://bs-uploads.toptal.io/blackfish-uploads/components/sorting_algorithms_page/illustration/9415907/static_image/optimized/bubble-sort-0-84f462db576f62c1b15abc89cc8fde75.gif&quot;,&quot;50&quot;:&quot;https://bs-uploads.toptal.io/blackfish-uploads/components/sorting_algorithms_page/illustration/9415908/static_image/optimized/bubble-sort-0-f0bb4e1c7359baa10046f69af97f5ec6.gif&quot;}" src="./files/bubble-sort-0-2574ce46d0886b16887e6f5baff4071c.gif"></div></td>
+    <td><div class="sorting_algorithms_table-td" data-role="td"><div class="sorting_algorithms_table-hover_card" data-role="hover_card"><div class="sorting_algorithms_table-hover_card_actions"><div class="sorting_algorithms_table-play is-white"></div>Play animation</div></div><img alt="" class="sorting_algorithms_table-image" data-animated="{&quot;20&quot;:&quot;https://bs-uploads.toptal.io/blackfish-uploads/components/sorting_algorithms_page/illustration/9415937/animated_image/optimized/merge-sort-298f43f6582d185d7e12b2a154a06efa.gif&quot;,&quot;30&quot;:&quot;https://bs-uploads.toptal.io/blackfish-uploads/components/sorting_algorithms_page/illustration/9415938/animated_image/optimized/merge-sort-01775a0978ea74f8ff7852ab935f180f.gif&quot;,&quot;40&quot;:&quot;https://bs-uploads.toptal.io/blackfish-uploads/components/sorting_algorithms_page/illustration/9415939/animated_image/optimized/merge-sort-8a33285b89c676ce40608e3862b759a1.gif&quot;,&quot;50&quot;:&quot;https://bs-uploads.toptal.io/blackfish-uploads/components/sorting_algorithms_page/illustration/9415940/animated_image/optimized/merge-sort-53e1128cb93e513c015268d2d83c2c30.gif&quot;}" data-role="sorting_example" data-static="{&quot;20&quot;:&quot;https://bs-uploads.toptal.io/blackfish-uploads/components/sorting_algorithms_page/illustration/9415937/static_image/optimized/merge-sort-0-2574ce46d0886b16887e6f5baff4071c.gif&quot;,&quot;30&quot;:&quot;https://bs-uploads.toptal.io/blackfish-uploads/components/sorting_algorithms_page/illustration/9415938/static_image/optimized/merge-sort-0-d7227fe6ebde46ad4f294746971cf5ea.gif&quot;,&quot;40&quot;:&quot;https://bs-uploads.toptal.io/blackfish-uploads/components/sorting_algorithms_page/illustration/9415939/static_image/optimized/merge-sort-0-84f462db576f62c1b15abc89cc8fde75.gif&quot;,&quot;50&quot;:&quot;https://bs-uploads.toptal.io/blackfish-uploads/components/sorting_algorithms_page/illustration/9415940/static_image/optimized/merge-sort-0-f0bb4e1c7359baa10046f69af97f5ec6.gif&quot;}" src="./files/merge-sort-0-2574ce46d0886b16887e6f5baff4071c.gif"></div></td>
+    <td><div class="sorting_algorithms_table-td" data-role="td"><div class="sorting_algorithms_table-hover_card" data-role="hover_card"><div class="sorting_algorithms_table-hover_card_actions"><div class="sorting_algorithms_table-play is-white"></div>Play animation</div></div><img alt="" class="sorting_algorithms_table-image" data-animated="{&quot;20&quot;:&quot;https://bs-uploads.toptal.io/blackfish-uploads/components/sorting_algorithms_page/illustration/9415969/animated_image/optimized/quick-sort-6d0a0f44c655e37f55176b005e4df5a1.gif&quot;,&quot;30&quot;:&quot;https://bs-uploads.toptal.io/blackfish-uploads/components/sorting_algorithms_page/illustration/9415970/animated_image/optimized/quick-sort-7633d57cc4128db93e9475e8254f670f.gif&quot;,&quot;40&quot;:&quot;https://bs-uploads.toptal.io/blackfish-uploads/components/sorting_algorithms_page/illustration/9415971/animated_image/optimized/quick-sort-bb19d26bb7d652c828cffc05db57a329.gif&quot;,&quot;50&quot;:&quot;https://bs-uploads.toptal.io/blackfish-uploads/components/sorting_algorithms_page/illustration/9415972/animated_image/optimized/quick-sort-ec1ec0e60947b6fc5ff837af519a513a.gif&quot;}" data-role="sorting_example" data-static="{&quot;20&quot;:&quot;https://bs-uploads.toptal.io/blackfish-uploads/components/sorting_algorithms_page/illustration/9415969/static_image/optimized/quick-sort-0-2574ce46d0886b16887e6f5baff4071c.gif&quot;,&quot;30&quot;:&quot;https://bs-uploads.toptal.io/blackfish-uploads/components/sorting_algorithms_page/illustration/9415970/static_image/optimized/quick-sort-0-d7227fe6ebde46ad4f294746971cf5ea.gif&quot;,&quot;40&quot;:&quot;https://bs-uploads.toptal.io/blackfish-uploads/components/sorting_algorithms_page/illustration/9415971/static_image/optimized/quick-sort-0-84f462db576f62c1b15abc89cc8fde75.gif&quot;,&quot;50&quot;:&quot;https://bs-uploads.toptal.io/blackfish-uploads/components/sorting_algorithms_page/illustration/9415972/static_image/optimized/quick-sort-0-f0bb4e1c7359baa10046f69af97f5ec6.gif&quot;}" src="./files/quick-sort-0-2574ce46d0886b16887e6f5baff4071c.gif"></div></td>
+    </tr></tbody>
+    
+    
+
+    
+    
+    
+    </table></div></div></div>
+
+</section>
+</main>
+
+</div><div class="layout-overlay" data-view="layout#overlay"></div><div class="notification-container" data-view="notifications#service"></div><script>setTimeout(function () {
+  classNameWithFont = document.documentElement.className + ' wf-active'
+  document.documentElement.className = classNameWithFont
+}, 0);</script><script src="./files/public_base_js.66b3a68834671ab31b3a.js"></script><script src="./files/public_sorting_algorithms_js.6bb1fbd8cd766d157e48.js"></script>
+<div class="layout-counters"><div class="vendor_scripts">
+
+  </div></div></body>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        document.body.style.zoom = "1.5";
+    });
+</script>
+</html>
