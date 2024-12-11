@@ -1,0 +1,684 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>0418第一次籌備會議</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-default_background {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(0, 0, 0, 0.06); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="15e5130e-3517-46e4-8fba-229a35543825" class="page sans"><header><h1 class="page-title">0418第一次籌備會議</h1><p class="page-description"></p></header><div class="page-body"><p id="101f9128-2efa-4c15-8fa5-558bbdf26a93" class=""><strong>雄中管樂團與校友團第十四次聯合音樂會</strong></p><p id="4b4bb384-3890-4bc5-929e-2a73ea55fac1" class=""><strong>第一次籌備會議</strong></p><p id="d639f8af-3099-4b37-8892-7375b42c7b39" class="">時間：2021年4月18日10:00~11:30</p><p id="bc189cce-6883-433d-b9dc-6adee7893ff0" class="">出席：承軒、詠誠、柏盛、彥傑、麒諺、怡蓁、遠軒、彥威、春頤、東桓、孟宸</p><p id="85e0c775-3d20-4828-b458-c41786cd5c71" class="">地點：Google Meet（線上）</p><p id="fa066a47-10be-4264-96c7-2fe80da822b6" class="">影音記錄：<a href="https://youtu.be/mCtnlldNmcA">https://youtu.be/mCtnlldNmcA</a></p><h3 id="01376a35-72b8-48d9-887f-22df469c4ee5" class="">一、 報告事項：</h3><p id="c5971a14-baa4-456f-bbf9-f2bf2dfcca41" class="">📝：未來工作項目</p><h3 id="734c731c-7b47-4f9d-8c7e-e398bd79a61c" class="">（一）總召：承軒</h3><ul id="279f9ace-3bc3-410b-a466-2c477efefcb6" class="bulleted-list"><li style="list-style-type:disc">與校友團幹部的合作模式<ul id="3db73e1b-3a07-42f2-8978-2f8b79c79844" class="bulleted-list"><li style="list-style-type:circle">人事、音總、文書、譜務、財務、公關</li></ul><ul id="baf4e4f5-8487-4719-a710-53b6c6d2a1e5" class="bulleted-list"><li style="list-style-type:circle">校友團統編：<strong>88043399</strong></li></ul></li></ul><ul id="dc301017-dfa1-4e57-80f2-83417de62123" class="bulleted-list"><li style="list-style-type:disc">音樂會概述　🔗</li></ul><ul id="a0457014-7a10-403e-958c-a94d3c4c5dc9" class="bulleted-list"><li style="list-style-type:disc">預算表 🔗</li></ul><ul id="29df7341-af14-4c46-ab68-8bc25c1b74e4" class="bulleted-list"><li style="list-style-type:disc">確認進度、時程 🔗</li></ul><ul id="cc0d2381-43e6-4ceb-8298-b74b411a91f3" class="bulleted-list"><li style="list-style-type:disc">活動名稱更改</li></ul><h3 id="c95f2d6d-42f4-4b25-864a-89fa9fad1dc1" class="">（二）校內總召：東桓</h3><ul id="2b5d6c36-24c5-4b67-a35e-a3e598c8ece9" class="bulleted-list"><li style="list-style-type:disc">家長會協辦確認</li></ul><ul id="43f2866e-ea4e-464f-bed5-3812d24d9e7d" class="bulleted-list"><li style="list-style-type:disc">校內拉贊助<ul id="86c57316-8332-4388-b276-ea11c1ecd7b1" class="bulleted-list"><li style="list-style-type:circle">校內企畫書</li></ul></li></ul><ul id="5880121d-74ea-4f84-a884-6facacf81d2b" class="bulleted-list"><li style="list-style-type:disc">📝申請團練場地</li></ul><ul id="4c8d39c5-2666-48a2-babe-25e9f0493971" class="bulleted-list"><li style="list-style-type:disc">📝確認校內邀請貴賓名單</li></ul><ul id="e4dd0df1-ec0c-4caf-85aa-6697a653fa50" class="bulleted-list"><li style="list-style-type:disc">📝校內團員名單</li></ul><ul id="2bcd9fde-d409-4e20-bdc1-a93eb51fd7d3" class="bulleted-list"><li style="list-style-type:disc">📝樂器車聯絡</li></ul><h3 id="b2d2700a-afda-4de5-a6d0-e64d9903d3ae" class="">（三）副召：詠誠</h3><ul id="552585b2-b415-4aad-83f0-b968355484f5" class="bulleted-list"><li style="list-style-type:disc">團員招募（從校友團人事移轉）</li></ul><ul id="6eafa02d-7919-4e12-97ba-2ea33799e1b6" class="bulleted-list"><li style="list-style-type:disc">分部長確認</li></ul><ul id="766c9f00-4a71-4989-926a-9ff09dd7acf8" class="bulleted-list"><li style="list-style-type:disc">📝團練規則（出缺席記錄、請假、罰票）</li></ul><h3 id="cb74d553-c5ce-4d5d-a577-b443cd613170" class="">（四）製作：柏盛、彥傑</h3><ul id="64b5869c-ed09-43fa-ba16-eebf53a0022e" class="bulleted-list"><li style="list-style-type:disc">影片規劃（演出串場影片4部、宣傳影片4部、早鳥影片1部）</li></ul><ul id="c37e921a-23d0-4e74-9bf9-c440c7b30fde" class="bulleted-list"><li style="list-style-type:disc">早鳥影片<ul id="3192d92c-fb97-4d03-941c-2b731db0a760" class="bulleted-list"><li style="list-style-type:circle">預告片形式</li></ul><ul id="0db6e195-c7dd-4fa6-8025-7972a7390ed4" class="bulleted-list"><li style="list-style-type:circle">Final 時間：6月10日</li></ul><ul id="1a0c2957-2c59-4648-97d3-f8ac06e815e1" class="bulleted-list"><li style="list-style-type:circle">預計6月17日上片</li></ul></li></ul><ul id="df4edeb7-5660-4171-89f9-c4d3669f101c" class="bulleted-list"><li style="list-style-type:disc">拍攝及剪輯時程<ul id="02f302fc-7d9a-4fea-8155-a41bd8002300" class="bulleted-list"><li style="list-style-type:circle">邀請：4月</li></ul><ul id="43b22d9e-27fe-4cc3-8991-662e4be3650a" class="bulleted-list"><li style="list-style-type:circle">拍攝：5~6月</li></ul><ul id="b805f89c-1f46-4a15-b4ec-2bc0ed9e264d" class="bulleted-list"><li style="list-style-type:circle">後製：7月</li></ul><ul id="7a541612-d06c-492e-8236-13d0a55b991d" class="bulleted-list"><li style="list-style-type:circle">Final 時間：串場影片：7/31、宣傳影片：宣傳前一週</li></ul></li></ul><ul id="f4606785-fc4e-4625-9fc8-b56c607a5a76" class="bulleted-list"><li style="list-style-type:disc">彩排時間拉長：12:30開始</li></ul><h3 id="6dd88baa-642a-41b0-baa9-00a4006e8ecf" class="">（五）音總：麒諺、春頤</h3><ul id="d54f54f6-60a3-4a71-a255-28b519ba3534" class="bulleted-list"><li style="list-style-type:disc">團練時間確認</li></ul><ul id="c92af20e-4121-4051-9581-d6b23c9d894c" class="bulleted-list"><li style="list-style-type:disc">曲目英原文、中文翻譯</li></ul><ul id="1ab271b4-8699-4631-a5b9-85dcf8a16bb6" class="bulleted-list"><li style="list-style-type:disc">樂曲編制（人數、樂器）<ul id="ea7a0e61-203d-4fea-a5da-5c30942471d9" class="bulleted-list"><li style="list-style-type:circle">特殊樂器需要先留意，是否需要再找外面老師</li></ul></li></ul><ul id="39769a96-7fb4-4b3d-9150-aa771b493ddd" class="bulleted-list"><li style="list-style-type:disc">安可曲構想</li></ul><ul id="66b43d5c-9f5c-4df3-8a25-889808d15b82" class="bulleted-list"><li style="list-style-type:disc">📝節目冊樂曲解說：麒諺負責統籌、7/4交稿</li></ul><h3 id="00683d58-6930-4c5a-bfbf-cec4544a0f00" class="">（六）文宣：怡蓁</h3><ul id="b272c05a-b5fb-49e4-9192-c3f6c946ddc8" class="bulleted-list"><li style="list-style-type:disc">設計相關<ul id="5686bc09-4102-4ecb-be53-b94e3a0bd2c3" class="bulleted-list"><li style="list-style-type:circle">實體：DM、邀請卡、節目冊、海報（團內紀念）</li></ul><ul id="2e8b908c-caa6-4576-a16d-88b1d747453b" class="bulleted-list"><li style="list-style-type:circle">主視覺元素AI檔、FB大頭貼、FB封面(banner)、大頭貼特效框<strong>？</strong>、工作證名牌</li></ul><ul id="0cc69aaf-a591-468c-a737-4f70a2c7c340" class="bulleted-list"><li style="list-style-type:circle">官方宣傳圖（兩廳院網站、文化中心網站）🔗<ul id="dd8bb813-24d1-4b09-a89e-0f435367b33e" class="bulleted-list"><li style="list-style-type:square">兩廳院網路：w300*h420px, 72dpi, JPEG/PNG, 上限2MB</li></ul><ul id="ca4aa7a3-5193-4b71-af35-a824ee8d1b81" class="bulleted-list"><li style="list-style-type:square">兩廳院月刊：w2.2*h3cm, W:2.2, 300dpi, JPG/TIFF</li></ul><ul id="82b42ece-a61a-480a-9c8d-65d2ce6d3c20" class="bulleted-list"><li style="list-style-type:square">文化中心：方形（大頭貼？）、DM圖</li></ul></li></ul></li></ul><ul id="f7475f06-da71-44f8-93b8-0ecf3fd18675" class="bulleted-list"><li style="list-style-type:disc">節目冊文案時程 🔗<ul id="4ec05dc5-401f-40ff-a928-9d8f24077621" class="bulleted-list"><li style="list-style-type:circle">文字初排</li></ul></li></ul><ul id="012f6150-d265-4485-8dcb-c7e50c272d41" class="bulleted-list"><li style="list-style-type:disc">宣傳相關<ul id="e7917ab4-5d82-41cd-8091-c67506361cec" class="bulleted-list"><li style="list-style-type:circle">擬定宣傳計畫</li></ul></li></ul><h3 id="aaf396d5-a203-44e0-8647-d0d0ab1a5f4a" class="">（七）票務：絲凡</h3><ul id="2c42e4cc-0ee6-433e-9493-6b59f1065aa0" class="bulleted-list"><li style="list-style-type:disc">兩廳院文化生活OPENTIX簽約<ul id="e279327c-c718-4c03-9261-51e764e40e0c" class="bulleted-list"><li style="list-style-type:circle">改用校友團團體簽約</li></ul><ul id="5caaf45c-5184-4780-9600-4687af8f4f72" class="bulleted-list"><li style="list-style-type:circle">票價：100、200、300 🔗</li></ul><ul id="d2f98258-75d6-49c2-9057-bfa16560d3e2" class="bulleted-list"><li style="list-style-type:circle">貴賓席改為40席（+30席預留）</li></ul><ul id="9d9c802a-42b4-47fc-ba02-19bc45ac52f0" class="bulleted-list"><li style="list-style-type:circle">早鳥票：6/1～7/17</li></ul><ul id="4a2efe92-7737-4e34-bbfc-5c2e3cd2b14b" class="bulleted-list"><li style="list-style-type:circle">早鳥75折、學生8折、身障5折、敬老5折</li></ul><ul id="b45d2431-d98f-484a-86c7-107576ec6ae3" class="bulleted-list"><li style="list-style-type:circle">團員票8折</li></ul></li></ul><ul id="2cf4c08f-0c83-400e-b441-3231ae8ae963" class="bulleted-list"><li style="list-style-type:disc">📝團員買票規則</li></ul><ul id="57f88044-e016-4c0f-8bcc-4914a26a775e" class="bulleted-list"><li style="list-style-type:disc">📝寄票與取票流程</li></ul><h3 id="71e95e24-d072-4bb3-9535-1ec29dea1115" class="">（八）譜務：遠軒</h3><ul id="35cce144-b360-4bf0-9aaa-9039bc54283d" class="bulleted-list"><li style="list-style-type:disc">目前樂譜狀況：大致已掃描、蓋電子章<ul id="d060235c-da4b-4b6e-992c-9817dfdaa314" class="bulleted-list"><li style="list-style-type:circle">提醒 Aurora Awakes：校友團租、版權限制。</li></ul><ul id="1077e411-ed45-4c0e-9d03-52c037bdaef6" class="bulleted-list"><li style="list-style-type:circle">Colors：掃描、獨奏者有譜→已經有</li></ul><ul id="8e1c550d-b5e8-4bbc-962a-a586a6604a42" class="bulleted-list"><li style="list-style-type:circle">Transcendent Journey：換譜缺漏問題（待處理）</li></ul></li></ul><ul id="e7679a66-6fa2-4809-89ba-39e2ea41118e" class="bulleted-list"><li style="list-style-type:disc">📝總譜列印：請春頤先自行印譜</li></ul><ul id="a1423fb3-fe0e-4182-8f8c-50f9d4fd42aa" class="bulleted-list"><li style="list-style-type:disc">📝現場譜務：是否會有列表機？<ul id="933efe35-8949-4bc2-ab1b-1ec35f27cfff" class="bulleted-list"><li style="list-style-type:circle">現場：杜杜電腦＋春頤列表機</li></ul></li></ul><h3 id="28fd557c-2ec9-476a-8e59-5e23c1183747" class="">（九）公關：彥威</h3><ul id="7dedd2a5-3e90-4bdf-a255-cc34aadfccd7" class="bulleted-list"><li style="list-style-type:disc">校友團協辦確認 → 4/19校友團幹部會議</li></ul><ul id="015f0ef9-8436-4e84-b103-41f6ad072f3e" class="bulleted-list"><li style="list-style-type:disc">企畫書已完成（差抵稅確認）<ul id="b6db6b37-b2d7-4ae4-b202-dec843e67ea4" class="bulleted-list"><li style="list-style-type:circle">個人贊助方案等同企業贊助</li></ul><ul id="5eda6634-0fd1-466f-8a56-3fb986faeb6d" class="bulleted-list"><li style="list-style-type:circle">貴賓票改為詢問制（設定上限）、取消DVD</li></ul></li></ul><ul id="1563ba15-093f-4dd0-a42c-f46c5d911fdd" class="bulleted-list"><li style="list-style-type:disc">拉贊助執行<ul id="b5f9eb17-68a5-406e-b5b4-eb1758c04dfb" class="bulleted-list"><li style="list-style-type:circle">5/20前第一波贊助</li></ul></li></ul><ul id="70b1ba5c-6951-4fd1-aa47-7ccd21e0f485" class="bulleted-list"><li style="list-style-type:disc">📝整理贊助廠商（節目冊）、貴賓名單、<strong>感謝狀</strong></li></ul><h3 id="839f490c-48ca-43b6-864a-c54a912fb9fa" class="">（十）傳承：孟宸</h3><ul id="56913fa6-f992-4ad4-94d8-847f8a8c7547" class="bulleted-list"><li style="list-style-type:disc">範本<a href="https://www.notion.so/Template-3e454a990d0541b1ba0d0db7f8e10f7f?pvs=21">https://www.notion.so/Template-3e454a990d0541b1ba0d0db7f8e10f7f</a></li></ul><ul id="a0d320a7-2eda-4191-99a5-463586f93509" class="bulleted-list"><li style="list-style-type:disc">以設計為例實際填入的範例<a href="https://www.notion.so/38dbbdf256d143bda27fe79f948ae958?pvs=21">https://www.notion.so/38dbbdf256d143bda27fe79f948ae958</a></li></ul><h3 id="f26c2ec0-18ee-45fa-961e-4a3ceb2c3453" class="">二、 討論事項：</h3><ul id="c5803e9b-8a2c-46c8-ba74-8c31fed929c4" class="bulleted-list"><li style="list-style-type:disc">英文標題</li></ul><ul id="a2227d6d-2113-403b-9f8a-fcfd5f69878e" class="bulleted-list"><li style="list-style-type:disc">安可曲<ul id="05e0c4af-f6f7-434d-9627-632fef14282c" class="bulleted-list"><li style="list-style-type:circle">鬼滅之刃</li></ul><ul id="e7890633-2380-483b-84fa-3be7b57e9daa" class="bulleted-list"><li style="list-style-type:circle">蘇打綠：當我們一起走過</li></ul><ul id="d0dc3687-80af-4003-b59a-ddac67522363" class="bulleted-list"><li style="list-style-type:circle">滅火器：長途夜車</li></ul><ul id="21262558-2253-4949-9f46-5277368796a8" class="bulleted-list"><li style="list-style-type:circle">星野源：創造</li></ul><ul id="105d760b-bd0b-4c58-a9eb-229b5e0f56e1" class="bulleted-list"><li style="list-style-type:circle">懷舊老歌</li></ul><ul id="8a327e7a-5707-4e42-b6fc-de61e1f31c7d" class="bulleted-list"><li style="list-style-type:circle">★請怡蓁協助重製音樂的報價</li></ul></li></ul><ul id="6598e0b0-66cb-4ce1-84c1-74eedf4f0c3b" class="bulleted-list"><li style="list-style-type:disc">推薦總場務人選</li></ul><ul id="90dd0958-e3f5-4bb7-8648-e604eae0e915" class="bulleted-list"><li style="list-style-type:disc">小額贊助<ul id="3819be08-2d89-436b-851b-f86652a7579a" class="bulleted-list"><li style="list-style-type:circle">方式？確定對象？拿到的項目？</li></ul><ul id="f910b8a9-7aed-4764-b34a-005f799d7b76" class="bulleted-list"><li style="list-style-type:circle">可能最低1000元，小於1000元改由購票支持</li></ul><ul id="8fa82acd-d2fb-4d59-937c-663f00f49d91" class="bulleted-list"><li style="list-style-type:circle">可以進校友團再討論</li></ul></li></ul><ul id="1ce5f8a5-7184-4a06-ad00-a07e2cc35cf3" class="bulleted-list"><li style="list-style-type:disc">提醒事項<ul id="8714955a-fb17-47f4-ad16-f98bb18d2f33" class="bulleted-list"><li style="list-style-type:circle">表單：團員表單、回饋單</li></ul><ul id="863531a3-f43b-40cb-afed-cceffbcba059" class="bulleted-list"><li style="list-style-type:circle">申請校內場地</li></ul><ul id="deeb7281-2dd7-4ca0-944a-d0620e1ba0cf" class="bulleted-list"><li style="list-style-type:circle">更名公文</li></ul><ul id="6021b1aa-9685-45d6-acb2-48785daa2b8b" class="bulleted-list"><li style="list-style-type:circle">DM、邀請卡領取規則</li></ul></li></ul><h3 id="e6941b5f-6dc8-42a5-b2d3-11c8ceed0e01" class="">三、第二次籌備會議追蹤進度</h3><p id="8b8d2079-2282-44ad-88a4-a6d058df9d23" class="">副召：分部長確定、找人進度</p><p id="7bb58127-ee32-4758-84c5-a7b2413f5bf3" class="">製作：影片製作進度</p><p id="7ecddc7c-82e7-4a9d-a770-fb32e033e8d9" class="">文宣：設計進度追蹤、擬定宣傳計畫</p><p id="a9927204-cef8-4a77-bfea-a18128ace61d" class="">票務：售票簽約</p><p id="c0ba85ff-d560-40f2-a9ce-7627445e1aac" class="">公關、校內總召：贊助進度</p><p id="aed65e8d-75d1-4396-8d06-639bf0445e0b" class="">安可曲討論：請怡蓁協助樂曲重製報價</p><p id="6a750ac7-fe2a-4df6-ba0d-78d122fb0412" class="">小額贊助討論</p><h3 id="ddf6c0f9-1c85-45e4-8d02-9215fed9811c" class="">逐</h3><p id="b5f29dc2-11c8-47ce-ac31-83646aaefd27" class="">高雄中學管樂團　高雄中學校友管樂團　第十四次聯合音樂會</p><p id="f46fa704-d372-4143-b2b7-b562341a06a3" class="">Kaohsiung Senior High School Wind Band &amp; K.S.H.S. Alumni Wind Orchestra 14th Annual Joint Concert</p><p id="7cc2abd7-3517-410f-ae33-aed154d39e87" class="">日期：2021年8月17日星期二</p><p id="756b038b-824d-431a-9b87-d8853e3bb9ac" class="">時間：19:30 （19:00開放入場）</p><p id="767ce512-6c88-48f3-b246-223673e5cf30" class="">地點：高雄市文化中心　至德堂</p><p id="f72fa99f-ed9c-4d8e-945b-1d6d4fcd2ac0" class="">指揮：何春頤</p><p id="4a345361-f861-41d0-a5b6-7941a34955d7" class="">指導老師：何春頤</p><p id="dd55ef2e-4445-4008-b35f-ba92128f85c3" class="">長號獨奏：楊錦龍</p><p id="0b84e9de-0400-4e79-b808-250ccc1d5dbc" class="">票價：100、200、300</p><p id="b337256c-d61f-4a65-b27f-a0146da5f28b" class="">主辦單位：高雄中學管樂團、高雄中學校友管樂團、高雄中學學務處</p><p id="9f3176af-bf23-455d-9ecb-950b81fa3f90" class="">協辦單位：<strong>高雄中學家長會</strong>、<strong>高雄中學校友會</strong></p><p id="54a89ae9-a319-41ca-bc65-fa399089dd96" class="">音樂會主題：<a href="https://chenhsuantu.github.io/KAB14">https://chenhsuantu.github.io/KAB14</a></p><h3 id="02c331d6-388c-4622-afd7-a148de44f0fa" class="">演出流程 （影片、曲目）</h3><ul id="9cd2b0d4-0927-4359-a3a5-7b1180adfdd9" class="bulleted-list"><li style="list-style-type:disc"><strong>串場影片：起源 -</strong></li></ul><p id="2646ee79-05f0-496c-a1e8-3a9d9db173b3" class="">（校內團）</p><p id="7d45a42b-0b18-4a75-a7a8-21321d4fe91c" class="">《波麗露》Maurice Ravel (arr. Jay Bocook): Bolero</p><p id="76a9f098-aea1-49fa-b95a-eee1ba7f8f3f" class="">《星盤》Daisuke Shimizu: Astrolabe</p><ul id="3ccefd6b-8ed3-4d72-9e72-695ba436ec7f" class="bulleted-list"><li style="list-style-type:disc"><strong>串場影片：挫折 -</strong></li></ul><p id="6194f11e-80ac-4c56-9c1c-53edf10583e6" class="">（校友團）</p><p id="cb5057d1-e316-424c-9691-dfd2e7e652a6" class="">《神曲》〈地獄〉Robert W. Smith: The Divine Comedy I. Inferno</p><p id="bebcce8b-c847-49c4-af9b-14ea367fab8e" class="">《極光覺醒》John Mackey: Aurora Awakes</p><p id="17cca62c-2e4f-4be4-bd1d-2f6628cf1523" class="">= = = 中場休息 = = =</p><ul id="88d9f2ce-a307-4d44-b332-6946f6145d3a" class="bulleted-list"><li style="list-style-type:disc"><strong>串場影片：曙光 -</strong></li></ul><p id="7c12c870-8495-4a33-b96e-92d49c8d6f00" class="">（大合奏：協奏曲）</p><p id="39d2c4ac-6648-42df-abaf-c5dc870df61d" class="">《色彩》長號協奏曲　Bert Appermont: Colors for Trombone</p><ul id="e33971b4-0e4c-42fc-8514-4092a5ab3a4a" class="bulleted-list"><li style="list-style-type:disc"><strong>串場影片：展望 -</strong></li></ul><p id="e814ee2b-026e-4340-b01f-1d5c3847b0a8" class="">（大合奏）</p><p id="ef661635-c2e8-4647-87af-98088784675a" class="">《超越旅程》Rossano Galante: Transcendent Journey</p><p id="4fa96d4d-f17c-4724-8934-4c9905858831" class="">《遠征》Oscar Navarro: Expedition</p><h3 id="7481974a-9d9b-4b5e-99c0-8de8566c126a" class="">預算表</h3><div id="3b92e425-c8c0-406d-a8ca-075a24e4f66f" class="collection-content"><h4 class="collection-title"></h4><table class="collection-content"><thead><tr><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesTitle"><path d="M0.637695 13.1914C1.0957 13.1914 1.32812 13 1.47852 12.5215L2.24414 10.3887H6.14746L6.90625 12.5215C7.05664 13 7.2959 13.1914 7.74707 13.1914C8.22559 13.1914 8.5332 12.9043 8.5332 12.4531C8.5332 12.2891 8.50586 12.1523 8.44434 11.9678L5.41602 3.79199C5.2041 3.21777 4.82129 2.9375 4.19922 2.9375C3.60449 2.9375 3.21484 3.21777 3.0166 3.78516L-0.0322266 12.002C-0.09375 12.1797 -0.121094 12.3232 -0.121094 12.4668C-0.121094 12.918 0.166016 13.1914 0.637695 13.1914ZM2.63379 9.12402L4.17871 4.68066H4.21973L5.76465 9.12402H2.63379ZM12.2793 13.2324C13.3115 13.2324 14.2891 12.6787 14.7129 11.8037H14.7402V12.5762C14.7471 12.9863 15.0273 13.2393 15.4238 13.2393C15.834 13.2393 16.1143 12.9795 16.1143 12.5215V8.00977C16.1143 6.49902 14.9658 5.52148 13.1543 5.52148C11.7666 5.52148 10.6592 6.08887 10.2695 6.99121C10.1943 7.15527 10.1533 7.3125 10.1533 7.46289C10.1533 7.81152 10.4062 8.04395 10.7686 8.04395C11.0215 8.04395 11.2129 7.94824 11.3496 7.73633C11.7529 6.99121 12.2861 6.65625 13.1064 6.65625C14.0977 6.65625 14.6992 7.20996 14.6992 8.1123V8.67285L12.5664 8.7959C10.7686 8.8916 9.77734 9.69824 9.77734 11.0107C9.77734 12.3369 10.8096 13.2324 12.2793 13.2324ZM12.6621 12.1387C11.8008 12.1387 11.2129 11.667 11.2129 10.9561C11.2129 10.2725 11.7598 9.82129 12.7578 9.75977L14.6992 9.62988V10.3203C14.6992 11.3457 13.7969 12.1387 12.6621 12.1387Z"></path></svg></span>類別</th><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesText"><path d="M1.56738 3.25879H14.4258C14.7676 3.25879 15.0479 2.97852 15.0479 2.63672C15.0479 2.29492 14.7744 2.02148 14.4258 2.02148H1.56738C1.21875 2.02148 0.952148 2.29492 0.952148 2.63672C0.952148 2.97852 1.22559 3.25879 1.56738 3.25879ZM1.56738 6.84082H14.4258C14.7676 6.84082 15.0479 6.56055 15.0479 6.21875C15.0479 5.87695 14.7744 5.60352 14.4258 5.60352H1.56738C1.21875 5.60352 0.952148 5.87695 0.952148 6.21875C0.952148 6.56055 1.22559 6.84082 1.56738 6.84082ZM1.56738 10.4229H14.4258C14.7676 10.4229 15.0479 10.1426 15.0479 9.80078C15.0479 9.45898 14.7744 9.18555 14.4258 9.18555H1.56738C1.21875 9.18555 0.952148 9.45898 0.952148 9.80078C0.952148 10.1426 1.22559 10.4229 1.56738 10.4229ZM1.56738 14.0049H8.75879C9.10059 14.0049 9.38086 13.7246 9.38086 13.3828C9.38086 13.041 9.10742 12.7676 8.75879 12.7676H1.56738C1.21875 12.7676 0.952148 13.041 0.952148 13.3828C0.952148 13.7246 1.22559 14.0049 1.56738 14.0049Z"></path></svg></span>類別金額</th><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesText"><path d="M1.56738 3.25879H14.4258C14.7676 3.25879 15.0479 2.97852 15.0479 2.63672C15.0479 2.29492 14.7744 2.02148 14.4258 2.02148H1.56738C1.21875 2.02148 0.952148 2.29492 0.952148 2.63672C0.952148 2.97852 1.22559 3.25879 1.56738 3.25879ZM1.56738 6.84082H14.4258C14.7676 6.84082 15.0479 6.56055 15.0479 6.21875C15.0479 5.87695 14.7744 5.60352 14.4258 5.60352H1.56738C1.21875 5.60352 0.952148 5.87695 0.952148 6.21875C0.952148 6.56055 1.22559 6.84082 1.56738 6.84082ZM1.56738 10.4229H14.4258C14.7676 10.4229 15.0479 10.1426 15.0479 9.80078C15.0479 9.45898 14.7744 9.18555 14.4258 9.18555H1.56738C1.21875 9.18555 0.952148 9.45898 0.952148 9.80078C0.952148 10.1426 1.22559 10.4229 1.56738 10.4229ZM1.56738 14.0049H8.75879C9.10059 14.0049 9.38086 13.7246 9.38086 13.3828C9.38086 13.041 9.10742 12.7676 8.75879 12.7676H1.56738C1.21875 12.7676 0.952148 13.041 0.952148 13.3828C0.952148 13.7246 1.22559 14.0049 1.56738 14.0049Z"></path></svg></span>項目</th><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesText"><path d="M1.56738 3.25879H14.4258C14.7676 3.25879 15.0479 2.97852 15.0479 2.63672C15.0479 2.29492 14.7744 2.02148 14.4258 2.02148H1.56738C1.21875 2.02148 0.952148 2.29492 0.952148 2.63672C0.952148 2.97852 1.22559 3.25879 1.56738 3.25879ZM1.56738 6.84082H14.4258C14.7676 6.84082 15.0479 6.56055 15.0479 6.21875C15.0479 5.87695 14.7744 5.60352 14.4258 5.60352H1.56738C1.21875 5.60352 0.952148 5.87695 0.952148 6.21875C0.952148 6.56055 1.22559 6.84082 1.56738 6.84082ZM1.56738 10.4229H14.4258C14.7676 10.4229 15.0479 10.1426 15.0479 9.80078C15.0479 9.45898 14.7744 9.18555 14.4258 9.18555H1.56738C1.21875 9.18555 0.952148 9.45898 0.952148 9.80078C0.952148 10.1426 1.22559 10.4229 1.56738 10.4229ZM1.56738 14.0049H8.75879C9.10059 14.0049 9.38086 13.7246 9.38086 13.3828C9.38086 13.041 9.10742 12.7676 8.75879 12.7676H1.56738C1.21875 12.7676 0.952148 13.041 0.952148 13.3828C0.952148 13.7246 1.22559 14.0049 1.56738 14.0049Z"></path></svg></span>金額</th><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesText"><path d="M1.56738 3.25879H14.4258C14.7676 3.25879 15.0479 2.97852 15.0479 2.63672C15.0479 2.29492 14.7744 2.02148 14.4258 2.02148H1.56738C1.21875 2.02148 0.952148 2.29492 0.952148 2.63672C0.952148 2.97852 1.22559 3.25879 1.56738 3.25879ZM1.56738 6.84082H14.4258C14.7676 6.84082 15.0479 6.56055 15.0479 6.21875C15.0479 5.87695 14.7744 5.60352 14.4258 5.60352H1.56738C1.21875 5.60352 0.952148 5.87695 0.952148 6.21875C0.952148 6.56055 1.22559 6.84082 1.56738 6.84082ZM1.56738 10.4229H14.4258C14.7676 10.4229 15.0479 10.1426 15.0479 9.80078C15.0479 9.45898 14.7744 9.18555 14.4258 9.18555H1.56738C1.21875 9.18555 0.952148 9.45898 0.952148 9.80078C0.952148 10.1426 1.22559 10.4229 1.56738 10.4229ZM1.56738 14.0049H8.75879C9.10059 14.0049 9.38086 13.7246 9.38086 13.3828C9.38086 13.041 9.10742 12.7676 8.75879 12.7676H1.56738C1.21875 12.7676 0.952148 13.041 0.952148 13.3828C0.952148 13.7246 1.22559 14.0049 1.56738 14.0049Z"></path></svg></span>備註</th></tr></thead><tbody><tr id="e1e2a374-19d5-489d-a0de-f0b107c14c03"><td class="cell-title"><a href="0418%E7%AC%AC%E4%B8%80%E6%AC%A1%E7%B1%8C%E5%82%99%E6%9C%83%E8%AD%B0%2015e5130e351746e48fba229a35543825/Untitled%203b92e425c8c0406da8ca075a24e4f66f/%E5%A0%B4%E5%9C%B0%20e1e2a37419d5489da0def0b107c14c03.html">場地</a></td><td class="cell-&lt;qP}">30,500</td><td class="cell-nyUV">場地費</td><td class="cell-&lt;?`X">17,500</td><td class="cell-=WbI">35,000*五折</td></tr><tr id="3ca0b6f4-544b-4419-989a-b306491ce329"><td class="cell-title"><a href="0418%E7%AC%AC%E4%B8%80%E6%AC%A1%E7%B1%8C%E5%82%99%E6%9C%83%E8%AD%B0%2015e5130e351746e48fba229a35543825/Untitled%203b92e425c8c0406da8ca075a24e4f66f/Untitled%203ca0b6f4544b4419989ab306491ce329.html">Untitled</a></td><td class="cell-&lt;qP}"></td><td class="cell-nyUV">彩排裝台</td><td class="cell-&lt;?`X">8,500</td><td class="cell-=WbI">1000/小時*8.5小時</td></tr><tr id="4910fcc7-077a-4ec2-a145-1206d644aa4f"><td class="cell-title"><a href="0418%E7%AC%AC%E4%B8%80%E6%AC%A1%E7%B1%8C%E5%82%99%E6%9C%83%E8%AD%B0%2015e5130e351746e48fba229a35543825/Untitled%203b92e425c8c0406da8ca075a24e4f66f/Untitled%204910fcc7077a4ec2a1451206d644aa4f.html">Untitled</a></td><td class="cell-&lt;qP}"></td><td class="cell-nyUV">鋼琴租用費</td><td class="cell-&lt;?`X">2,000</td><td class="cell-=WbI"></td></tr><tr id="cbccd146-a04b-482e-b7ee-97ca7ad7a776"><td class="cell-title"><a href="0418%E7%AC%AC%E4%B8%80%E6%AC%A1%E7%B1%8C%E5%82%99%E6%9C%83%E8%AD%B0%2015e5130e351746e48fba229a35543825/Untitled%203b92e425c8c0406da8ca075a24e4f66f/Untitled%20cbccd146a04b482eb7ee97ca7ad7a776.html">Untitled</a></td><td class="cell-&lt;qP}"></td><td class="cell-nyUV">鋼琴調音</td><td class="cell-&lt;?`X">2,500</td><td class="cell-=WbI"></td></tr><tr id="08530f6f-ee52-420f-b362-30b843261f42"><td class="cell-title"><a href="0418%E7%AC%AC%E4%B8%80%E6%AC%A1%E7%B1%8C%E5%82%99%E6%9C%83%E8%AD%B0%2015e5130e351746e48fba229a35543825/Untitled%203b92e425c8c0406da8ca075a24e4f66f/%E6%8C%87%E6%8F%AE%2008530f6fee52420fb36230b843261f42.html">指揮</a></td><td class="cell-&lt;qP}">66,000</td><td class="cell-nyUV">指揮團練</td><td class="cell-&lt;?`X">57,600</td><td class="cell-=WbI">1200/小時*3*16次</td></tr><tr id="c5a3f1fb-1b5b-45fe-ae41-b980ad1200a5"><td class="cell-title"><a href="0418%E7%AC%AC%E4%B8%80%E6%AC%A1%E7%B1%8C%E5%82%99%E6%9C%83%E8%AD%B0%2015e5130e351746e48fba229a35543825/Untitled%203b92e425c8c0406da8ca075a24e4f66f/Untitled%20c5a3f1fb1b5b45feae41b980ad1200a5.html">Untitled</a></td><td class="cell-&lt;qP}"></td><td class="cell-nyUV">指揮彩排</td><td class="cell-&lt;?`X">3,600</td><td class="cell-=WbI">3600/次</td></tr><tr id="16fc4163-9382-4843-b99f-dfca3df90d84"><td class="cell-title"><a href="0418%E7%AC%AC%E4%B8%80%E6%AC%A1%E7%B1%8C%E5%82%99%E6%9C%83%E8%AD%B0%2015e5130e351746e48fba229a35543825/Untitled%203b92e425c8c0406da8ca075a24e4f66f/Untitled%2016fc416393824843b99fdfca3df90d84.html">Untitled</a></td><td class="cell-&lt;qP}"></td><td class="cell-nyUV">指揮演出</td><td class="cell-&lt;?`X">4,800</td><td class="cell-=WbI">4800/次</td></tr><tr id="bfa2d647-0c85-4224-b197-86d1afc25fa1"><td class="cell-title"><a href="0418%E7%AC%AC%E4%B8%80%E6%AC%A1%E7%B1%8C%E5%82%99%E6%9C%83%E8%AD%B0%2015e5130e351746e48fba229a35543825/Untitled%203b92e425c8c0406da8ca075a24e4f66f/%E8%A8%AD%E8%A8%88%20bfa2d6470c854224b19786d1afc25fa1.html">設計</a></td><td class="cell-&lt;qP}">30,000</td><td class="cell-nyUV">設計費</td><td class="cell-&lt;?`X">10,000</td><td class="cell-=WbI"></td></tr><tr id="35ab2f16-6c46-4e09-a4a2-22a1c21c7a19"><td class="cell-title"><a href="0418%E7%AC%AC%E4%B8%80%E6%AC%A1%E7%B1%8C%E5%82%99%E6%9C%83%E8%AD%B0%2015e5130e351746e48fba229a35543825/Untitled%203b92e425c8c0406da8ca075a24e4f66f/Untitled%2035ab2f166c464e09a4a222a1c21c7a19.html">Untitled</a></td><td class="cell-&lt;qP}"></td><td class="cell-nyUV">節目冊</td><td class="cell-&lt;?`X">15,000</td><td class="cell-=WbI"></td></tr><tr id="2846c29b-5d72-4b84-9d7a-54f7c93cdb81"><td class="cell-title"><a href="0418%E7%AC%AC%E4%B8%80%E6%AC%A1%E7%B1%8C%E5%82%99%E6%9C%83%E8%AD%B0%2015e5130e351746e48fba229a35543825/Untitled%203b92e425c8c0406da8ca075a24e4f66f/Untitled%202846c29b5d724b849d7a54f7c93cdb81.html">Untitled</a></td><td class="cell-&lt;qP}"></td><td class="cell-nyUV">DM／邀請卡／海報</td><td class="cell-&lt;?`X">5,000</td><td class="cell-=WbI"></td></tr><tr id="509622f1-882f-4911-833c-7842c4a7033f"><td class="cell-title"><a href="0418%E7%AC%AC%E4%B8%80%E6%AC%A1%E7%B1%8C%E5%82%99%E6%9C%83%E8%AD%B0%2015e5130e351746e48fba229a35543825/Untitled%203b92e425c8c0406da8ca075a24e4f66f/%E8%A3%BD%E4%BD%9C%20509622f1882f4911833c7842c4a7033f.html">製作</a></td><td class="cell-&lt;qP}">15,000</td><td class="cell-nyUV">製作</td><td class="cell-&lt;?`X">15,000</td><td class="cell-=WbI"></td></tr><tr id="467c4e75-8998-4785-9146-d0b7d4919323"><td class="cell-title"><a href="0418%E7%AC%AC%E4%B8%80%E6%AC%A1%E7%B1%8C%E5%82%99%E6%9C%83%E8%AD%B0%2015e5130e351746e48fba229a35543825/Untitled%203b92e425c8c0406da8ca075a24e4f66f/%E8%AD%9C%E8%B2%BB%20467c4e75899847859146d0b7d4919323.html">譜費</a></td><td class="cell-&lt;qP}">16,500</td><td class="cell-nyUV">購譜、租譜</td><td class="cell-&lt;?`X">15,138</td><td class="cell-=WbI"><strong>非共同支出</strong></td></tr><tr id="78e594dd-0455-4e2c-8c69-76fde88aaccc"><td class="cell-title"><a href="0418%E7%AC%AC%E4%B8%80%E6%AC%A1%E7%B1%8C%E5%82%99%E6%9C%83%E8%AD%B0%2015e5130e351746e48fba229a35543825/Untitled%203b92e425c8c0406da8ca075a24e4f66f/Untitled%2078e594dd04554e2c8c6976fde88aaccc.html">Untitled</a></td><td class="cell-&lt;qP}"></td><td class="cell-nyUV">譜務影印費</td><td class="cell-&lt;?`X">1,362</td><td class="cell-=WbI">總譜</td></tr><tr id="3f0f426b-119c-4f48-8272-3ad97b796df3"><td class="cell-title"><a href="0418%E7%AC%AC%E4%B8%80%E6%AC%A1%E7%B1%8C%E5%82%99%E6%9C%83%E8%AD%B0%2015e5130e351746e48fba229a35543825/Untitled%203b92e425c8c0406da8ca075a24e4f66f/%E9%8C%84%E5%BD%B1%203f0f426b119c4f4882723ad97b796df3.html">錄影</a></td><td class="cell-&lt;qP}">26,000</td><td class="cell-nyUV">錄影錄音</td><td class="cell-&lt;?`X">26,000</td><td class="cell-=WbI">記憶箱藝術工作室<br/><br/><strong>*DVD</strong></td></tr><tr id="a7c52340-5356-4150-815a-934fdc93028c"><td class="cell-title"><a href="0418%E7%AC%AC%E4%B8%80%E6%AC%A1%E7%B1%8C%E5%82%99%E6%9C%83%E8%AD%B0%2015e5130e351746e48fba229a35543825/Untitled%203b92e425c8c0406da8ca075a24e4f66f/%E9%9B%9C%E6%94%AF%20a7c5234053564150815a934fdc93028c.html">雜支</a></td><td class="cell-&lt;qP}">28,000</td><td class="cell-nyUV">樂器借用／維修</td><td class="cell-&lt;?`X">5,000</td><td class="cell-=WbI"></td></tr><tr id="42fc00db-9ec0-47cf-8573-cf407418088d"><td class="cell-title"><a href="0418%E7%AC%AC%E4%B8%80%E6%AC%A1%E7%B1%8C%E5%82%99%E6%9C%83%E8%AD%B0%2015e5130e351746e48fba229a35543825/Untitled%203b92e425c8c0406da8ca075a24e4f66f/Untitled%2042fc00db9ec047cf8573cf407418088d.html">Untitled</a></td><td class="cell-&lt;qP}"></td><td class="cell-nyUV">樂器車</td><td class="cell-&lt;?`X">10,000</td><td class="cell-=WbI"></td></tr><tr id="bc3ebbde-12fa-4534-bbcf-57c0a09bb97e"><td class="cell-title"><a href="0418%E7%AC%AC%E4%B8%80%E6%AC%A1%E7%B1%8C%E5%82%99%E6%9C%83%E8%AD%B0%2015e5130e351746e48fba229a35543825/Untitled%203b92e425c8c0406da8ca075a24e4f66f/Untitled%20bc3ebbde12fa4534bbcf57c0a09bb97e.html">Untitled</a></td><td class="cell-&lt;qP}"></td><td class="cell-nyUV">便當</td><td class="cell-&lt;?`X">10,000</td><td class="cell-=WbI"></td></tr><tr id="cd187b95-6a42-406a-a8c3-86526fc8bcad"><td class="cell-title"><a href="0418%E7%AC%AC%E4%B8%80%E6%AC%A1%E7%B1%8C%E5%82%99%E6%9C%83%E8%AD%B0%2015e5130e351746e48fba229a35543825/Untitled%203b92e425c8c0406da8ca075a24e4f66f/Untitled%20cd187b956a42406aa8c386526fc8bcad.html">Untitled</a></td><td class="cell-&lt;qP}"></td><td class="cell-nyUV">場務雜支</td><td class="cell-&lt;?`X">3,000</td><td class="cell-=WbI"></td></tr></tbody></table><br/><br/></div><p id="bbaf5b5f-ef79-427b-ae51-8df04f2eac03" class=""><strong>合計 212,000</strong></p><h3 id="15b16e74-b327-4c25-91a5-e17cc885e9ab" class="">籌備日程表</h3><div id="d7f5e757-f79e-41b1-8536-0411b0e33bfb" class="collection-content"><h4 class="collection-title"></h4><table class="collection-content"><thead><tr><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesTitle"><path d="M0.637695 13.1914C1.0957 13.1914 1.32812 13 1.47852 12.5215L2.24414 10.3887H6.14746L6.90625 12.5215C7.05664 13 7.2959 13.1914 7.74707 13.1914C8.22559 13.1914 8.5332 12.9043 8.5332 12.4531C8.5332 12.2891 8.50586 12.1523 8.44434 11.9678L5.41602 3.79199C5.2041 3.21777 4.82129 2.9375 4.19922 2.9375C3.60449 2.9375 3.21484 3.21777 3.0166 3.78516L-0.0322266 12.002C-0.09375 12.1797 -0.121094 12.3232 -0.121094 12.4668C-0.121094 12.918 0.166016 13.1914 0.637695 13.1914ZM2.63379 9.12402L4.17871 4.68066H4.21973L5.76465 9.12402H2.63379ZM12.2793 13.2324C13.3115 13.2324 14.2891 12.6787 14.7129 11.8037H14.7402V12.5762C14.7471 12.9863 15.0273 13.2393 15.4238 13.2393C15.834 13.2393 16.1143 12.9795 16.1143 12.5215V8.00977C16.1143 6.49902 14.9658 5.52148 13.1543 5.52148C11.7666 5.52148 10.6592 6.08887 10.2695 6.99121C10.1943 7.15527 10.1533 7.3125 10.1533 7.46289C10.1533 7.81152 10.4062 8.04395 10.7686 8.04395C11.0215 8.04395 11.2129 7.94824 11.3496 7.73633C11.7529 6.99121 12.2861 6.65625 13.1064 6.65625C14.0977 6.65625 14.6992 7.20996 14.6992 8.1123V8.67285L12.5664 8.7959C10.7686 8.8916 9.77734 9.69824 9.77734 11.0107C9.77734 12.3369 10.8096 13.2324 12.2793 13.2324ZM12.6621 12.1387C11.8008 12.1387 11.2129 11.667 11.2129 10.9561C11.2129 10.2725 11.7598 9.82129 12.7578 9.75977L14.6992 9.62988V10.3203C14.6992 11.3457 13.7969 12.1387 12.6621 12.1387Z"></path></svg></span>Property</th><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesText"><path d="M1.56738 3.25879H14.4258C14.7676 3.25879 15.0479 2.97852 15.0479 2.63672C15.0479 2.29492 14.7744 2.02148 14.4258 2.02148H1.56738C1.21875 2.02148 0.952148 2.29492 0.952148 2.63672C0.952148 2.97852 1.22559 3.25879 1.56738 3.25879ZM1.56738 6.84082H14.4258C14.7676 6.84082 15.0479 6.56055 15.0479 6.21875C15.0479 5.87695 14.7744 5.60352 14.4258 5.60352H1.56738C1.21875 5.60352 0.952148 5.87695 0.952148 6.21875C0.952148 6.56055 1.22559 6.84082 1.56738 6.84082ZM1.56738 10.4229H14.4258C14.7676 10.4229 15.0479 10.1426 15.0479 9.80078C15.0479 9.45898 14.7744 9.18555 14.4258 9.18555H1.56738C1.21875 9.18555 0.952148 9.45898 0.952148 9.80078C0.952148 10.1426 1.22559 10.4229 1.56738 10.4229ZM1.56738 14.0049H8.75879C9.10059 14.0049 9.38086 13.7246 9.38086 13.3828C9.38086 13.041 9.10742 12.7676 8.75879 12.7676H1.56738C1.21875 12.7676 0.952148 13.041 0.952148 13.3828C0.952148 13.7246 1.22559 14.0049 1.56738 14.0049Z"></path></svg></span>內容</th><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesText"><path d="M1.56738 3.25879H14.4258C14.7676 3.25879 15.0479 2.97852 15.0479 2.63672C15.0479 2.29492 14.7744 2.02148 14.4258 2.02148H1.56738C1.21875 2.02148 0.952148 2.29492 0.952148 2.63672C0.952148 2.97852 1.22559 3.25879 1.56738 3.25879ZM1.56738 6.84082H14.4258C14.7676 6.84082 15.0479 6.56055 15.0479 6.21875C15.0479 5.87695 14.7744 5.60352 14.4258 5.60352H1.56738C1.21875 5.60352 0.952148 5.87695 0.952148 6.21875C0.952148 6.56055 1.22559 6.84082 1.56738 6.84082ZM1.56738 10.4229H14.4258C14.7676 10.4229 15.0479 10.1426 15.0479 9.80078C15.0479 9.45898 14.7744 9.18555 14.4258 9.18555H1.56738C1.21875 9.18555 0.952148 9.45898 0.952148 9.80078C0.952148 10.1426 1.22559 10.4229 1.56738 10.4229ZM1.56738 14.0049H8.75879C9.10059 14.0049 9.38086 13.7246 9.38086 13.3828C9.38086 13.041 9.10742 12.7676 8.75879 12.7676H1.56738C1.21875 12.7676 0.952148 13.041 0.952148 13.3828C0.952148 13.7246 1.22559 14.0049 1.56738 14.0049Z"></path></svg></span>一</th><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesText"><path d="M1.56738 3.25879H14.4258C14.7676 3.25879 15.0479 2.97852 15.0479 2.63672C15.0479 2.29492 14.7744 2.02148 14.4258 2.02148H1.56738C1.21875 2.02148 0.952148 2.29492 0.952148 2.63672C0.952148 2.97852 1.22559 3.25879 1.56738 3.25879ZM1.56738 6.84082H14.4258C14.7676 6.84082 15.0479 6.56055 15.0479 6.21875C15.0479 5.87695 14.7744 5.60352 14.4258 5.60352H1.56738C1.21875 5.60352 0.952148 5.87695 0.952148 6.21875C0.952148 6.56055 1.22559 6.84082 1.56738 6.84082ZM1.56738 10.4229H14.4258C14.7676 10.4229 15.0479 10.1426 15.0479 9.80078C15.0479 9.45898 14.7744 9.18555 14.4258 9.18555H1.56738C1.21875 9.18555 0.952148 9.45898 0.952148 9.80078C0.952148 10.1426 1.22559 10.4229 1.56738 10.4229ZM1.56738 14.0049H8.75879C9.10059 14.0049 9.38086 13.7246 9.38086 13.3828C9.38086 13.041 9.10742 12.7676 8.75879 12.7676H1.56738C1.21875 12.7676 0.952148 13.041 0.952148 13.3828C0.952148 13.7246 1.22559 14.0049 1.56738 14.0049Z"></path></svg></span>二</th><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesText"><path d="M1.56738 3.25879H14.4258C14.7676 3.25879 15.0479 2.97852 15.0479 2.63672C15.0479 2.29492 14.7744 2.02148 14.4258 2.02148H1.56738C1.21875 2.02148 0.952148 2.29492 0.952148 2.63672C0.952148 2.97852 1.22559 3.25879 1.56738 3.25879ZM1.56738 6.84082H14.4258C14.7676 6.84082 15.0479 6.56055 15.0479 6.21875C15.0479 5.87695 14.7744 5.60352 14.4258 5.60352H1.56738C1.21875 5.60352 0.952148 5.87695 0.952148 6.21875C0.952148 6.56055 1.22559 6.84082 1.56738 6.84082ZM1.56738 10.4229H14.4258C14.7676 10.4229 15.0479 10.1426 15.0479 9.80078C15.0479 9.45898 14.7744 9.18555 14.4258 9.18555H1.56738C1.21875 9.18555 0.952148 9.45898 0.952148 9.80078C0.952148 10.1426 1.22559 10.4229 1.56738 10.4229ZM1.56738 14.0049H8.75879C9.10059 14.0049 9.38086 13.7246 9.38086 13.3828C9.38086 13.041 9.10742 12.7676 8.75879 12.7676H1.56738C1.21875 12.7676 0.952148 13.041 0.952148 13.3828C0.952148 13.7246 1.22559 14.0049 1.56738 14.0049Z"></path></svg></span>三</th><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesText"><path d="M1.56738 3.25879H14.4258C14.7676 3.25879 15.0479 2.97852 15.0479 2.63672C15.0479 2.29492 14.7744 2.02148 14.4258 2.02148H1.56738C1.21875 2.02148 0.952148 2.29492 0.952148 2.63672C0.952148 2.97852 1.22559 3.25879 1.56738 3.25879ZM1.56738 6.84082H14.4258C14.7676 6.84082 15.0479 6.56055 15.0479 6.21875C15.0479 5.87695 14.7744 5.60352 14.4258 5.60352H1.56738C1.21875 5.60352 0.952148 5.87695 0.952148 6.21875C0.952148 6.56055 1.22559 6.84082 1.56738 6.84082ZM1.56738 10.4229H14.4258C14.7676 10.4229 15.0479 10.1426 15.0479 9.80078C15.0479 9.45898 14.7744 9.18555 14.4258 9.18555H1.56738C1.21875 9.18555 0.952148 9.45898 0.952148 9.80078C0.952148 10.1426 1.22559 10.4229 1.56738 10.4229ZM1.56738 14.0049H8.75879C9.10059 14.0049 9.38086 13.7246 9.38086 13.3828C9.38086 13.041 9.10742 12.7676 8.75879 12.7676H1.56738C1.21875 12.7676 0.952148 13.041 0.952148 13.3828C0.952148 13.7246 1.22559 14.0049 1.56738 14.0049Z"></path></svg></span>四</th><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesText"><path d="M1.56738 3.25879H14.4258C14.7676 3.25879 15.0479 2.97852 15.0479 2.63672C15.0479 2.29492 14.7744 2.02148 14.4258 2.02148H1.56738C1.21875 2.02148 0.952148 2.29492 0.952148 2.63672C0.952148 2.97852 1.22559 3.25879 1.56738 3.25879ZM1.56738 6.84082H14.4258C14.7676 6.84082 15.0479 6.56055 15.0479 6.21875C15.0479 5.87695 14.7744 5.60352 14.4258 5.60352H1.56738C1.21875 5.60352 0.952148 5.87695 0.952148 6.21875C0.952148 6.56055 1.22559 6.84082 1.56738 6.84082ZM1.56738 10.4229H14.4258C14.7676 10.4229 15.0479 10.1426 15.0479 9.80078C15.0479 9.45898 14.7744 9.18555 14.4258 9.18555H1.56738C1.21875 9.18555 0.952148 9.45898 0.952148 9.80078C0.952148 10.1426 1.22559 10.4229 1.56738 10.4229ZM1.56738 14.0049H8.75879C9.10059 14.0049 9.38086 13.7246 9.38086 13.3828C9.38086 13.041 9.10742 12.7676 8.75879 12.7676H1.56738C1.21875 12.7676 0.952148 13.041 0.952148 13.3828C0.952148 13.7246 1.22559 14.0049 1.56738 14.0049Z"></path></svg></span>五</th><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesText"><path d="M1.56738 3.25879H14.4258C14.7676 3.25879 15.0479 2.97852 15.0479 2.63672C15.0479 2.29492 14.7744 2.02148 14.4258 2.02148H1.56738C1.21875 2.02148 0.952148 2.29492 0.952148 2.63672C0.952148 2.97852 1.22559 3.25879 1.56738 3.25879ZM1.56738 6.84082H14.4258C14.7676 6.84082 15.0479 6.56055 15.0479 6.21875C15.0479 5.87695 14.7744 5.60352 14.4258 5.60352H1.56738C1.21875 5.60352 0.952148 5.87695 0.952148 6.21875C0.952148 6.56055 1.22559 6.84082 1.56738 6.84082ZM1.56738 10.4229H14.4258C14.7676 10.4229 15.0479 10.1426 15.0479 9.80078C15.0479 9.45898 14.7744 9.18555 14.4258 9.18555H1.56738C1.21875 9.18555 0.952148 9.45898 0.952148 9.80078C0.952148 10.1426 1.22559 10.4229 1.56738 10.4229ZM1.56738 14.0049H8.75879C9.10059 14.0049 9.38086 13.7246 9.38086 13.3828C9.38086 13.041 9.10742 12.7676 8.75879 12.7676H1.56738C1.21875 12.7676 0.952148 13.041 0.952148 13.3828C0.952148 13.7246 1.22559 14.0049 1.56738 14.0049Z"></path></svg></span>六</th><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesText"><path d="M1.56738 3.25879H14.4258C14.7676 3.25879 15.0479 2.97852 15.0479 2.63672C15.0479 2.29492 14.7744 2.02148 14.4258 2.02148H1.56738C1.21875 2.02148 0.952148 2.29492 0.952148 2.63672C0.952148 2.97852 1.22559 3.25879 1.56738 3.25879ZM1.56738 6.84082H14.4258C14.7676 6.84082 15.0479 6.56055 15.0479 6.21875C15.0479 5.87695 14.7744 5.60352 14.4258 5.60352H1.56738C1.21875 5.60352 0.952148 5.87695 0.952148 6.21875C0.952148 6.56055 1.22559 6.84082 1.56738 6.84082ZM1.56738 10.4229H14.4258C14.7676 10.4229 15.0479 10.1426 15.0479 9.80078C15.0479 9.45898 14.7744 9.18555 14.4258 9.18555H1.56738C1.21875 9.18555 0.952148 9.45898 0.952148 9.80078C0.952148 10.1426 1.22559 10.4229 1.56738 10.4229ZM1.56738 14.0049H8.75879C9.10059 14.0049 9.38086 13.7246 9.38086 13.3828C9.38086 13.041 9.10742 12.7676 8.75879 12.7676H1.56738C1.21875 12.7676 0.952148 13.041 0.952148 13.3828C0.952148 13.7246 1.22559 14.0049 1.56738 14.0049Z"></path></svg></span>日</th></tr></thead><tbody><tr id="7d66474c-4ced-4f65-84c5-210980bdeedd"><td class="cell-title"><a href="0418%E7%AC%AC%E4%B8%80%E6%AC%A1%E7%B1%8C%E5%82%99%E6%9C%83%E8%AD%B0%2015e5130e351746e48fba229a35543825/Untitled%20d7f5e757f79e41b185360411b0e33bfb/%E5%9B%9B%E6%9C%88%207d66474c4ced4f6584c5210980bdeedd.html">四月</a></td><td class="cell-xg&gt;k">設計：4/25 DM與邀請卡設計初稿</td><td class="cell-R{`I">19</td><td class="cell-JkRx">20</td><td class="cell-Di:Z">21</td><td class="cell-:kCs">22</td><td class="cell-ZqMB">23</td><td class="cell-PgiH">24</td><td class="cell-Kixx"><strong>25</strong></td></tr><tr id="b5f4dacf-d94d-42db-9b1e-f43574179705"><td class="cell-title"><a href="0418%E7%AC%AC%E4%B8%80%E6%AC%A1%E7%B1%8C%E5%82%99%E6%9C%83%E8%AD%B0%2015e5130e351746e48fba229a35543825/Untitled%20d7f5e757f79e41b185360411b0e33bfb/Untitled%20b5f4dacfd94d42db9b1ef43574179705.html">Untitled</a></td><td class="cell-xg&gt;k">設計：5/2 官方宣傳圖完成</td><td class="cell-R{`I">26</td><td class="cell-JkRx">27</td><td class="cell-Di:Z">28</td><td class="cell-:kCs">29</td><td class="cell-ZqMB">30</td><td class="cell-PgiH">5/1</td><td class="cell-Kixx"><strong>2</strong></td></tr><tr id="ec96d63d-b521-4922-a8d9-ec87f0822b56"><td class="cell-title"><a href="0418%E7%AC%AC%E4%B8%80%E6%AC%A1%E7%B1%8C%E5%82%99%E6%9C%83%E8%AD%B0%2015e5130e351746e48fba229a35543825/Untitled%20d7f5e757f79e41b185360411b0e33bfb/%E4%BA%94%E6%9C%88%20ec96d63db5214922a8d9ec87f0822b56.html">五月</a></td><td class="cell-xg&gt;k">宣傳：5/9 宣傳計畫完成</td><td class="cell-R{`I">3</td><td class="cell-JkRx">4</td><td class="cell-Di:Z">5</td><td class="cell-:kCs">6</td><td class="cell-ZqMB">7</td><td class="cell-PgiH">8</td><td class="cell-Kixx"><strong>9</strong></td></tr><tr id="08e362b7-aae2-4d7c-8523-32b8fbf09701"><td class="cell-title"><a href="0418%E7%AC%AC%E4%B8%80%E6%AC%A1%E7%B1%8C%E5%82%99%E6%9C%83%E8%AD%B0%2015e5130e351746e48fba229a35543825/Untitled%20d7f5e757f79e41b185360411b0e33bfb/Untitled%2008e362b7aae24d7c852332b8fbf09701.html">Untitled</a></td><td class="cell-xg&gt;k">票務：5/9 票務簽約完成<br/><br/>設計：5/16 DM與邀請卡完成、送印<br/><br/>全體：5/15~16 第二次籌備會議（待定）</td><td class="cell-R{`I">10</td><td class="cell-JkRx">11</td><td class="cell-Di:Z">12</td><td class="cell-:kCs">13</td><td class="cell-ZqMB">14</td><td class="cell-PgiH"><strong>15</strong></td><td class="cell-Kixx"><strong>16</strong></td></tr><tr id="6556708b-6f64-4fef-9d21-7c022a38d4e9"><td class="cell-title"><a href="0418%E7%AC%AC%E4%B8%80%E6%AC%A1%E7%B1%8C%E5%82%99%E6%9C%83%E8%AD%B0%2015e5130e351746e48fba229a35543825/Untitled%20d7f5e757f79e41b185360411b0e33bfb/Untitled%206556708b6f644fef9d217c022a38d4e9.html">Untitled</a></td><td class="cell-xg&gt;k">設計：5/22 提供主視覺元素、FB大頭貼<br/><br/>　　、FB封面、大頭貼特效框</td><td class="cell-R{`I">17</td><td class="cell-JkRx">18</td><td class="cell-Di:Z">19</td><td class="cell-:kCs">20</td><td class="cell-ZqMB">21</td><td class="cell-PgiH"><strong>22</strong></td><td class="cell-Kixx">23</td></tr><tr id="6dce9fa0-8c63-48b2-9b1e-80c4d941b17b"><td class="cell-title"><a href="0418%E7%AC%AC%E4%B8%80%E6%AC%A1%E7%B1%8C%E5%82%99%E6%9C%83%E8%AD%B0%2015e5130e351746e48fba229a35543825/Untitled%20d7f5e757f79e41b185360411b0e33bfb/Untitled%206dce9fa08c6348b29b1e80c4d941b17b.html">Untitled</a></td><td class="cell-xg&gt;k">宣傳：5/24網路宣傳開始<br/><br/>校內：5/24校內拉贊開始</td><td class="cell-R{`I">24</td><td class="cell-JkRx">25</td><td class="cell-Di:Z">26</td><td class="cell-:kCs">27</td><td class="cell-ZqMB">28</td><td class="cell-PgiH">29</td><td class="cell-Kixx">30</td></tr><tr id="0ce1b909-8ac1-4bdf-b676-d33c2162e903"><td class="cell-title"><a href="0418%E7%AC%AC%E4%B8%80%E6%AC%A1%E7%B1%8C%E5%82%99%E6%9C%83%E8%AD%B0%2015e5130e351746e48fba229a35543825/Untitled%20d7f5e757f79e41b185360411b0e33bfb/%E5%85%AD%E6%9C%88%200ce1b9098ac14bdfb676d33c2162e903.html">六月</a></td><td class="cell-xg&gt;k"></td><td class="cell-R{`I">31</td><td class="cell-JkRx">6/1</td><td class="cell-Di:Z">2</td><td class="cell-:kCs">3</td><td class="cell-ZqMB">4</td><td class="cell-PgiH">5</td><td class="cell-Kixx"><strong>6</strong></td></tr><tr id="b5887b68-a8bc-4759-ae56-9843f8f65e41"><td class="cell-title"><a href="0418%E7%AC%AC%E4%B8%80%E6%AC%A1%E7%B1%8C%E5%82%99%E6%9C%83%E8%AD%B0%2015e5130e351746e48fba229a35543825/Untitled%20d7f5e757f79e41b185360411b0e33bfb/Untitled%20b5887b68a8bc4759ae569843f8f65e41.html">Untitled</a></td><td class="cell-xg&gt;k">製作：6/10 早鳥影片定案</td><td class="cell-R{`I">7</td><td class="cell-JkRx">8</td><td class="cell-Di:Z">9</td><td class="cell-:kCs">10</td><td class="cell-ZqMB">11</td><td class="cell-PgiH">12</td><td class="cell-Kixx">13</td></tr><tr id="7dfa9dd7-9d82-4369-8a01-8818af5daa0e"><td class="cell-title"><a href="0418%E7%AC%AC%E4%B8%80%E6%AC%A1%E7%B1%8C%E5%82%99%E6%9C%83%E8%AD%B0%2015e5130e351746e48fba229a35543825/Untitled%20d7f5e757f79e41b185360411b0e33bfb/Untitled%207dfa9dd79d8243698a018818af5daa0e.html">Untitled</a></td><td class="cell-xg&gt;k"></td><td class="cell-R{`I">14</td><td class="cell-JkRx">15</td><td class="cell-Di:Z">16</td><td class="cell-:kCs">17</td><td class="cell-ZqMB">18</td><td class="cell-PgiH">19</td><td class="cell-Kixx">20</td></tr><tr id="92df06ff-db03-4a35-a236-1ca0956799e5"><td class="cell-title"><a href="0418%E7%AC%AC%E4%B8%80%E6%AC%A1%E7%B1%8C%E5%82%99%E6%9C%83%E8%AD%B0%2015e5130e351746e48fba229a35543825/Untitled%20d7f5e757f79e41b185360411b0e33bfb/Untitled%2092df06ffdb034a35a2361ca0956799e5.html">Untitled</a></td><td class="cell-xg&gt;k">全體：6/26~27 第三次籌備會議（待定）</td><td class="cell-R{`I">21</td><td class="cell-JkRx">22</td><td class="cell-Di:Z">23</td><td class="cell-:kCs">24</td><td class="cell-ZqMB">25</td><td class="cell-PgiH"><strong>26</strong></td><td class="cell-Kixx"><strong>27</strong></td></tr><tr id="b847e084-36d4-46fe-88b9-4ebe0a3b3262"><td class="cell-title"><a href="0418%E7%AC%AC%E4%B8%80%E6%AC%A1%E7%B1%8C%E5%82%99%E6%9C%83%E8%AD%B0%2015e5130e351746e48fba229a35543825/Untitled%20d7f5e757f79e41b185360411b0e33bfb/Untitled%20b847e08436d446fe88b94ebe0a3b3262.html">Untitled</a></td><td class="cell-xg&gt;k">6/30 文化中心文宣（藝文花園）<br/><br/>節目冊：7/4 給設計第一階段文案</td><td class="cell-R{`I">28</td><td class="cell-JkRx">29</td><td class="cell-Di:Z">30</td><td class="cell-:kCs">7/1</td><td class="cell-ZqMB">2</td><td class="cell-PgiH">3</td><td class="cell-Kixx"><strong>4</strong></td></tr><tr id="1820460a-4d58-4c40-a9b0-b2928265de9e"><td class="cell-title"><a href="0418%E7%AC%AC%E4%B8%80%E6%AC%A1%E7%B1%8C%E5%82%99%E6%9C%83%E8%AD%B0%2015e5130e351746e48fba229a35543825/Untitled%20d7f5e757f79e41b185360411b0e33bfb/%E4%B8%83%E6%9C%88%201820460a4d584c40a9b0b2928265de9e.html">七月</a></td><td class="cell-xg&gt;k"></td><td class="cell-R{`I">5</td><td class="cell-JkRx">6</td><td class="cell-Di:Z">7</td><td class="cell-:kCs">8</td><td class="cell-ZqMB">9</td><td class="cell-PgiH">10</td><td class="cell-Kixx">11</td></tr><tr id="8dac3ce4-132c-440f-8967-51007a8562e1"><td class="cell-title"><a href="0418%E7%AC%AC%E4%B8%80%E6%AC%A1%E7%B1%8C%E5%82%99%E6%9C%83%E8%AD%B0%2015e5130e351746e48fba229a35543825/Untitled%20d7f5e757f79e41b185360411b0e33bfb/Untitled%208dac3ce4132c440f896751007a8562e1.html">Untitled</a></td><td class="cell-xg&gt;k">製作：7/13 宣傳影片1定案<br/><br/>7/17 早鳥票結束<br/><br/>節目冊：7/18 文字初排</td><td class="cell-R{`I">12</td><td class="cell-JkRx">13</td><td class="cell-Di:Z">14</td><td class="cell-:kCs">15</td><td class="cell-ZqMB">16</td><td class="cell-PgiH">17</td><td class="cell-Kixx">18</td></tr><tr id="f53520ac-ce60-40c7-8ac9-7ccf8a07d4fd"><td class="cell-title"><a href="0418%E7%AC%AC%E4%B8%80%E6%AC%A1%E7%B1%8C%E5%82%99%E6%9C%83%E8%AD%B0%2015e5130e351746e48fba229a35543825/Untitled%20d7f5e757f79e41b185360411b0e33bfb/Untitled%20f53520acce6040c78ac97ccf8a07d4fd.html">Untitled</a></td><td class="cell-xg&gt;k">製作：7/20 宣傳影片2定案<br/><br/>全體：7/24~25 第四次籌備會議（待定）</td><td class="cell-R{`I">19</td><td class="cell-JkRx">20</td><td class="cell-Di:Z">21</td><td class="cell-:kCs">22</td><td class="cell-ZqMB">23</td><td class="cell-PgiH">24</td><td class="cell-Kixx">25</td></tr><tr id="1e3c2b2f-742a-4ef2-9958-7d41fcae7aab"><td class="cell-title"><a href="0418%E7%AC%AC%E4%B8%80%E6%AC%A1%E7%B1%8C%E5%82%99%E6%9C%83%E8%AD%B0%2015e5130e351746e48fba229a35543825/Untitled%20d7f5e757f79e41b185360411b0e33bfb/Untitled%201e3c2b2f742a4ef299587d41fcae7aab.html">Untitled</a></td><td class="cell-xg&gt;k">節目冊：7/26 給設計第二階段文案<br/><br/>製作：7/27 宣傳影片3定案<br/><br/>製作：7/31 演出串場影片定案<br/><br/>7/31 技術需求文件（藝文花園）</td><td class="cell-R{`I">26</td><td class="cell-JkRx">27</td><td class="cell-Di:Z">28</td><td class="cell-:kCs">29</td><td class="cell-ZqMB">30</td><td class="cell-PgiH"><strong>31</strong></td><td class="cell-Kixx">8/1</td></tr><tr id="3992a7d2-a96a-415b-ad07-3edc2e81fd6e"><td class="cell-title"><a href="0418%E7%AC%AC%E4%B8%80%E6%AC%A1%E7%B1%8C%E5%82%99%E6%9C%83%E8%AD%B0%2015e5130e351746e48fba229a35543825/Untitled%20d7f5e757f79e41b185360411b0e33bfb/%E5%85%AB%E6%9C%88%203992a7d2a96a415bad073edc2e81fd6e.html">八月</a></td><td class="cell-xg&gt;k">8/2 團練開始<br/><br/>製作：8/3 宣傳影片4定案<br/><br/>節目冊：8/3 校稿及修改完成<br/><br/>節目冊：8/4 送印<br/><br/>全體：8/8 第五次籌備會議（待定）</td><td class="cell-R{`I">2</td><td class="cell-JkRx"><strong>3</strong></td><td class="cell-Di:Z">4</td><td class="cell-:kCs"><strong>5</strong></td><td class="cell-ZqMB">6</td><td class="cell-PgiH"><strong>7</strong></td><td class="cell-Kixx"><strong>8</strong></td></tr><tr id="ccb8098d-a1d5-4010-8443-ad68447af924"><td class="cell-title"><a href="0418%E7%AC%AC%E4%B8%80%E6%AC%A1%E7%B1%8C%E5%82%99%E6%9C%83%E8%AD%B0%2015e5130e351746e48fba229a35543825/Untitled%20d7f5e757f79e41b185360411b0e33bfb/Untitled%20ccb8098da1d540108443ad68447af924.html">Untitled</a></td><td class="cell-xg&gt;k">8/15 校友團團員大會（待定）</td><td class="cell-R{`I">9</td><td class="cell-JkRx"><strong>10</strong></td><td class="cell-Di:Z">11</td><td class="cell-:kCs"><strong>12</strong></td><td class="cell-ZqMB">13</td><td class="cell-PgiH"><strong>14</strong></td><td class="cell-Kixx"><strong>15</strong></td></tr><tr id="53c3b62f-82e3-42c7-a5de-6b337b48a6a9"><td class="cell-title"><a href="0418%E7%AC%AC%E4%B8%80%E6%AC%A1%E7%B1%8C%E5%82%99%E6%9C%83%E8%AD%B0%2015e5130e351746e48fba229a35543825/Untitled%20d7f5e757f79e41b185360411b0e33bfb/Untitled%2053c3b62f82e342c7a5de6b337b48a6a9.html">Untitled</a></td><td class="cell-xg&gt;k">8/16 Rundown、行前會<br/><br/>8/17 演出</td><td class="cell-R{`I">16</td><td class="cell-JkRx"><strong>17</strong></td><td class="cell-Di:Z">0</td><td class="cell-:kCs"></td><td class="cell-ZqMB">0</td><td class="cell-PgiH"></td><td class="cell-Kixx"></td></tr></tbody></table><br/><br/></div><h3 id="2c322b8e-b8c4-45b0-b534-f1487438a627" class="">團練時間</h3><figure id="2a890c92-823e-4dec-87c6-c068ce2d0ba1" class="image"><a href="0418%E7%AC%AC%E4%B8%80%E6%AC%A1%E7%B1%8C%E5%82%99%E6%9C%83%E8%AD%B0%2015e5130e351746e48fba229a35543825/image2.png"><img style="width:700px" src="0418%E7%AC%AC%E4%B8%80%E6%AC%A1%E7%B1%8C%E5%82%99%E6%9C%83%E8%AD%B0%2015e5130e351746e48fba229a35543825/image2.png"/></a></figure><h3 id="85b19a22-58d5-4a8d-bfb5-5d4ef9526eb6" class="">票圖</h3><figure id="dd9fa82c-c91d-496e-b17e-3c7713be2339" class="image"><a href="0418%E7%AC%AC%E4%B8%80%E6%AC%A1%E7%B1%8C%E5%82%99%E6%9C%83%E8%AD%B0%2015e5130e351746e48fba229a35543825/image5.png"><img style="width:700px" src="0418%E7%AC%AC%E4%B8%80%E6%AC%A1%E7%B1%8C%E5%82%99%E6%9C%83%E8%AD%B0%2015e5130e351746e48fba229a35543825/image5.png"/></a></figure><h3 id="036e61bd-028f-424a-94bb-fad6539ef34c" class="">節目冊：怡蓁統籌</h3><div id="5298ad1d-808e-4fcd-9485-f2a4013c6f0e" class="collection-content"><h4 class="collection-title"></h4><table class="collection-content"><thead><tr><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesTitle"><path d="M0.637695 13.1914C1.0957 13.1914 1.32812 13 1.47852 12.5215L2.24414 10.3887H6.14746L6.90625 12.5215C7.05664 13 7.2959 13.1914 7.74707 13.1914C8.22559 13.1914 8.5332 12.9043 8.5332 12.4531C8.5332 12.2891 8.50586 12.1523 8.44434 11.9678L5.41602 3.79199C5.2041 3.21777 4.82129 2.9375 4.19922 2.9375C3.60449 2.9375 3.21484 3.21777 3.0166 3.78516L-0.0322266 12.002C-0.09375 12.1797 -0.121094 12.3232 -0.121094 12.4668C-0.121094 12.918 0.166016 13.1914 0.637695 13.1914ZM2.63379 9.12402L4.17871 4.68066H4.21973L5.76465 9.12402H2.63379ZM12.2793 13.2324C13.3115 13.2324 14.2891 12.6787 14.7129 11.8037H14.7402V12.5762C14.7471 12.9863 15.0273 13.2393 15.4238 13.2393C15.834 13.2393 16.1143 12.9795 16.1143 12.5215V8.00977C16.1143 6.49902 14.9658 5.52148 13.1543 5.52148C11.7666 5.52148 10.6592 6.08887 10.2695 6.99121C10.1943 7.15527 10.1533 7.3125 10.1533 7.46289C10.1533 7.81152 10.4062 8.04395 10.7686 8.04395C11.0215 8.04395 11.2129 7.94824 11.3496 7.73633C11.7529 6.99121 12.2861 6.65625 13.1064 6.65625C14.0977 6.65625 14.6992 7.20996 14.6992 8.1123V8.67285L12.5664 8.7959C10.7686 8.8916 9.77734 9.69824 9.77734 11.0107C9.77734 12.3369 10.8096 13.2324 12.2793 13.2324ZM12.6621 12.1387C11.8008 12.1387 11.2129 11.667 11.2129 10.9561C11.2129 10.2725 11.7598 9.82129 12.7578 9.75977L14.6992 9.62988V10.3203C14.6992 11.3457 13.7969 12.1387 12.6621 12.1387Z"></path></svg></span>內容</th><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesText"><path d="M1.56738 3.25879H14.4258C14.7676 3.25879 15.0479 2.97852 15.0479 2.63672C15.0479 2.29492 14.7744 2.02148 14.4258 2.02148H1.56738C1.21875 2.02148 0.952148 2.29492 0.952148 2.63672C0.952148 2.97852 1.22559 3.25879 1.56738 3.25879ZM1.56738 6.84082H14.4258C14.7676 6.84082 15.0479 6.56055 15.0479 6.21875C15.0479 5.87695 14.7744 5.60352 14.4258 5.60352H1.56738C1.21875 5.60352 0.952148 5.87695 0.952148 6.21875C0.952148 6.56055 1.22559 6.84082 1.56738 6.84082ZM1.56738 10.4229H14.4258C14.7676 10.4229 15.0479 10.1426 15.0479 9.80078C15.0479 9.45898 14.7744 9.18555 14.4258 9.18555H1.56738C1.21875 9.18555 0.952148 9.45898 0.952148 9.80078C0.952148 10.1426 1.22559 10.4229 1.56738 10.4229ZM1.56738 14.0049H8.75879C9.10059 14.0049 9.38086 13.7246 9.38086 13.3828C9.38086 13.041 9.10742 12.7676 8.75879 12.7676H1.56738C1.21875 12.7676 0.952148 13.041 0.952148 13.3828C0.952148 13.7246 1.22559 14.0049 1.56738 14.0049Z"></path></svg></span>負責人</th><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesSelect"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 13.7383C4.85547 13.7383 2.33301 11.209 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 11.209 11.1445 13.7383 8 13.7383ZM7.62402 10.6348C7.79492 10.915 8.20508 10.9287 8.37598 10.6348L10.666 6.73145C10.8574 6.41016 10.7002 6.04102 10.3652 6.04102H5.62793C5.29297 6.04102 5.14941 6.43066 5.32031 6.73145L7.62402 10.6348Z"></path></svg></span>文案</th><th><span class="icon property-icon"><svg role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.45);flex-shrink:0" class="typesText"><path d="M1.56738 3.25879H14.4258C14.7676 3.25879 15.0479 2.97852 15.0479 2.63672C15.0479 2.29492 14.7744 2.02148 14.4258 2.02148H1.56738C1.21875 2.02148 0.952148 2.29492 0.952148 2.63672C0.952148 2.97852 1.22559 3.25879 1.56738 3.25879ZM1.56738 6.84082H14.4258C14.7676 6.84082 15.0479 6.56055 15.0479 6.21875C15.0479 5.87695 14.7744 5.60352 14.4258 5.60352H1.56738C1.21875 5.60352 0.952148 5.87695 0.952148 6.21875C0.952148 6.56055 1.22559 6.84082 1.56738 6.84082ZM1.56738 10.4229H14.4258C14.7676 10.4229 15.0479 10.1426 15.0479 9.80078C15.0479 9.45898 14.7744 9.18555 14.4258 9.18555H1.56738C1.21875 9.18555 0.952148 9.45898 0.952148 9.80078C0.952148 10.1426 1.22559 10.4229 1.56738 10.4229ZM1.56738 14.0049H8.75879C9.10059 14.0049 9.38086 13.7246 9.38086 13.3828C9.38086 13.041 9.10742 12.7676 8.75879 12.7676H1.56738C1.21875 12.7676 0.952148 13.041 0.952148 13.3828C0.952148 13.7246 1.22559 14.0049 1.56738 14.0049Z"></path></svg></span>Property</th></tr></thead><tbody><tr id="dc22cd67-a3a7-4fce-ad22-dea5840cb96e"><td class="cell-title"><a href="0418%E7%AC%AC%E4%B8%80%E6%AC%A1%E7%B1%8C%E5%82%99%E6%9C%83%E8%AD%B0%2015e5130e351746e48fba229a35543825/Untitled%205298ad1d808e4fcd9485f2a4013c6f0e/%E4%B8%BB%E9%A1%8C%E6%96%87%E6%A1%88%EF%BC%88%E5%A6%82%E6%9E%9C%E6%9C%89%EF%BC%89%20dc22cd67a3a74fcead22dea5840cb96e.html">主題文案（如果有）</a></td><td class="cell-HUc_">承軒</td><td class="cell-`&lt;tI"><span class="selected-value select-value-color-green">7/4</span></td><td class="cell-RJdo"></td></tr><tr id="2bead6b0-3acb-455e-93c2-a5f624b4ef30"><td class="cell-title"><a href="0418%E7%AC%AC%E4%B8%80%E6%AC%A1%E7%B1%8C%E5%82%99%E6%9C%83%E8%AD%B0%2015e5130e351746e48fba229a35543825/Untitled%205298ad1d808e4fcd9485f2a4013c6f0e/%E6%A0%A1%E9%95%B7%E5%BC%95%E8%A8%80%202bead6b03acb455e93c2a5f624b4ef30.html">校長引言</a></td><td class="cell-HUc_">東桓</td><td class="cell-`&lt;tI"><span class="selected-value select-value-color-green">7/4</span></td><td class="cell-RJdo"></td></tr><tr id="bef286aa-2ab3-4d52-8f3f-659a65386a0c"><td class="cell-title"><a href="0418%E7%AC%AC%E4%B8%80%E6%AC%A1%E7%B1%8C%E5%82%99%E6%9C%83%E8%AD%B0%2015e5130e351746e48fba229a35543825/Untitled%205298ad1d808e4fcd9485f2a4013c6f0e/%E5%9C%98%E9%95%B7%E5%BC%95%E8%A8%80%20bef286aa2ab34d528f3f659a65386a0c.html">團長引言</a></td><td class="cell-HUc_">汪董</td><td class="cell-`&lt;tI"><span class="selected-value select-value-color-green">7/4</span></td><td class="cell-RJdo"></td></tr><tr id="281c0539-564b-47c0-baf8-6c225efa61c2"><td class="cell-title"><a href="0418%E7%AC%AC%E4%B8%80%E6%AC%A1%E7%B1%8C%E5%82%99%E6%9C%83%E8%AD%B0%2015e5130e351746e48fba229a35543825/Untitled%205298ad1d808e4fcd9485f2a4013c6f0e/%E6%A8%82%E5%9C%98%E7%B0%A1%E4%BB%8B%20281c0539564b47c0baf86c225efa61c2.html">樂團簡介</a></td><td class="cell-HUc_">莞方</td><td class="cell-`&lt;tI"><span class="selected-value select-value-color-green">7/4</span></td><td class="cell-RJdo"></td></tr><tr id="cc7ae28b-3e6b-40b4-b86d-4d7b77c78cc2"><td class="cell-title"><a href="0418%E7%AC%AC%E4%B8%80%E6%AC%A1%E7%B1%8C%E5%82%99%E6%9C%83%E8%AD%B0%2015e5130e351746e48fba229a35543825/Untitled%205298ad1d808e4fcd9485f2a4013c6f0e/%E6%A8%82%E5%9C%98%E4%BA%8B%E7%B4%80%20cc7ae28b3e6b40b4b86d4d7b77c78cc2.html">樂團事紀</a></td><td class="cell-HUc_">莞方</td><td class="cell-`&lt;tI"><span class="selected-value select-value-color-green">7/4</span></td><td class="cell-RJdo"></td></tr><tr id="992cbdc1-ba78-435f-acbb-ed2fa3017fd1"><td class="cell-title"><a href="0418%E7%AC%AC%E4%B8%80%E6%AC%A1%E7%B1%8C%E5%82%99%E6%9C%83%E8%AD%B0%2015e5130e351746e48fba229a35543825/Untitled%205298ad1d808e4fcd9485f2a4013c6f0e/%E6%8C%87%E6%8F%AE%E7%B0%A1%E4%BB%8B%20992cbdc1ba78435facbbed2fa3017fd1.html">指揮簡介</a></td><td class="cell-HUc_">春頤</td><td class="cell-`&lt;tI"><span class="selected-value select-value-color-green">7/4</span></td><td class="cell-RJdo"></td></tr><tr id="afa996f6-43ff-41ca-88c9-04e0f308232b"><td class="cell-title"><a href="0418%E7%AC%AC%E4%B8%80%E6%AC%A1%E7%B1%8C%E5%82%99%E6%9C%83%E8%AD%B0%2015e5130e351746e48fba229a35543825/Untitled%205298ad1d808e4fcd9485f2a4013c6f0e/%E5%8D%94%E5%A5%8F%E8%80%85%E7%B0%A1%E4%BB%8B%20afa996f643ff41ca88c904e0f308232b.html">協奏者簡介</a></td><td class="cell-HUc_">承軒</td><td class="cell-`&lt;tI"><span class="selected-value select-value-color-green">7/4</span></td><td class="cell-RJdo"></td></tr><tr id="b054d749-0ce4-4fca-a060-6f8701f166b5"><td class="cell-title"><a href="0418%E7%AC%AC%E4%B8%80%E6%AC%A1%E7%B1%8C%E5%82%99%E6%9C%83%E8%AD%B0%2015e5130e351746e48fba229a35543825/Untitled%205298ad1d808e4fcd9485f2a4013c6f0e/%E6%9B%B2%E7%9B%AE%20b054d7490ce44fcaa0606f8701f166b5.html">曲目</a></td><td class="cell-HUc_">麒諺</td><td class="cell-`&lt;tI"><span class="selected-value select-value-color-green">7/4</span></td><td class="cell-RJdo"></td></tr><tr id="260f74b3-318d-4bc8-8627-44bcb181d27a"><td class="cell-title"><a href="0418%E7%AC%AC%E4%B8%80%E6%AC%A1%E7%B1%8C%E5%82%99%E6%9C%83%E8%AD%B0%2015e5130e351746e48fba229a35543825/Untitled%205298ad1d808e4fcd9485f2a4013c6f0e/%E6%A8%82%E6%9B%B2%E8%A7%A3%E8%AA%AA%20260f74b3318d4bc8862744bcb181d27a.html">樂曲解說</a></td><td class="cell-HUc_">麒諺</td><td class="cell-`&lt;tI"><span class="selected-value select-value-color-green">7/4</span></td><td class="cell-RJdo">太趕？</td></tr><tr id="bd7ef4e8-32c4-49ac-9437-4808961018b3"><td class="cell-title"><a href="0418%E7%AC%AC%E4%B8%80%E6%AC%A1%E7%B1%8C%E5%82%99%E6%9C%83%E8%AD%B0%2015e5130e351746e48fba229a35543825/Untitled%205298ad1d808e4fcd9485f2a4013c6f0e/%E6%BC%94%E5%87%BA%E4%BA%BA%E5%93%A1%20bd7ef4e832c449ac94374808961018b3.html">演出人員</a></td><td class="cell-HUc_">詠誠</td><td class="cell-`&lt;tI"><span class="selected-value select-value-color-brown">7/26</span></td><td class="cell-RJdo">Final: 8/2</td></tr><tr id="c5e6404b-23c4-4fb1-ab2b-6d903af9d9f2"><td class="cell-title"><a href="0418%E7%AC%AC%E4%B8%80%E6%AC%A1%E7%B1%8C%E5%82%99%E6%9C%83%E8%AD%B0%2015e5130e351746e48fba229a35543825/Untitled%205298ad1d808e4fcd9485f2a4013c6f0e/%E8%A3%BD%E4%BD%9C%E5%9C%98%E9%9A%8A%20c5e6404b23c44fb1ab2b6d903af9d9f2.html">製作團隊</a></td><td class="cell-HUc_">承軒</td><td class="cell-`&lt;tI"><span class="selected-value select-value-color-brown">7/26</span></td><td class="cell-RJdo"></td></tr><tr id="b7343980-9497-4c39-909e-33e7a629bf9f"><td class="cell-title"><a href="0418%E7%AC%AC%E4%B8%80%E6%AC%A1%E7%B1%8C%E5%82%99%E6%9C%83%E8%AD%B0%2015e5130e351746e48fba229a35543825/Untitled%205298ad1d808e4fcd9485f2a4013c6f0e/%E8%B4%8A%E5%8A%A9%E3%80%81%E5%BB%A3%E5%91%8A%20b734398094974c39909e33e7a629bf9f.html">贊助、廣告</a></td><td class="cell-HUc_">彥威</td><td class="cell-`&lt;tI"><span class="selected-value select-value-color-brown">7/26</span></td><td class="cell-RJdo">Final: 8/2</td></tr></tbody></table><br/><br/></div><h3 id="cef9588c-4798-4e75-82d6-2c2e0c03657b" class="">設計：官方宣傳圖片</h3><h3 id="47c4a5ec-b970-4e98-803a-cc05ac4ffe8c" class="">兩廳院 OPENTIX 藝文指南針</h3><figure id="baca5a07-d82f-4f18-8730-e6ed9f50a9bf" class="image"><a href="0418%E7%AC%AC%E4%B8%80%E6%AC%A1%E7%B1%8C%E5%82%99%E6%9C%83%E8%AD%B0%2015e5130e351746e48fba229a35543825/image1.png"><img style="width:700px" src="0418%E7%AC%AC%E4%B8%80%E6%AC%A1%E7%B1%8C%E5%82%99%E6%9C%83%E8%AD%B0%2015e5130e351746e48fba229a35543825/image1.png"/></a></figure><h3 id="99370a52-aab7-4226-8ed0-0e2cf2a1288d" class="">兩廳院 OPENTIX 網頁</h3><p id="6fd5be70-567c-4abb-b186-910b4bd31c33" class="">範例：<a href="https://www.opentix.life/event/1347930630599835653*">https://www.opentix.life/event/1347930630599835653</a></p><figure id="cfd6e740-7cb2-40ae-b153-f703a1c76b9f" class="image"><a href="0418%E7%AC%AC%E4%B8%80%E6%AC%A1%E7%B1%8C%E5%82%99%E6%9C%83%E8%AD%B0%2015e5130e351746e48fba229a35543825/image4.png"><img style="width:700px" src="0418%E7%AC%AC%E4%B8%80%E6%AC%A1%E7%B1%8C%E5%82%99%E6%9C%83%E8%AD%B0%2015e5130e351746e48fba229a35543825/image4.png"/></a></figure><h3 id="a7520f6e-4ef0-4f09-a87c-f75302a9b7fa" class="">文化高雄：高雄藝文月刊</h3><figure id="962fda55-446f-422d-9f1e-b2f4ef829532" class="image"><a href="0418%E7%AC%AC%E4%B8%80%E6%AC%A1%E7%B1%8C%E5%82%99%E6%9C%83%E8%AD%B0%2015e5130e351746e48fba229a35543825/image3.png"><img style="width:700px" src="0418%E7%AC%AC%E4%B8%80%E6%AC%A1%E7%B1%8C%E5%82%99%E6%9C%83%E8%AD%B0%2015e5130e351746e48fba229a35543825/image3.png"/></a></figure><h3 id="16474382-319e-4d8e-af65-4fdb54f6c2c5" class="">文化中心網頁：（可放兩張照片）</h3></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
