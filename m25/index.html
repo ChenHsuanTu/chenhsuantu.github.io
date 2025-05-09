@@ -1,1 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>母親節快樂</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #fff0f5;
+      font-family: "Arial", sans-serif;
+    }
 
+    .card {
+      width: 320px;
+      background-color: pink;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      text-align: center;
+      overflow: hidden;
+      animation: float 2s ease-in-out infinite alternate;
+    }
+
+    .card img {
+      width: 100%;
+      height: auto;
+    }
+
+    .card .message {
+      padding: 20px;
+      font-size: 40px;
+      color: #fff;
+      font-weight: bold;
+    }
+
+    @keyframes float {
+      from { transform: translateY(0); }
+      to { transform: translateY(-10px); }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <img src="https://chenhsuantu.github.io/m25/m.jpg"/>
+    <div style='text-align: left; font-size: 18px; padding: 10px;'>Dear 雅咪：</div>
+    <div class="message">母親節快樂</div>
+    恭喜獲得年度精選
+    <div style='color: palevioletred; font-size: 26px; font-weight: bold;'>日本九州五天四夜<br/>旅遊兌換券</div>
+    <div style='text-align: right; padding: 10px;'>Angus 2025.05.11 </div>
+
+  </div>
+</body>
+</html>
