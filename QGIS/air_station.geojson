@@ -1,0 +1,32 @@
+{
+"type": "FeatureCollection",
+"name": "AirStation",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::3826" } },
+"features": [
+{ "type": "Feature", "properties": { "SiteName": "三重", "AreaName": "北部空品區", "SiteAddres": "新北市三重區三和路重陽路交口", "SiteType": "交通測站" }, "geometry": { "type": "Point", "coordinates": [ 299815.839663517253939, 2773911.100124593358487 ] } },
+{ "type": "Feature", "properties": { "SiteName": "土城", "AreaName": "北部空品區", "SiteAddres": "新北市土城區學府路一段241號", "SiteType": "一般測站" }, "geometry": { "type": "Point", "coordinates": [ 295617.601468056440353, 2763918.307898125611246 ] } },
+{ "type": "Feature", "properties": { "SiteName": "士林", "AreaName": "北部空品區", "SiteAddres": "臺北市北投區文林北路155號", "SiteType": "一般測站" }, "geometry": { "type": "Point", "coordinates": [ 301979.339561761415098, 2777553.01663232408464 ] } },
+{ "type": "Feature", "properties": { "SiteName": "大同", "AreaName": "北部空品區", "SiteAddres": "臺北市大同區重慶北路三段2號", "SiteType": "交通測站" }, "geometry": { "type": "Point", "coordinates": [ 301787.521618337428663, 2772876.012959971558303 ] } },
+{ "type": "Feature", "properties": { "SiteName": "大園", "AreaName": "北部空品區", "SiteAddres": "桃園市大園區中正東路160號", "SiteType": "一般測站" }, "geometry": { "type": "Point", "coordinates": [ 270360.86794941034168, 2772476.590032550971955 ] } },
+{ "type": "Feature", "properties": { "SiteName": "中山", "AreaName": "北部空品區", "SiteAddres": "臺北市中山區林森北路511號", "SiteType": "一般測站" }, "geometry": { "type": "Point", "coordinates": [ 303121.359512722759973, 2772788.20655833138153 ] } },
+{ "type": "Feature", "properties": { "SiteName": "中壢", "AreaName": "北部空品區", "SiteAddres": "桃園市中壢區延平路622號", "SiteType": "交通測站" }, "geometry": { "type": "Point", "coordinates": [ 272383.556043341639452, 2760620.833724459633231 ] } },
+{ "type": "Feature", "properties": { "SiteName": "古亭", "AreaName": "北部空品區", "SiteAddres": "臺北市大安區羅斯福路三段153號", "SiteType": "一般測站" }, "geometry": { "type": "Point", "coordinates": [ 303444.952963863033801, 2768164.607999795116484 ] } },
+{ "type": "Feature", "properties": { "SiteName": "平鎮", "AreaName": "北部空品區", "SiteAddres": "桃園市平鎮區文化街189號", "SiteType": "一般測站" }, "geometry": { "type": "Point", "coordinates": [ 270598.23552866699174, 2760563.541153653990477 ] } },
+{ "type": "Feature", "properties": { "SiteName": "永和", "AreaName": "北部空品區", "SiteAddres": "新北市永和區永和路光復路交口", "SiteType": "交通測站" }, "geometry": { "type": "Point", "coordinates": [ 302109.208239379106089, 2767759.805680547375232 ] } },
+{ "type": "Feature", "properties": { "SiteName": "汐止", "AreaName": "北部空品區", "SiteAddres": "新北市汐止區樟樹一路141巷2號", "SiteType": "一般測站" }, "geometry": { "type": "Point", "coordinates": [ 314799.363590020861011, 2773367.036726519465446 ] } },
+{ "type": "Feature", "properties": { "SiteName": "松山", "AreaName": "北部空品區", "SiteAddres": "臺北市松山區八德路四段746號", "SiteType": "一般測站" }, "geometry": { "type": "Point", "coordinates": [ 308381.974531690822914, 2771440.492388693150133 ] } },
+{ "type": "Feature", "properties": { "SiteName": "板橋", "AreaName": "北部空品區", "SiteAddres": "新北市板橋區文化路一段25號", "SiteType": "一般測站" }, "geometry": { "type": "Point", "coordinates": [ 296293.302586988778785, 2767292.715231265872717 ] } },
+{ "type": "Feature", "properties": { "SiteName": "林口", "AreaName": "北部空品區", "SiteAddres": "新北市林口區民治路25號", "SiteType": "一般測站" }, "geometry": { "type": "Point", "coordinates": [ 288017.528753786406014, 2774381.081484518945217 ] } },
+{ "type": "Feature", "properties": { "SiteName": "桃園", "AreaName": "北部空品區", "SiteAddres": "桃園市桃園區成功路二段144號", "SiteType": "一般測站" }, "geometry": { "type": "Point", "coordinates": [ 282298.635400839732029, 2765238.490657147020102 ] } },
+{ "type": "Feature", "properties": { "SiteName": "基隆", "AreaName": "北部空品區", "SiteAddres": "基隆市東信路324號", "SiteType": "一般測站" }, "geometry": { "type": "Point", "coordinates": [ 326641.094671359285712, 2780300.339132564142346 ] } },
+{ "type": "Feature", "properties": { "SiteName": "淡水", "AreaName": "北部空品區", "SiteAddres": "新北市淡水區中正東路42巷6號", "SiteType": "一般測站" }, "geometry": { "type": "Point", "coordinates": [ 295285.919129629328381, 2784073.575956848450005 ] } },
+{ "type": "Feature", "properties": { "SiteName": "菜寮", "AreaName": "北部空品區", "SiteAddres": "新北市三重區中正北路163號", "SiteType": "一般測站" }, "geometry": { "type": "Point", "coordinates": [ 298528.199995638220571, 2773500.940807939507067 ] } },
+{ "type": "Feature", "properties": { "SiteName": "陽明", "AreaName": "北部空品區", "SiteAddres": "臺北市北投區竹子湖路111號", "SiteType": "公園測站" }, "geometry": { "type": "Point", "coordinates": [ 303377.265543016896117, 2786121.398776079993695 ] } },
+{ "type": "Feature", "properties": { "SiteName": "新店", "AreaName": "北部空品區", "SiteAddres": "新北市新店區民族路108號", "SiteType": "一般測站" }, "geometry": { "type": "Point", "coordinates": [ 304293.828729745000601, 2763362.228897677734494 ] } },
+{ "type": "Feature", "properties": { "SiteName": "新莊", "AreaName": "北部空品區", "SiteAddres": "新北市新莊區中正路510號", "SiteType": "一般測站" }, "geometry": { "type": "Point", "coordinates": [ 293643.388961877499241, 2770053.136257835663855 ] } },
+{ "type": "Feature", "properties": { "SiteName": "萬里", "AreaName": "北部空品區", "SiteAddres": "新北市萬里區瑪鋉路221號", "SiteType": "一般測站" }, "geometry": { "type": "Point", "coordinates": [ 319536.058115961612202, 2785856.162172259762883 ] } },
+{ "type": "Feature", "properties": { "SiteName": "萬華", "AreaName": "北部空品區", "SiteAddres": "臺北市萬華區中華路1段66號", "SiteType": "一般測站" }, "geometry": { "type": "Point", "coordinates": [ 301255.809177939547226, 2771024.528728131204844 ] } },
+{ "type": "Feature", "properties": { "SiteName": "龍潭", "AreaName": "北部空品區", "SiteAddres": "桃園市龍潭區中正路210號", "SiteType": "一般測站" }, "geometry": { "type": "Point", "coordinates": [ 271862.402139324054588, 2750716.940994319971651 ] } },
+{ "type": "Feature", "properties": { "SiteName": "觀音", "AreaName": "北部空品區", "SiteAddres": "桃園市觀音區文化路2號", "SiteType": "背景測站" }, "geometry": { "type": "Point", "coordinates": [ 258351.494699374568881, 2769712.50209164340049 ] } }
+]
+}
