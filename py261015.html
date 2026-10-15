@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'none'; style-src 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net; font-src data: https://fonts.gstatic.com https://cdn.jsdelivr.net; img-src data: https: http:; base-uri 'none'; form-action 'none'; object-src 'none'; frame-src 'none'">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>內容</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.18.7/dist/katex.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;600&family=Noto+Sans+SC:wght@400;700&display=swap">
+<style>:root{--nb-font-body:'Inter', -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;--nb-font-heading:'Inter', -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;--nb-font-mono:'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, 'Liberation Mono', monospace;--nb-font-size:11pt;--nb-code-size:9.5pt;--nb-line-height:1.55;--nb-heading-weight:700;--nb-color-bg:#ffffff;--nb-color-text:#1f2933;--nb-color-muted:#6b7280;--nb-color-heading:#111827;--nb-color-link:#1f77b4;--nb-color-border:#e5e7eb;--nb-color-accent:#1f77b4;--nb-code-bg:#f5f5f5;--nb-code-text:#1f2933;--nb-code-border:#e0e0e0;--nb-output-bg:#ffffff;--nb-output-text:#1f2933;--nb-prompt-color:#303f9f;--nb-table-header-bg:#f3f4f6;--nb-table-header-text:#111827;--nb-table-border:#e5e7eb;--nb-table-stripe:#fafafa;--nb-error-bg:#fdecea;--nb-error-text:#b3261e;--nb-quote-border:#d1d5db;--nb-inline-code-bg:#f3f4f6;--nb-syntax-keyword:#008000;--nb-syntax-string:#ba2121;--nb-syntax-number:#666666;--nb-syntax-comment:#408080;--nb-syntax-function:#0000ff;--nb-syntax-builtin:#008000;--nb-syntax-operator:#aa22ff;--nb-syntax-class:#0000ff;--nb-syntax-decorator:#aa22ff;--nb-syntax-variable:#1f2933;--nb-cell-gap:10px;--nb-cell-padding:8px 10px;--nb-radius:4px;--nb-prompt-width:64px;--nb-code-border-width:1px;}
+@page{size:A4;margin:16mm;}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--nb-color-bg);color:var(--nb-color-text);font-family:var(--nb-font-body), 'Noto Sans SC';font-size:var(--nb-font-size);line-height:var(--nb-line-height);-webkit-print-color-adjust:exact;print-color-adjust:exact;-webkit-font-smoothing:antialiased}
+.nb-notebook{max-width:100%;margin:0 auto;padding:28px 32px}
+@media print{.nb-notebook{padding:0}}
+.nb-cell{margin:0 0 var(--nb-cell-gap)}
+.nb-cell--code,.nb-output--image,.nb-result{break-inside:avoid;page-break-inside:avoid}
+.nb-cell--long{break-inside:auto;page-break-inside:auto}
+.nb-input,.nb-result{display:flex;gap:8px;align-items:flex-start}
+.nb-prompt{flex:0 0 var(--nb-prompt-width);width:var(--nb-prompt-width);font-family:var(--nb-font-mono);font-size:calc(var(--nb-code-size) - 1pt);color:var(--nb-prompt-color);text-align:right;padding-top:9px;white-space:nowrap;overflow:hidden}
+.nb-code,.nb-md-code{flex:1 1 auto;min-width:0;margin:0;padding:var(--nb-cell-padding);background:var(--nb-code-bg);color:var(--nb-code-text);border:var(--nb-code-border-width) solid var(--nb-code-border);border-radius:var(--nb-radius);font-family:var(--nb-font-mono);font-size:var(--nb-code-size);line-height:1.5;white-space:pre-wrap;word-break:break-word;overflow-wrap:anywhere;tab-size:4}
+.nb-code code,.nb-md-code code{font:inherit;background:transparent;padding:0}
+[data-code-accent="1"] .nb-code{border-left:3px solid var(--nb-color-accent)}
+.nb-outputs{margin-top:6px}
+[data-prompts="1"] .nb-outputs > .nb-output{margin-left:calc(var(--nb-prompt-width) + 8px)}
+.nb-result-body{flex:1 1 auto;min-width:0}
+.nb-output{margin:0 0 6px;max-width:100%}
+.nb-stream,.nb-error,.nb-output--text,.nb-raw{margin:0 0 6px;padding:6px 10px;font-family:var(--nb-font-mono);font-size:var(--nb-code-size);line-height:1.45;white-space:pre-wrap;word-break:break-word;overflow-wrap:anywhere;background:var(--nb-output-bg);color:var(--nb-output-text);border-radius:calc(var(--nb-radius) / 2)}
+.nb-stream--stderr,.nb-error{background:var(--nb-error-bg);color:var(--nb-error-text)}
+.nb-output--placeholder{font-size:0.85em;color:var(--nb-color-muted);border:1px dashed var(--nb-color-border);padding:6px 10px;border-radius:var(--nb-radius)}
+.nb-output img,.nb-markdown img{max-width:100%;height:auto;display:block}
+.nb-output--image img{margin:4px 0}
+.nb-output--html{overflow-x:auto;font-size:0.92em}
+.nb-output--html table,.nb-markdown table{border-collapse:collapse;max-width:100%;margin:6px 0;font-size:0.9em;line-height:1.35}
+.nb-output--html th,.nb-output--html td,.nb-markdown th,.nb-markdown td{border:1px solid var(--nb-table-border);padding:4px 8px;text-align:left;vertical-align:top}
+.nb-output--html th,.nb-markdown th{background:var(--nb-table-header-bg);color:var(--nb-table-header-text);font-weight:600}
+.nb-output--html tbody tr:nth-child(even) td,.nb-markdown tbody tr:nth-child(even) td{background:var(--nb-table-stripe)}
+.nb-output--html .dataframe thead th{text-align:right}
+.nb-table-part{margin:12px 0}
+.nb-table-columns{font-size:0.8em;color:var(--nb-color-muted);margin:0 0 4px;break-after:avoid}
+@media print{
+.nb-output--html{overflow:visible}
+.nb-output--html table,.nb-markdown table{width:100%;table-layout:fixed}
+.nb-output--html th,.nb-output--html td,.nb-markdown th,.nb-markdown td{padding:4px 2px;white-space:normal;overflow-wrap:anywhere;word-break:normal}
+.nb-output--html pre,.nb-markdown td pre,.nb-markdown th pre{white-space:pre-wrap;overflow-wrap:anywhere}
+}
+.nb-markdown{max-width:100%}
+.nb-markdown > :first-child{margin-top:0}
+.nb-markdown > :last-child{margin-bottom:0}
+.nb-markdown h1,.nb-markdown h2,.nb-markdown h3,.nb-markdown h4,.nb-markdown h5,.nb-markdown h6{font-family:var(--nb-font-heading);font-weight:var(--nb-heading-weight);color:var(--nb-color-heading);line-height:1.25;margin:1.1em 0 0.45em;break-after:avoid;page-break-after:avoid}
+.nb-markdown h1{font-size:1.9em}
+.nb-markdown h2{font-size:1.5em}
+.nb-markdown h3{font-size:1.25em}
+.nb-markdown h4{font-size:1.08em}
+.nb-markdown p,.nb-markdown ul,.nb-markdown ol,.nb-markdown blockquote{margin:0 0 0.75em}
+.nb-markdown ul,.nb-markdown ol{padding-left:1.5em}
+.nb-markdown li + li{margin-top:0.2em}
+.nb-markdown a{color:var(--nb-color-link);text-decoration:underline;text-underline-offset:2px}
+.nb-markdown blockquote{border-left:3px solid var(--nb-quote-border);padding:2px 0 2px 14px;color:var(--nb-color-muted)}
+.nb-markdown code:not(.hljs){font-family:var(--nb-font-mono);font-size:0.9em;background:var(--nb-inline-code-bg);padding:1px 5px;border-radius:3px}
+.nb-markdown hr{border:0;border-top:1px solid var(--nb-color-border);margin:1.2em 0}
+.nb-markdown input[type=checkbox]{margin-right:6px}
+.katex-display{margin:0.6em 0;overflow-x:auto;overflow-y:hidden}
+.katex{font-size:1.05em}
+.nb-math-error{color:var(--nb-error-text)}
+.hljs{color:var(--nb-code-text);background:transparent}
+.hljs-keyword,.hljs-selector-tag,.hljs-tag{color:var(--nb-syntax-keyword)}
+.hljs-string,.hljs-regexp,.hljs-addition{color:var(--nb-syntax-string)}
+.hljs-number,.hljs-literal,.hljs-symbol{color:var(--nb-syntax-number)}
+.hljs-comment,.hljs-quote,.hljs-deletion{color:var(--nb-syntax-comment);font-style:italic}
+.hljs-title,.hljs-title.function_,.hljs-section{color:var(--nb-syntax-function)}
+.hljs-built_in,.hljs-type{color:var(--nb-syntax-builtin)}
+.hljs-operator,.hljs-punctuation{color:var(--nb-syntax-operator)}
+.hljs-title.class_,.hljs-title.class_.inherited__{color:var(--nb-syntax-class)}
+.hljs-meta,.hljs-meta .hljs-keyword,.hljs-attr,.hljs-attribute{color:var(--nb-syntax-decorator)}
+.hljs-variable,.hljs-params,.hljs-property{color:var(--nb-syntax-variable)}
+.hljs-emphasis{font-style:italic}
+.hljs-strong{font-weight:600}
+.nb-cover{margin:0 0 28px;padding:0 0 16px;border-bottom:2px solid var(--nb-color-accent)}
+.nb-cover h1{font-family:var(--nb-font-heading);font-weight:var(--nb-heading-weight);color:var(--nb-color-heading);font-size:2.1em;line-height:1.2;margin:0 0 8px}
+.nb-cover-meta{color:var(--nb-color-muted);font-size:0.85em}
+[data-theme="report"] .nb-cover{border-left:6px solid var(--nb-color-accent);padding-left:16px;border-bottom:0}
+[data-numbered="1"] .nb-notebook{counter-reset:h1 h2 h3}
+[data-numbered="1"] .nb-markdown h1{counter-increment:h1;counter-reset:h2 h3}
+[data-numbered="1"] .nb-markdown h1::before{content:counter(h1) ". "}
+[data-numbered="1"] .nb-markdown h2{counter-increment:h2;counter-reset:h3}
+[data-numbered="1"] .nb-markdown h2::before{content:counter(h1) "." counter(h2) " "}
+[data-numbered="1"] .nb-markdown h3{counter-increment:h3}
+[data-numbered="1"] .nb-markdown h3::before{content:counter(h1) "." counter(h2) "." counter(h3) " "}
+[data-numbered="1"] .nb-cover h1::before{content:none}
+</style>
+</head>
+<body data-theme="classic" data-prompts="1" data-code-accent="0" data-numbered="0">
+<article class="nb-notebook">
+<section class="nb-cell nb-cell--markdown"><div class="nb-markdown"><h1>內容</h1>
+<ol>
+<li>函數 max()最大值</li>
+<li>函數 min()最小值</li>
+<li>函數 sum() 總和</li>
+<li>函數 sorted()排序(由小到大)</li>
+<li>函數 map():對串列(迭代物件)的每個元素做指定函數的處理,處理後結果放入新的串列。</li>
+<li>map後的結果只能使用1次,要多次使用的話,要再用函數list處理。</li>
+<li>函數 list():將可迭代物件(如字串、map結果)轉換為串列</li>
+</ol>
+</div></section>
+<section class="nb-cell nb-cell--markdown"><div class="nb-markdown"><h2>一、max()最大值／min()最小值</h2>
+</div></section>
+<section class="nb-cell nb-cell--code"><div class="nb-input"><div class="nb-prompt nb-prompt--in">In [1]:</div><pre class="nb-code"><code class="hljs language-python"><span class="hljs-comment"># max可以放好幾個數字</span>
+<span class="hljs-built_in">max</span>(<span class="hljs-number">22</span>,<span class="hljs-number">25</span>,<span class="hljs-number">24</span>)</code></pre></div><div class="nb-outputs"><div class="nb-result"><div class="nb-prompt nb-prompt--out">Out[1]:</div><div class="nb-result-body"><pre class="nb-output nb-output--text">25</pre></div></div></div></section>
+<section class="nb-cell nb-cell--code"><div class="nb-input"><div class="nb-prompt nb-prompt--in">In [2]:</div><pre class="nb-code"><code class="hljs language-python"><span class="hljs-comment"># 也可以放陣列</span>
+<span class="hljs-built_in">max</span>([<span class="hljs-number">22</span>,<span class="hljs-number">25</span>,<span class="hljs-number">24</span>])</code></pre></div><div class="nb-outputs"><div class="nb-result"><div class="nb-prompt nb-prompt--out">Out[2]:</div><div class="nb-result-body"><pre class="nb-output nb-output--text">25</pre></div></div></div></section>
+<section class="nb-cell nb-cell--code"><div class="nb-input"><div class="nb-prompt nb-prompt--in">In [3]:</div><pre class="nb-code"><code class="hljs language-python"><span class="hljs-comment"># min 也是，可以放好幾個數字</span>
+<span class="hljs-built_in">min</span>(<span class="hljs-number">22</span>,<span class="hljs-number">25</span>,<span class="hljs-number">24</span>)</code></pre></div><div class="nb-outputs"><div class="nb-result"><div class="nb-prompt nb-prompt--out">Out[3]:</div><div class="nb-result-body"><pre class="nb-output nb-output--text">22</pre></div></div></div></section>
+<section class="nb-cell nb-cell--code"><div class="nb-input"><div class="nb-prompt nb-prompt--in">In [4]:</div><pre class="nb-code"><code class="hljs language-python"><span class="hljs-comment"># 也可以放陣列</span>
+<span class="hljs-built_in">min</span>([<span class="hljs-number">22</span>,<span class="hljs-number">25</span>,<span class="hljs-number">24</span>])</code></pre></div><div class="nb-outputs"><div class="nb-result"><div class="nb-prompt nb-prompt--out">Out[4]:</div><div class="nb-result-body"><pre class="nb-output nb-output--text">22</pre></div></div></div></section>
+<hr/>
+<section class="nb-cell nb-cell--markdown"><div class="nb-markdown"><h2>二、排序： sorted() 由小到大</h2>
+</div></section>
+<section class="nb-cell nb-cell--code"><div class="nb-input"><div class="nb-prompt nb-prompt--in">In [5]:</div><pre class="nb-code"><code class="hljs language-python"><span class="hljs-comment"># sorted 只能放陣列</span>
+<span class="hljs-comment"># sorted(22,25,24) -&gt; 放數字會出錯</span>
+<span class="hljs-built_in">sorted</span>([<span class="hljs-number">22</span>,<span class="hljs-number">25</span>,<span class="hljs-number">24</span>])</code></pre></div><div class="nb-outputs"><div class="nb-result"><div class="nb-prompt nb-prompt--out">Out[5]:</div><div class="nb-result-body"><pre class="nb-output nb-output--text">[22, 24, 25]</pre></div></div></div></section>
+<section class="nb-cell nb-cell--code"><div class="nb-input"><div class="nb-prompt nb-prompt--in">In [6]:</div><pre class="nb-code"><code class="hljs language-python"><span class="hljs-comment"># 如果我想由大到小，要加入 reverse = True 的參數</span>
+<span class="hljs-built_in">sorted</span>([<span class="hljs-number">22</span>,<span class="hljs-number">25</span>,<span class="hljs-number">24</span>], reverse=<span class="hljs-literal">True</span>)</code></pre></div><div class="nb-outputs"><div class="nb-result"><div class="nb-prompt nb-prompt--out">Out[6]:</div><div class="nb-result-body"><pre class="nb-output nb-output--text">[25, 24, 22]</pre></div></div></div></section>
+<hr/>
+<section class="nb-cell nb-cell--markdown"><div class="nb-markdown"><h2>三、 map() 函式是一個懶惰的個迭代器 (iterator)── 只做一次</h2>
+</div></section>
+<section class="nb-cell nb-cell--markdown"><div class="nb-markdown"><h3>
+1. 前情提要，split 是把「一段文字」，用空白格切割成「陣列」（陣列裡面還是文字）
+</h3>
+</div></section>
+<section class="nb-cell nb-cell--code"><div class="nb-input"><div class="nb-prompt nb-prompt--in">In [7]:</div><pre class="nb-code"><code class="hljs language-python">s = <span class="hljs-string">&#x27;19 21 20&#x27;</span>
+s.split()</code></pre></div><div class="nb-outputs"><div class="nb-result"><div class="nb-prompt nb-prompt--out">Out[7]:</div><div class="nb-result-body"><pre class="nb-output nb-output--text">[&#39;19&#39;, &#39;21&#39;, &#39;20&#39;]</pre></div></div></div></section>
+<section class="nb-cell nb-cell--markdown"><div class="nb-markdown"><h3>
+2. 我想把陣列裡面文字變成整數，改怎麼做呢？
+</h3>
+<p>(1) 單純的字串 '21' ，可以透過 int() 變成整數</p>
+</div></section>
+<section class="nb-cell nb-cell--code"><div class="nb-input"><div class="nb-prompt nb-prompt--in">In [8]:</div><pre class="nb-code"><code class="hljs language-python"><span class="hljs-built_in">int</span>(<span class="hljs-string">&#x27;5&#x27;</span>)</code></pre></div><div class="nb-outputs"><div class="nb-result"><div class="nb-prompt nb-prompt--out">Out[8]:</div><div class="nb-result-body"><pre class="nb-output nb-output--text">5</pre></div></div></div></section>
+<section class="nb-cell nb-cell--markdown"><div class="nb-markdown"><p>(2) 陣列不能直接用 int()。那只能把陣列裡每一個東西都拿出來做 int()。</p>
+<p>把 list 裡面每個東西都一一拿出來，分別作運算的工具，就是 map()。</p>
+<p>map 裡面第一個放函數「名稱」（所以不用加後面括號），第二個放陣列。</p>
+</div></section>
+<section class="nb-cell nb-cell--code"><div class="nb-input"><div class="nb-prompt nb-prompt--in">In [9]:</div><pre class="nb-code"><code class="hljs language-python"><span class="hljs-comment"># int(s.split()) &lt;- 這個不行，裡面不是字串 TypeError: int() argument must be a string, a bytes-like object or a real number, not &#x27;list&#x27;</span></code></pre></div></section>
+<section class="nb-cell nb-cell--code"><div class="nb-input"><div class="nb-prompt nb-prompt--in">In [10]:</div><pre class="nb-code"><code class="hljs language-python">sp = s.split()
+sp</code></pre></div><div class="nb-outputs"><div class="nb-result"><div class="nb-prompt nb-prompt--out">Out[10]:</div><div class="nb-result-body"><pre class="nb-output nb-output--text">[&#39;19&#39;, &#39;21&#39;, &#39;20&#39;]</pre></div></div></div></section>
+<section class="nb-cell nb-cell--code"><div class="nb-input"><div class="nb-prompt nb-prompt--in">In [11]:</div><pre class="nb-code"><code class="hljs language-python"><span class="hljs-comment"># 對 sp 的每個元素做 int ，寫法是 map(int, sp)。map 裡面第一個放函數「名稱」，第二個放陣列。</span>
+n = <span class="hljs-built_in">map</span>(<span class="hljs-built_in">int</span>,sp)
+n <span class="hljs-comment"># n 的長相很奇怪</span></code></pre></div><div class="nb-outputs"><div class="nb-result"><div class="nb-prompt nb-prompt--out">Out[11]:</div><div class="nb-result-body"><pre class="nb-output nb-output--text">&lt;map at 0x7f8445237790&gt;</pre></div></div></div></section>
+<section class="nb-cell nb-cell--markdown"><div class="nb-markdown"><h3>
+3. 直接做完 map 的結果，有些壞處……
+</h3>
+<p>(1) 樣子很奇怪（像上面）　&lt;map at 0x79fdaeb8ccd0&gt;</p>
+<p>(2) map 很懶惰，只算執行一次（只能被消耗一次，所以算過後就消失了）</p>
+</div></section>
+<section class="nb-cell nb-cell--code"><div class="nb-input"><div class="nb-prompt nb-prompt--in">In [12]:</div><pre class="nb-code"><code class="hljs language-python"><span class="hljs-comment"># 計算 n 第一次</span>
+<span class="hljs-built_in">sum</span>(n)</code></pre></div><div class="nb-outputs"><div class="nb-result"><div class="nb-prompt nb-prompt--out">Out[12]:</div><div class="nb-result-body"><pre class="nb-output nb-output--text">60</pre></div></div></div></section>
+<section class="nb-cell nb-cell--code"><div class="nb-input"><div class="nb-prompt nb-prompt--in">In [13]:</div><pre class="nb-code"><code class="hljs language-python"><span class="hljs-comment"># 計算 n 第二次 -&gt; 沒了</span>
+<span class="hljs-built_in">sum</span>(n)</code></pre></div><div class="nb-outputs"><div class="nb-result"><div class="nb-prompt nb-prompt--out">Out[13]:</div><div class="nb-result-body"><pre class="nb-output nb-output--text">0</pre></div></div></div></section>
+<section class="nb-cell nb-cell--code"><div class="nb-input"><div class="nb-prompt nb-prompt--in">In [14]:</div><pre class="nb-code"><code class="hljs language-python"><span class="hljs-comment"># n 消失了</span>
+<span class="hljs-built_in">list</span>(n)</code></pre></div><div class="nb-outputs"><div class="nb-result"><div class="nb-prompt nb-prompt--out">Out[14]:</div><div class="nb-result-body"><pre class="nb-output nb-output--text">[]</pre></div></div></div></section>
+<section class="nb-cell nb-cell--markdown"><div class="nb-markdown"><h3>
+4. 所以我們要用 map 算出來的陣列，要用 list() 把他存下來
+</h3>
+</div></section>
+<section class="nb-cell nb-cell--code"><div class="nb-input"><div class="nb-prompt nb-prompt--in">In [15]:</div><pre class="nb-code"><code class="hljs language-python">n = <span class="hljs-built_in">list</span>(<span class="hljs-built_in">map</span>(<span class="hljs-built_in">int</span>,sp))
+n</code></pre></div><div class="nb-outputs"><div class="nb-result"><div class="nb-prompt nb-prompt--out">Out[15]:</div><div class="nb-result-body"><pre class="nb-output nb-output--text">[19, 21, 20]</pre></div></div></div></section>
+<section class="nb-cell nb-cell--code"><div class="nb-input"><div class="nb-prompt nb-prompt--in">In [16]:</div><pre class="nb-code"><code class="hljs language-python"><span class="hljs-comment"># 計算 n 第一次</span>
+<span class="hljs-built_in">sum</span>(n)</code></pre></div><div class="nb-outputs"><div class="nb-result"><div class="nb-prompt nb-prompt--out">Out[16]:</div><div class="nb-result-body"><pre class="nb-output nb-output--text">60</pre></div></div></div></section>
+<section class="nb-cell nb-cell--code"><div class="nb-input"><div class="nb-prompt nb-prompt--in">In [17]:</div><pre class="nb-code"><code class="hljs language-python"><span class="hljs-comment"># 計算 n 第二次</span>
+<span class="hljs-built_in">sum</span>(n)</code></pre></div><div class="nb-outputs"><div class="nb-result"><div class="nb-prompt nb-prompt--out">Out[17]:</div><div class="nb-result-body"><pre class="nb-output nb-output--text">60</pre></div></div></div></section>
+</article>
+</body>
+</html>
